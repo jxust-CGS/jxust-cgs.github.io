@@ -1,0 +1,535 @@
+<!DOCTYPE html>
+<!--[if lte IE 8 ]>
+<html class="ie" xmlns="http://www.w3.org/1999/xhtml" xml:lang="en-US" lang="en-US">
+<![endif]-->
+<!--[if (gte IE 9)|!(IE)]><!-->
+<!--
+***************  *      *     *
+      8          *    *       *
+      8          *  *         *
+      8          **           *
+      8          *  *         *
+      8          *    *       *
+      8          *      *     *
+      8          *        *   ***********    -----Theme By Kieran(http://go.kieran.top)
+-->
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en-US" lang="en-US">
+<!--<![endif]-->
+
+<head>
+  <title>VBA（Excel宏命令） | 极光轨迹</title>
+  <!-- Meta data -->
+    <meta http-equiv="Content-Type" content="text/html" charset="UTF-8" >
+    <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="generator" content="极光轨迹">
+    
+    <meta name="author" content="Jxust_CGS">
+    
+    <meta name="description" itemprop="description" content="VBA代表Visual Basic for Applications，这是一种来自Microsoft的事件驱动编程语言，现在主要与Microsoft Office应用程序(如MSExcel，MS-Word和MS-Access)一起使用。在excel中通过使用VBA宏命令，可以以编程的方式操作数据，可以用于绘图、分析数据，计算，导出数据等操作，熟悉VBA你将解锁excel的全新玩法。">
+    
+	
+	<meta name="Keywords" content="VBS,Excel,VBScript">
+    
+
+    <!-- Favicon, (keep icon in root folder) -->
+    <link rel="Shortcut Icon" href="/img/favicon.ico" type="image/ico">
+
+    <link rel="alternate" href="/atom.xml" title="极光轨迹" type="application/atom+xml">
+    <link rel="stylesheet" href="/css/all.css" media="screen" type="text/css">
+    
+    <link rel="stylesheet" href="/highlightjs/vs.css" type="text/css">
+    
+
+    <!--[if IE 8]>
+    <link rel="stylesheet" type="text/css" href="/css/ie8.css" />
+    <![endif]-->
+
+    <!-- jQuery | Load our jQuery, with an alternative source fallback to a local version if request is unavailable -->
+    <script src="/js/jquery-1.11.1.min.js"></script>
+    <script>window.jQuery || document.write('<script src="js/jquery-1.11.1.min.js"><\/script>')</script>
+
+    <!-- Load these in the <head> for quicker IE8+ load times -->
+    <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+    <script src="/js/html5shiv.min.js"></script>
+    <script src="/js/respond.min.js"></script>
+    <![endif]-->
+
+  
+  <link rel="alternate" type="application/rss+xml" title="RSS" href="atom.xml">
+  
+  
+  <link rel="alternate" type="application/atom+xml" title="Atom 0.3" href="atom.xml">
+  
+  
+
+  <style>.col-md-8.col-md-offset-2.opening-statement img{display:none;}</style>
+  
+  <script src="/js/busuanzi.pure.mini.js"></script>
+  <script src="/js/lufei.js"></script>
+</head>
+
+<!--
+<body class="post-template">
+-->
+<body id="index" class="lightnav animsition">
+	  <!-- ============================ START lufei =========================== -->
+		<div id="xiaoren" class="xiaoren">
+			<div id="message">正在加载中……</div>
+			<div id="lufei" class="lufei"></div>
+		</div>
+	  <!-- ============================ END lufei =========================== -->
+      <!-- ============================ Off-canvas navigation =========================== -->
+
+    <div class="sb-slidebar sb-right sb-style-overlay sb-momentum-scrolling">
+        <div class="sb-close" aria-label="Close Menu" aria-hidden="true">
+            <img src="/img/close.png" alt="Close"/>
+        </div>
+        <!-- Lists in Slidebars -->
+        <ul class="sb-menu">
+            <li><a href="/" class="animsition-link" title="Home">首页</a></li>
+            <li><a href="/archives" class="animsition-link" title="archive">文章</a></li>
+            <!-- Dropdown Menu -->
+            
+        	<li>
+        		<a class="sb-toggle-submenu">分类<span class="sb-caret"></span></a>
+            	<ul class="sb-submenu">
+				  	
+				    <li><a href="/categories/Angular/" class="animsition-link">Angular<small>(1)</small></a></li>
+				    
+				    <li><a href="/categories/Hibernate/" class="animsition-link">Hibernate<small>(6)</small></a></li>
+				    
+				    <li><a href="/categories/Java/" class="animsition-link">Java<small>(1)</small></a></li>
+				    
+				    <li><a href="/categories/Radis/" class="animsition-link">Radis<small>(1)</small></a></li>
+				    
+				    <li><a href="/categories/Spring/" class="animsition-link">Spring<small>(4)</small></a></li>
+				    
+				    <li><a href="/categories/Swagger2/" class="animsition-link">Swagger2<small>(1)</small></a></li>
+				    
+				    <li><a href="/categories/VBS/" class="animsition-link">VBS<small>(1)</small></a></li>
+				    
+				    <li><a href="/categories/android/" class="animsition-link">android<small>(13)</small></a></li>
+				    
+				    <li><a href="/categories/android源码/" class="animsition-link">android源码<small>(3)</small></a></li>
+				    
+				    <li><a href="/categories/fullcalendar-js/" class="animsition-link">fullcalendar.js<small>(1)</small></a></li>
+				    
+				    <li><a href="/categories/git/" class="animsition-link">git<small>(1)</small></a></li>
+				    
+				    <li><a href="/categories/html/" class="animsition-link">html<small>(2)</small></a></li>
+				    
+				    <li><a href="/categories/java/" class="animsition-link">java<small>(3)</small></a></li>
+				    
+				    <li><a href="/categories/linux/" class="animsition-link">linux<small>(2)</small></a></li>
+				    
+				    <li><a href="/categories/modem/" class="animsition-link">modem<small>(1)</small></a></li>
+				    
+				    <li><a href="/categories/python/" class="animsition-link">python<small>(1)</small></a></li>
+				    
+				    <li><a href="/categories/web/" class="animsition-link">web<small>(2)</small></a></li>
+				    
+				    <li><a href="/categories/杂谈/" class="animsition-link">杂谈<small>(2)</small></a></li>
+				    
+				    <li><a href="/categories/正则表达式/" class="animsition-link">正则表达式<small>(1)</small></a></li>
+				    
+				    <li><a href="/categories/设计模式/" class="animsition-link">设计模式<small>(1)</small></a></li>
+				    
+				    <li><a href="/categories/阿里云/" class="animsition-link">阿里云<small>(1)</small></a></li>
+				    
+				</ul>
+        	</li>
+			
+			
+        	<li>
+        		<a class="sb-toggle-submenu">标签<span class="sb-caret"></span></a>
+            	<ul class="sb-submenu">
+				  	
+				    <li><a href="/tags/Angular/" class="animsition-link">Angular<small>(1)</small></a></li>
+				    
+				    <li><a href="/tags/Hibernate/" class="animsition-link">Hibernate<small>(6)</small></a></li>
+				    
+				    <li><a href="/tags/Json/" class="animsition-link">Json<small>(1)</small></a></li>
+				    
+				    <li><a href="/tags/Maven/" class="animsition-link">Maven<small>(1)</small></a></li>
+				    
+				    <li><a href="/tags/Radis/" class="animsition-link">Radis<small>(1)</small></a></li>
+				    
+				    <li><a href="/tags/Spring/" class="animsition-link">Spring<small>(4)</small></a></li>
+				    
+				    <li><a href="/tags/Swagger2/" class="animsition-link">Swagger2<small>(1)</small></a></li>
+				    
+				    <li><a href="/tags/VBS/" class="animsition-link">VBS<small>(1)</small></a></li>
+				    
+				    <li><a href="/tags/android/" class="animsition-link">android<small>(12)</small></a></li>
+				    
+				    <li><a href="/tags/android源码/" class="animsition-link">android源码<small>(3)</small></a></li>
+				    
+				    <li><a href="/tags/android源码-android/" class="animsition-link">android源码,android<small>(1)</small></a></li>
+				    
+				    <li><a href="/tags/bootstrap/" class="animsition-link">bootstrap<small>(2)</small></a></li>
+				    
+				    <li><a href="/tags/first/" class="animsition-link">first<small>(1)</small></a></li>
+				    
+				    <li><a href="/tags/freemarker/" class="animsition-link">freemarker<small>(1)</small></a></li>
+				    
+				    <li><a href="/tags/fullcalendar-js/" class="animsition-link">fullcalendar.js<small>(1)</small></a></li>
+				    
+				    <li><a href="/tags/git/" class="animsition-link">git<small>(1)</small></a></li>
+				    
+				    <li><a href="/tags/html/" class="animsition-link">html<small>(2)</small></a></li>
+				    
+				    <li><a href="/tags/linux/" class="animsition-link">linux<small>(1)</small></a></li>
+				    
+				    <li><a href="/tags/selenium/" class="animsition-link">selenium<small>(1)</small></a></li>
+				    
+				    <li><a href="/tags/shell-linux/" class="animsition-link">shell,linux<small>(1)</small></a></li>
+				    
+				    <li><a href="/tags/velocity/" class="animsition-link">velocity<small>(1)</small></a></li>
+				    
+				    <li><a href="/tags/术语/" class="animsition-link">术语<small>(1)</small></a></li>
+				    
+				    <li><a href="/tags/正则表达式/" class="animsition-link">正则表达式<small>(1)</small></a></li>
+				    
+				    <li><a href="/tags/设计模式/" class="animsition-link">设计模式<small>(1)</small></a></li>
+				    
+				    <li><a href="/tags/超级终端-at指令/" class="animsition-link">超级终端,at指令<small>(1)</small></a></li>
+				    
+				    <li><a href="/tags/阿里云/" class="animsition-link">阿里云<small>(1)</small></a></li>
+				    
+				</ul>
+        	</li>
+			
+			
+            <li>
+                <a class="sb-toggle-submenu">其他<span class="sb-caret"></span></a>
+                <ul class="sb-submenu">
+                    
+                        <li><a href="/links" target="_BLANK" class="animsition-link">导航</a></li>
+                    
+                </ul>
+            </li>
+            
+            
+            <li>
+                <a class="sb-toggle-submenu">友情链接<span class="sb-caret"></span></a>
+                <ul class="sb-submenu">
+                    
+                    <li><a href="http://ykzhai.top/" class="animsition-link">砦龑堃</a></li>
+                    
+                </ul>
+            </li>
+            
+        </ul>
+        <!-- Lists in Slidebars -->
+        <ul class="sb-menu secondary">
+            <li><a href="/curriculumvitae" class="animsition-link" title="about">关于</a></li>
+            <li><a href="/atom.xml" class="animsition-link" title="rss">RSS</a></li>
+        </ul>
+    </div>
+    
+    <!-- ============================ END Off-canvas navigation =========================== -->
+
+    <!-- ============================ #sb-site Main Page Wrapper =========================== -->
+
+    <div id="sb-site">
+        <!-- #sb-site - All page content should be contained within this id, except the off-canvas navigation itself -->
+
+        <!-- ============================ Header & Logo bar =========================== -->
+
+        <div id="navigation" class="navbar navbar-fixed-top">
+            <div class="navbar-inner">
+                <div class="container">
+                    <!-- Nav logo -->
+                    <div class="logo">
+                        <a href="/" title="Logo" class="animsition-link">
+                         <img src="/img/logo.png" alt="Logo" width="35px;"/> 
+                        </a>
+                    </div>
+                    <!-- // Nav logo -->
+                    <!-- Info-bar -->
+                    <nav>
+                        <ul class="nav">
+                            <li><a href="/" class="animsition-link">极光轨迹</a></li>
+                            <li class="nolink"><span>Always </span>Creative.</li>
+                            
+                            <li><a href="https://github.com/jxust-CGS" title="Github" target="_blank"><i class="icon-github"></i></a></li>
+                            
+                            
+                            
+                            
+                            
+                            <li><a href="http://weibo.com/jxustCGS" title="Sina-Weibo" target="_blank"><i class="icon-sina-weibo"></i></a></li>
+                            
+                            <li class="nolink"><span>Welcome!</span></li>
+                        </ul>
+                    </nav>
+                    <!--// Info-bar -->
+                </div>
+                <!-- // .container -->
+                <div class="learnmore sb-toggle-right">更多</div>
+                <button type="button" class="navbar-toggle menu-icon sb-toggle-right" title="More">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar before"></span>
+                <span class="icon-bar main"></span>
+                <span class="icon-bar after"></span>
+                </button>
+            </div>
+            <!-- // .navbar-inner -->
+        </div>
+
+        <!-- ============================ Header & Logo bar =========================== -->
+
+
+      
+<section id="intro">
+    <div class="container">
+		<div class="row col-md-offset-2">
+            <div class="col-md-8">
+                <h1>VBA（Excel宏命令）</h1>
+		<span class="post-meta">
+      <time datetime="2017-12-22T13:58:33.333Z" itemprop="datePublished">
+          2017-12-22
+      </time>
+	
+    
+    | 分类：
+    <a class="categories" href='/categories/VBS/'>VBS</a>
+    
+    
+    
+    
+    | 标签：
+    <a class="tags" href='/tags/VBS/'>VBS</a>
+    
+    
+</span>
+		<br/>
+            </div>
+        </div>
+        <div class="col-md-8 col-md-offset-2">
+      		<h1 id="开启excel开发工具栏"><a href="#开启excel开发工具栏" class="headerlink" title="开启excel开发工具栏"></a>开启excel开发工具栏</h1><ul>
+<li>打开excel</li>
+<li>选择文件 -&gt; 选项 -&gt; 自定义功能区</li>
+<li>勾选上开发工具<br><img src="http://oeb33qix3.bkt.clouddn.com/17-12-15/75814182.jpg" alt="开启excel开发工具栏">  </li>
+</ul>
+<h1 id="新建你的第一个宏命令"><a href="#新建你的第一个宏命令" class="headerlink" title="新建你的第一个宏命令"></a>新建你的第一个宏命令</h1><p>选择开发工具-&gt;插入-&gt;选择按钮控件-&gt;放置按钮到excel中<br><img src="http://oeb33qix3.bkt.clouddn.com/17-12-20/76701738.jpg" alt="新建按钮"><br>这是会提示为按钮指定宏，新建宏，这里我们实现一个简单的输出helloworld<br><img src="http://oeb33qix3.bkt.clouddn.com/17-12-20/81578902.jpg" alt="新建宏"><br>点击按钮，响应宏，弹出弹框，第一个宏命令就完成了<br><img src="http://oeb33qix3.bkt.clouddn.com/17-12-20/49137938.jpg" alt="运行宏">  </p>
+<h1 id="常用操作"><a href="#常用操作" class="headerlink" title="常用操作"></a>常用操作</h1><h2 id="数据类型"><a href="#数据类型" class="headerlink" title="数据类型"></a>数据类型</h2><p>VBScript只有一种数据类型 —— Variant，它是根据上下文来判断是数字还是字符串。因为Variant是VBScript中唯一的数据类型，所以它也是VBScript中所有函数的返回值的数据类型。为了进一步区分数据类型，它包含如下数据子类型：<br>|名称|释义|<br>|:—|:—|<br>Empty | 未初始化的Variant。对于数值变量，值为0；对于字符串变量，值为零长度字符串 (“”)。<br>Null    | 不包含任何有效数据的Variant。<br>Boolean | 包含True或False。<br>Byte    | 包含0到255之间的整数。<br>Integer | 包含-32,768到32,767之间的整数。<br>Currency| -922,337,203,685,477.5808到922,337,203,685,477.5807。<br>Long    | 包含-2,147,483,648到2,147,483,647之间的整数。<br>Single  | 包含单精度浮点数，负数范围从-3.402823E38到-1.401298E-45，正数范围从1.401298E-45到3.402823E38。<br>Double  | 包含双精度浮点数，负数范围从-1.79769313486232E308到-4.94065645841247E-324，正数范围从4.94065645841247E-324到1.79769313486232E308。<br>Date (Time)|包含表示日期的数字，日期范围从公元100年1月1日到公元9999年12月31日。<br>String  | 包含变长字符串，最大长度可为20亿个字符。<br>Object  | 包含对象。<br>Error   | 包含错误号。</p>
+<h2 id="数据变量"><a href="#数据变量" class="headerlink" title="数据变量"></a>数据变量</h2><h3 id="申明变量"><a href="#申明变量" class="headerlink" title="申明变量"></a>申明变量</h3><ul>
+<li>显式声明：Dim、Public、Private语句进行声明</li>
+<li>隐式声明：不声明直接使用<br>强制声明：Option Explicit语句强制显式声明所有变量<br>使用隐式声明方式的习惯不好，因为这样有时会由于变量名拼错而导致程序运行出现意外，因此，最好在每个脚本开始第一行使用Option Explicit语句强制显式声明所有变量。声明示例如下:<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">Option Explicit</span><br><span class="line">Dim Sum,Total</span><br><span class="line">Public UserName, Password</span><br><span class="line">Private m_id</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+<p>申明多个同类型变量，可以用逗号分隔。注意：VBScript中不允许在申明变量的时候同时给变量赋值。但是允许在一行代码内同时对两个变量进行赋值，中间用冒号分隔。示例如下:<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">Dim Name,Name_</span><br><span class="line">Name = &quot;我是&quot; : Name_ = &quot;Sirrah&quot;</span><br><span class="line">MsgBox Name &amp; Name_</span><br></pre></td></tr></table></figure></p>
+<p>由于vbs对对象声明不是很严格，所以推荐在脚本开始第一行使用Option Explicit语句强制显式声明所有变量，这样可以避免在使用变量时变量名写错了而没有被发现</p>
+<h3 id="命名规则"><a href="#命名规则" class="headerlink" title="命名规则"></a>命名规则</h3><ul>
+<li>VBScript变量名的第一个字符必须是字母</li>
+<li>数字和下划线(_)可以用于变量名，但是其他所有的非字母字符都是非法的</li>
+<li>VBScript变量名的长度不能超过255个字符</li>
+<li>在被声明的作用域内必须唯一<h3 id="变量作用范围"><a href="#变量作用范围" class="headerlink" title="变量作用范围"></a>变量作用范围</h3></li>
+<li>脚本级作用域，变量在整个脚本文件中都是有效的。声明的变量的作用域就是整个脚本。</li>
+<li>过程级作用域，变量在过程或函数中有效。过程、函数之外的其它代码都不能访问过程级变量。</li>
+<li>类级作用域，这是一种包含属性和方法的逻辑分组的特殊结构。类定义之外的代码都不能访问类级变量。</li>
+</ul>
+<p>有三种语句可以用于声明变量：Dim、Private、Public<br>在不同的情况使用不同的语句声明变量，具体取决于变量的作用域：</p>
+<ul>
+<li>Dim：用于声明脚本、过程、类级作用域的变量<br>所有被声明为脚本级的变量在整个脚本文件中有效，无论使用的是Dim、Private还是Public<br>用于过程变量，必须使用Dim；<br>用于类级的变量，Dim的效果跟Public是完全相同的；</li>
+<li>Private：用于声明脚本、类级作用域使用Private语句<br>如果用于脚本级变量，它的作用跟Dim和Public是完全相同的；<br>为了声明一个私有的类级变量，必须要用Private；</li>
+<li>Public：用于声明脚本、类级作用域<br>声明脚本级作用域的变量，在效果上它跟Dim或Private是一样的；<br>声明的类级变量就是这个类的公共属性。所有在类级用Dim或Public声明的变量在整个类中都是一个有效的公共属性。？？？？？？？？？？？？？？<br>生命周期<h3 id="变量赋值"><a href="#变量赋值" class="headerlink" title="变量赋值"></a>变量赋值</h3>变量赋值很简单，使用等号进行赋值，等号左边为变量名，右边为变量值。<br>若该变量是对象引用级别的，则需使用Set语句。<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line">Dim Age, Object, User</span><br><span class="line">Age = 0</span><br><span class="line">Set Object = CreateObject(&quot;ADODB.Connection&quot;)</span><br><span class="line">Set User = New UserInfo</span><br><span class="line">Dim MyArray() &apos;首先定义一个一维动态数组</span><br><span class="line">ReDim MyArray(3) &apos;重新定义该数组的大小</span><br><span class="line">MyArray(0) = &quot;我&quot; &apos;分别为数组赋值</span><br><span class="line">MyArray(1) = &quot;要&quot;</span><br><span class="line">MyArray(2) = &quot;学&quot;</span><br><span class="line">MyArray(3) = &quot;习&quot;</span><br><span class="line">ReDim Preserve MyArray(5) &apos;（ReDim）重新定义该数组的大小,（Preserve）保留原来数组中的数据 </span><br><span class="line">MyArray(4) = &quot;测&quot; &apos;继续为数组赋值</span><br><span class="line">MyArray(5) = &quot;试&quot;</span><br><span class="line">For i=0 To UBound(MyArray)&apos;UBound获取数组长度</span><br><span class="line">    MsgBox MyArray(i) &apos;循环遍历数组，并输出数组值</span><br><span class="line">Next</span><br><span class="line">Dim MyArray() &apos;首先定义一个一维动态数组</span><br><span class="line">ReDim MyArray(1,1) &apos;重新定义该数组（二维数组）的大小</span><br><span class="line">MyArray(0,0) = &quot;A&quot; &apos;分别为数组赋值</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+<h2 id="数据常量"><a href="#数据常量" class="headerlink" title="数据常量"></a>数据常量</h2><h3 id="定义常量"><a href="#定义常量" class="headerlink" title="定义常量"></a>定义常量</h3><p>对常数重新赋值，但不能重新赋值，否则将会出现错误<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">Const PI = 3.14 &apos;常数默认为公有</span><br><span class="line">Private Const STEP_APPLY = &quot;Apply&quot; &apos;定义私有常数</span><br><span class="line">Const STEP_APPLY = &quot;Apply&quot;, PI = 3.14 &apos;在一行上定义多个常数</span><br></pre></td></tr></table></figure></p>
+<h3 id="VBScript常量"><a href="#VBScript常量" class="headerlink" title="VBScript常量"></a>VBScript常量</h3><p><a href="http://www.cnblogs.com/sirrah/articles/2349071.html" target="_blank" rel="noopener">VBS基础篇 - 常数(2) - VBScript 常数(2) - Sirrah - 博客园</a></p>
+<h2 id="运算符"><a href="#运算符" class="headerlink" title="运算符"></a>运算符</h2><ul>
+<li>算数运算符 <ul>
+<li>+ 加 、 - 减 、 * 乘  、\/ 浮点除法</li>
+<li>\ 整数除法、 \^ 指数、 Mod 求模</li>
+</ul>
+</li>
+<li>逻辑运算符<ul>
+<li>and且 not非 or或</li>
+</ul>
+</li>
+<li>赋值运算符<ul>
+<li>= 将右侧值赋值给左侧变量</li>
+</ul>
+</li>
+<li>连接运算符<ul>
+<li>&amp; 连接字符串</li>
+</ul>
+</li>
+<li>比较运算符<ul>
+<li>=等于 、&lt;&gt;不等于、&lt;小于、&gt;大于、&lt;=小于等于、&gt;=大于等于</li>
+</ul>
+</li>
+</ul>
+<h2 id="条件语句与循环语句-page13"><a href="#条件语句与循环语句-page13" class="headerlink" title="条件语句与循环语句 ## page13"></a>条件语句与循环语句 ## page13</h2><h3 id="条件语句"><a href="#条件语句" class="headerlink" title="条件语句"></a>条件语句</h3><h4 id="if-then-else"><a href="#if-then-else" class="headerlink" title="if_then_else"></a>if_then_else</h4><p>else 与 elseif语句是可选的，在当行的语句中可以省略end if ，eg:<code>If myDate &lt; Now Then myDate = Now</code><br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">Dim value &apos;定义一个变量</span><br><span class="line">value = 10 &apos;变量赋值为10</span><br><span class="line">If value = 0 Then &apos;判断变量的值大小,如果相等则输出变量值</span><br><span class="line">    MsgBox value</span><br><span class="line">ElseIf value = 1 Then</span><br><span class="line">    MsgBox value</span><br><span class="line">ElseIf value = 2 then</span><br><span class="line">    Msgbox value</span><br><span class="line">Else</span><br><span class="line">    Msgbox &quot;数值超出范围！&quot; &apos;如过都不相等，则输出”数值超出范围！”</span><br><span class="line">End If</span><br></pre></td></tr></table></figure></p>
+<h4 id="select-case"><a href="#select-case" class="headerlink" title="select_case"></a>select_case</h4><p>select_case类似java中的<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">Select Case value &apos;判断变量的值大小,如果相等则输出变量值</span><br><span class="line">    Case 0 </span><br><span class="line">        MsgBox 0</span><br><span class="line">    Case 1 </span><br><span class="line">        MsgBox 1</span><br><span class="line">    Case 2 </span><br><span class="line">        MsgBox 2</span><br><span class="line">    Case Else </span><br><span class="line">        MsgBox &quot;数值超出范围！&quot; &apos;如过都不相等，则输出”数值超出范围！”</span><br><span class="line">End Select</span><br></pre></td></tr></table></figure></p>
+<h3 id="循环语句"><a href="#循环语句" class="headerlink" title="循环语句"></a>循环语句</h3><h4 id="Do-Loop"><a href="#Do-Loop" class="headerlink" title="Do_Loop"></a>Do_Loop</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line">//在do loop语句中条件语句可以放在do后面也可以放在loop后面，中间的代码属于循环体，exit do 相当于java中的break直接跳出循环</span><br><span class="line">//condition 条件状态</span><br><span class="line">//statement 循环体语句</span><br><span class="line">Do [&#123;While | Until&#125; condition]</span><br><span class="line">    [statements]</span><br><span class="line">    [Exit Do]</span><br><span class="line">    [statements]</span><br><span class="line">Loop</span><br><span class="line"></span><br><span class="line">Do</span><br><span class="line">    [statements]</span><br><span class="line">    [Exit Do]</span><br><span class="line">    [statements]</span><br><span class="line">Loop [&#123;While | Until&#125; condition]</span><br></pre></td></tr></table></figure>
+<h4 id="while-wend"><a href="#while-wend" class="headerlink" title="while_wend"></a>while_wend</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">While condition</span><br><span class="line">        [statements]</span><br><span class="line">Wend</span><br></pre></td></tr></table></figure>
+<h4 id="for-next"><a href="#for-next" class="headerlink" title="for_next"></a>for_next</h4><p>step是指定步长，exit for退出当前循环<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">For counter = start To end [Step step]</span><br><span class="line">    [statements]</span><br><span class="line">    [Exit For]</span><br><span class="line">    [statements]</span><br><span class="line">Next</span><br></pre></td></tr></table></figure></p>
+<p>下面给一个例子<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">Dim Count:Count = 0 &apos;定义一个变量，并赋值为0</span><br><span class="line">For i = 1 To 10 &apos;循环10次</span><br><span class="line">    Count = Count + 1</span><br><span class="line">    If Count = 5 Then &apos;当变量Count的值为5时，退出当前循环</span><br><span class="line">        Exit For</span><br><span class="line">    End If</span><br><span class="line">Next</span><br><span class="line">MsgBox Count &apos;输出5</span><br></pre></td></tr></table></figure></p>
+<h4 id="for-each-next"><a href="#for-each-next" class="headerlink" title="for_each_next"></a>for_each_next</h4><p>类似java中增强版的for循环，自动遍历数组<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">For Each element In group</span><br><span class="line">    [statements]</span><br><span class="line">    [Exit For]</span><br><span class="line">    [statements]</span><br><span class="line">Next [element]</span><br></pre></td></tr></table></figure></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">Dim Dics &apos;定义一个变量</span><br><span class="line">Set Dics = CreateObject(&quot;Scripting.Dictionary&quot;) &apos;定义一个Dictionary对象</span><br><span class="line">Dics.Add &quot;0&quot;, &quot;Athens&quot;   &apos;为Dictionary对象赋值</span><br><span class="line">Dics.Add &quot;1&quot;, &quot;Belgrade&quot;</span><br><span class="line">Dics.Add &quot;2&quot;, &quot;Cairo&quot;</span><br><span class="line">For Each Dic in Dics</span><br><span class="line">    MsgBox Dics.Item(Dic) &apos;循环遍历，且输出Dictionary键值</span><br><span class="line">Next</span><br></pre></td></tr></table></figure>
+<h1 id="创建函数（过程）"><a href="#创建函数（过程）" class="headerlink" title="创建函数（过程）"></a>创建函数（过程）</h1><p>在 VBScript 中，过程被分为两类：Sub 过程和 Function 过程。都可以同call方法调用<br>切记Sub与Function的区别：</p>
+<ul>
+<li>Sub没有返回值，而Function有返回值。</li>
+<li>Sub不能放在表达式中，而Function可以。<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">Call GetName(&quot;我是sirrah&quot;) &apos;调用Sub</span><br><span class="line">Sub GetName(name)</span><br><span class="line">    MsgBox name &apos;输出字符串</span><br><span class="line">End Sub</span><br><span class="line">// Function 是有返回值的，通过函数名返回一个值，这个值是在过程的语句中赋给函数名的。Function 返回值的数据类型总是Variant</span><br><span class="line">getName &quot;Sirrah&quot; &apos;调用Function</span><br><span class="line">Function getName(name)</span><br><span class="line">    getName = name &apos;设置返回值</span><br><span class="line">End Function</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+<h1 id="常用对象"><a href="#常用对象" class="headerlink" title="常用对象"></a>常用对象</h1><h2 id="class"><a href="#class" class="headerlink" title="class"></a>class</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br></pre></td><td class="code"><pre><span class="line">Set MyUser = New User</span><br><span class="line">MyUser.MyAge = &quot;22&quot; &apos;设置对象的MyAge属性值</span><br><span class="line">MyUser.Myname = &quot;Sirrah&quot; &apos;设置对象的Myname属性值</span><br><span class="line">MyUser.ToString &apos;调用对象的ToString方法</span><br><span class="line"> </span><br><span class="line">Class User</span><br><span class="line">    Private Str_Name &apos;声明变量Str_Name</span><br><span class="line">    Private Int_Age  &apos;声明变量Int_Age</span><br><span class="line"> </span><br><span class="line">    &apos;Property Get语句，获取属性值或对象引用，Default只与Public一起使用，表示该属性为类的默认属性</span><br><span class="line">    Public Property Get Myname</span><br><span class="line">        Myname = Str_Name</span><br><span class="line">    End Property  </span><br><span class="line"> </span><br><span class="line">    Public Property Get MyAge</span><br><span class="line">        MyAge = Int_Age</span><br><span class="line">    End Property</span><br><span class="line"> </span><br><span class="line">    &apos;Property Let语句，设置属性值</span><br><span class="line">    Public Property Let Myname(New_Name)</span><br><span class="line">        Str_Name = New_Name</span><br><span class="line">    End Property   </span><br><span class="line"> </span><br><span class="line">    Public Property Let MyAge(New_Age)</span><br><span class="line">        Int_Age = new_age</span><br><span class="line">    End Property  </span><br><span class="line"> </span><br><span class="line">    &apos;类方法</span><br><span class="line"> </span><br><span class="line">    Public Sub ToString()</span><br><span class="line">        MsgBox &quot;姓名：&quot;+Me.Myname+&quot; 年龄：&quot;+Me.MyAge</span><br><span class="line">        &apos;Me相当于Java里面的This</span><br><span class="line">    End Sub</span><br><span class="line"> </span><br><span class="line">End Class</span><br></pre></td></tr></table></figure>
+<h2 id="Dictionary"><a href="#Dictionary" class="headerlink" title="Dictionary"></a>Dictionary</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line">Dim Dic,Dics</span><br><span class="line">Set Dic = CreateObject(&quot;Scripting.Dictionary&quot;)</span><br><span class="line">Dic.Add &quot;Name&quot;, &quot;Sirrah&quot;   &apos;向Dictionary对象中添加键值对</span><br><span class="line">Dic.Add &quot;Age&quot;, 23</span><br><span class="line">Dics = dic.Items  &apos;Items返回一个包含所有Item值的数组</span><br><span class="line">For i = 0 To dic.Count - 1 &apos;Count返回Dictionary对象键数目</span><br><span class="line">    str = str &amp; Dics(i) &amp; vbCrlf</span><br><span class="line">Next</span><br><span class="line">MsgBox(str)</span><br><span class="line">Dim Dic,Dics</span><br><span class="line">Set Dics = CreateObject(&quot;Scripting.Dictionary&quot;)</span><br><span class="line">Dics.Add &quot;Name&quot;, &quot;Sirrah&quot;   &apos;向Dictionary对象中添加键值对</span><br><span class="line">Dics.Add &quot;Age&quot;, 23</span><br><span class="line">For Each Dic In Dics &apos;循环遍历Dictionary键，并输出键值</span><br><span class="line">    MsgBox Dics.Item(Dic)</span><br><span class="line">Next</span><br></pre></td></tr></table></figure>
+<h3 id="FileSystemObject"><a href="#FileSystemObject" class="headerlink" title="FileSystemObject"></a>FileSystemObject</h3><p>在宏命令中最常用的操作就是生成文件并按一定格式导出数据了<br><a href="http://www.cnblogs.com/sirrah/articles/2349034.html" target="_blank" rel="noopener">VBS基础篇 - 对象(3) - FileSystemObject对象 - Sirrah - 博客园</a><br>在vbs中要进行文件操作首先必须获取文件系统对象<code>Set fso = CreateObject(&quot;Scripting.FileSystemObject&quot;)</code><br>| 常用方法 | 代码 | 补充说明 |<br>|:—|:—|:—|<br>| 创建文件 | Fso.CreateTextFile “C:\test.txt”,False |  object. CreateTextFile(strFile,blnOverWrite)//blnOverWrite是否覆盖原文件<br>| 创建文件夹 | Fso.CreateFolder(“c:\test”) | |<br>| 删除文件 | Fso.DeleteFile(“c:\test.txt”) | Fso.DeleteFile “c:\test.txt”,True 强制删除只读文件 |<br>| 删除文件夹 | Fso.DeleteFolder(“c:\test”) | |<br>| 判断文件是否存在 | Fso.FileExists(“c:\test.txt”) | |<br>| 判断文件夹是否存在 | Fso.FolderExists(“c:\test”) | |<br>| 复制文件 | Fso.CopyFile “c:\*.txt”,”D:\”,False | 最后一位同样是是否覆盖原文件 |<br>| 复制文件夹 | Fso.CopyFolder “c:\test”,”D:\” | |<br>| 移动文件 | Fso.MoveFile “c:\test.txt”,”D:\” | |<br>| 移动文件夹 | Fso.MoveFolder “c:\test”,”D:\” | |<br>| 获取文件后缀 | GetExtensionName = fso.GetExtensionName(“c:\test.txt”) | |<br>| 获取文件名 | GetBaseName = Fso.GetBaseName(“c:\test\test.txt”) | |<br>| 获取父级目录 | GetParentFolderName = Fso.GetParentFolderName(“c:\test\test.txt”) | |</p>
+<h4 id="Drive"><a href="#Drive" class="headerlink" title="Drive"></a>Drive</h4><p>操作磁盘对象，首先获取磁盘对象<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">Set Fso = CreateObject(&quot;Scripting.FileSystemObject&quot;)</span><br><span class="line">&apos;使用GetDrive方法获取驱动器的句柄</span><br><span class="line">Set MyDriver = Fso.GetDrive(&quot;c:\&quot;)</span><br></pre></td></tr></table></figure></p>
+<p>获取磁盘对象后我们可以获取磁盘的基本信息<br>| 获取参数 | 代码 | 示例返回值 | 补充说明 |<br>|:—|:—|:—|:—|<br>| 获取磁盘类型 | MyDriver.DriveType | | 0: “未知磁盘类型” 1: “可移动磁盘”2: “本地磁盘”3: “网络磁盘”4: “CD-ROM”5: “RAM 磁盘” |<br>| 获取驱动类型 | Fso.GetDrive(“c:\”) | nfts | 可用的返回类型包括 FAT、NTFS 和 CDFS |<br>| 磁盘是否就绪 | MyDriver.IsReady | true | 用于判断u盘或cd驱动是否准备就绪  |<br>| 获取磁盘路径 | MyDriver.Path | c | 获取磁盘路径c而非c:\ |<br>| 获取磁盘根文件夹 | MyDriver.RootFolder | c:\ | |<br>| 获取磁盘名称 | MyDriver.VolumeName | 本地磁盘 | |</p>
+<h4 id="File"><a href="#File" class="headerlink" title="File"></a>File</h4><p>操作文件，首先就要获得文件对象<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">Dim Fso,MyFile     &apos;创建FileSystemObject对象</span><br><span class="line">Set Fso = CreateObject(&quot;Scripting.FileSystemObject&quot;)      &apos;使用GetFile方法获取文件的句柄</span><br><span class="line">Set MyFile = Fso.GetFile(&quot;c:\test.txt&quot;)</span><br></pre></td></tr></table></figure></p>
+<p>获取文件对象后可以对其进行操作<br>| 常用操作 | 代码 | 示例返回值 | 补充说明 |<br>|:—|:—|:—|:—|<br>| 复制文件 | MyFile.Copy “D:\”,False  | | 第二个参数，是否覆盖已存在的文件（默认覆盖） |<br>| 删除文件 | MyFile.Delete True | | 第二个参数，是否删除只读的文 |<br>| 移动文件 | MyFile.Move(“D:\”) | | |<br>| 获取文件创建时间 | MyFile.DateCreated | | |<br>| 获取文件最后操作时间 | MyFile.DateLastModified |  | |<br>| 获取最后访问时间 | MyFile.DateLastAccessed | | |<br>| 获取文件父级目录 | MyFile.parentfolder | | |<br>| 获取文件名 | MyFile.name | | |<br>| 获取文件类型 | MyFile.Type | | |<br>| 获取文件大小 | MyFile.Size/1024&amp;”KB” | | |<br>folder文件夹对象与file对象用法相似，对应参看api</p>
+<h4 id="TextStream"><a href="#TextStream" class="headerlink" title="TextStream"></a>TextStream</h4><p>TextStream对象是用于访问文本文件的对象，它是FileSystemObject一个独立的附属对象，但在使用TextStream对象时，我们仍要借助FileSystemObject 对象或其附属对象来创建一个 TextStream 对象并访问磁盘文件的内容。可以通过FileSystemObject 对象的CreateTextFile()及OpenTextFile()，来获取TextStream的对象句柄。<br>| 方法 | 说明 |<br>|:—|:—|<br>|Close()|    关闭一个打开的文件|<br>|Read(numchars)|    从文件中读出 numchars 个字符|<br>|ReadAll()|    作为单个字符串读出整个文件|<br>|ReadLine()|    作为一个字符串从文件中读出一行（直到回车符和换行）|<br>|Skip(numchars)|    当从文件读出时忽略 numchars 个字符|<br>|SkipLine()|    当从文件读出时忽略下一行|<br>|Write(string)|    向文件写入字符串 string|<br>|WriteLine(string)|    向文件写入字符串 string（可选）和换行符|<br>|WriteBlankLines(n)|    向文件写入 n 个换行符|</p>
+<h1 id="其他建议"><a href="#其他建议" class="headerlink" title="其他建议"></a>其他建议</h1><p>在excel中新建文件的时候默认保存的格式是<code>.xlsx</code>,这种格式是不能保存宏的，切记切记<br>建议保存文件格式为<code>.xls</code>和<code>.xlsm</code>格式<br>其他的对象及方法这里就不详述了（其实就是我想偷懒了^_^），参考百度及文末提供的api文档</p>
+<h1 id="参考代码"><a href="#参考代码" class="headerlink" title="参考代码"></a>参考代码</h1><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br></pre></td><td class="code"><pre><span class="line">Option Explicit&apos;限制所有对象必须先声明后使用</span><br><span class="line">Sub button_insert_Click()</span><br><span class="line">    Dim title_row, name_row, data_start_row, data_end_row, data_col, max_row</span><br><span class="line">    Dim i</span><br><span class="line">    Dim file_path, fs, fHandle</span><br><span class="line">    max_row = 10000</span><br><span class="line">    title_row = getrowfrom(1, &quot;ID&quot;, 1)</span><br><span class="line">    name_row = title_row + 1</span><br><span class="line">    data_start_row = name_row + 1</span><br><span class="line">    data_end_row = getrowfrom(1, &quot;&quot;, data_start_row) - 1</span><br><span class="line">    data_col = getcolfrom(name_row, &quot;&quot;, 1) - 1</span><br><span class="line">    </span><br><span class="line">    file_path = &quot;D:/output.txt&quot;</span><br><span class="line">    Set fs = CreateObject(&quot;Scripting.FileSystemObject&quot;)</span><br><span class="line">    Set fHandle = fs.CreateTextFile(file_path, True)</span><br><span class="line">    </span><br><span class="line">    fHandle.writeline (&quot;/************************&quot;)</span><br><span class="line">    fHandle.writeline (&quot; * 宏命令生成insert语句 *&quot;)</span><br><span class="line">    fHandle.writeline (&quot; ************************/&quot;)</span><br><span class="line">    </span><br><span class="line">    For i = data_start_row To data_end_row</span><br><span class="line">        fHandle.writeline (&quot;insert into sys_user (&quot; &amp; getrowvalues(name_row, 1, data_col) &amp; &quot;) values (&quot; &amp; getrowvalues(i, 1, data_col) &amp; &quot;);&quot;)</span><br><span class="line">    Next</span><br><span class="line">    </span><br><span class="line">    fHandle.Close</span><br><span class="line">    MsgBox (&quot;脚本生成成功！&quot; &amp; Chr(13) &amp; &quot;文件路径为：&quot; &amp; file_path)</span><br><span class="line">    </span><br><span class="line">End Sub</span><br><span class="line"></span><br><span class="line">Function getrowfrom(col, name, row_from)</span><br><span class="line">    Dim i, max_row, result</span><br><span class="line">    max_row = 10000</span><br><span class="line">    For i = row_from To max_row</span><br><span class="line">        If Cells(i, col) = name Then</span><br><span class="line">            result = i</span><br><span class="line">            Exit For</span><br><span class="line">        End If</span><br><span class="line">    Next</span><br><span class="line">    getrowfrom = result</span><br><span class="line">End Function</span><br><span class="line"></span><br><span class="line">Function getcolfrom(row, name, col_from)</span><br><span class="line">    Dim i, max_col, result</span><br><span class="line">    max_col = 10000</span><br><span class="line">    For i = col_from To max_col</span><br><span class="line">        If Cells(row, i) = name Then</span><br><span class="line">            result = i</span><br><span class="line">            Exit For</span><br><span class="line">        End If</span><br><span class="line">    Next</span><br><span class="line">    getcolfrom = result</span><br><span class="line">End Function</span><br><span class="line"></span><br><span class="line">Function getrowvalues(row, start_col, end_col)</span><br><span class="line">    Dim i, result</span><br><span class="line">    result = &quot;&quot;</span><br><span class="line">    For i = start_col To end_col</span><br><span class="line">        result = result &amp; Cells(row, i) &amp; &quot;,&quot;</span><br><span class="line">    Next</span><br><span class="line">    result = Left(result, Len(result) - 1)</span><br><span class="line">    getrowvalues = result</span><br><span class="line">End Function</span><br><span class="line"></span><br><span class="line">Function getcolvalues(col, start_row, end_row)</span><br><span class="line">    Dim i, result</span><br><span class="line">    result = &quot;&quot;</span><br><span class="line">    For i = start_row To end_row</span><br><span class="line">        result = result &amp; Cells(i, col) &amp; &quot;,&quot;</span><br><span class="line">    Next</span><br><span class="line">    result = Left(result, Len(result) - 1)</span><br><span class="line">    getcolvalues = result</span><br><span class="line">End Function</span><br></pre></td></tr></table></figure>
+<h1 id="参考文章"><a href="#参考文章" class="headerlink" title="参考文章"></a>参考文章</h1><p><a href="http://www.yiibai.com/vba/" target="_blank" rel="noopener">VBA教程™-亿百教程</a><br><a href="http://blog.csdn.net/superbirds/article/details/6762748" target="_blank" rel="noopener">FileSystemObject详解 - CSDN博客</a><br><a href="http://www.cnblogs.com/sirrah/default.html?page=16" target="_blank" rel="noopener">随笔列表 - Sirrah - 博客园（对应参考了vbs系列文章）</a><br><a href="http://www.jb51.net/shouce/vbscript/" target="_blank" rel="noopener">微软官方vbscript参考手册__jb51.net</a><br><a href="https://pan.baidu.com/s/1pKJdOZh" target="_blank" rel="noopener">百度云分享vbs中文api</a></p>
+
+            <div class="clearfix"></div>
+            <hr class="nogutter">
+        </div>
+        <nav class="pagination" role="pagination">
+    
+    
+    <a class="pull-right" href="/2017/12/22/Swagger2/">
+        Swagger2学习笔记 →
+    </a>
+    
+	<br/>
+</nav>
+
+        <br/>
+	<div class="row col-md-offset-2">
+            <div class="col-md-8">
+    			<div class="wumi">
+<!-- WUMI BEGIN -->
+<script type="text/javascript" id="wumiiComments">
+    var wumiiPermaLink = ""; 
+    var wumiiTitle = "VBA（Excel宏命令）"; 
+    var wumiiSitePrefix = "http://www.chenguangsong.online"; 
+    var wumiiCommentParams = "&pf=JAVASCRIPT";
+</script>
+<script type="text/javascript" src="http://widget.wumii.cn/ext/cw/widget"></script>
+<!-- WUMI END -->
+
+</div>
+            </div>
+        </div>
+    </div>
+</section>
+
+
+      
+<!-- ============================ Footer =========================== -->
+
+<footer>
+    <div class="container">
+            <div class="copy">
+                <p>
+                    &copy; 2014<script>new Date().getFullYear()>2010&&document.write("-"+new Date().getFullYear());</script>, Content By Jxust_CGS. All Rights Reserved.<br>
+					<span id="busuanzi_container_site_pv">本站总访问量<span id="busuanzi_value_site_pv"></span>次</span>
+					<span id="busuanzi_container_site_uv">本站访客数<span id="busuanzi_value_site_uv"></span>人次</span><br />
+                </p>
+                <p>Theme By <a href="//go.kieran.top" style="color: #767D84">Kieran</a></p>
+            </div>
+            <div class="social">
+                <ul>
+                    
+                    <li><a href="https://github.com/jxust-CGS" title="Github" target="_blank"><i class="icon-github"></i></a>&nbsp;</li>
+                    
+                    
+                    
+                    
+                    
+                    <li><a href="http://weibo.com/jxustCGS" title="Sina-Weibo" target="_blank"><i class="icon-sina-weibo"></i></a>&nbsp;</li>
+                    
+                </ul>
+            </div>
+            <div class="clearfix"> </div>
+        </div>
+</footer>
+<script>
+(function(){
+    var bp = document.createElement('script');
+    var curProtocol = window.location.protocol.split(':')[0];
+    if (curProtocol === 'https') {
+        bp.src = 'https://zz.bdstatic.com/linksubmit/push.js';        
+    }
+    else {
+        bp.src = 'http://push.zhanzhang.baidu.com/push.js';
+    }
+    var s = document.getElementsByTagName("script")[0];
+    s.parentNode.insertBefore(bp, s);
+})();
+</script>
+<!-- ============================ END Footer =========================== -->
+      <!-- Load our scripts -->
+<!-- Resizable 'on-demand' full-height hero -->
+<script type="text/javascript">
+    var resizeHero = function () {
+        var hero = $(".cover,.heightblock"),
+            window1 = $(window);
+        hero.css({
+            "height": window1.height()
+        });
+    };
+
+    resizeHero();
+
+    $(window).resize(function () {
+        resizeHero();
+    });
+</script>
+<script src="/js/plugins.min.js"></script><!-- Bootstrap core and concatenated plugins always load here -->
+<script src="/js/jquery.flexslider-min.js"></script><!-- Flexslider plugin -->
+<script src="/js/scripts.js"></script><!-- Theme scripts -->
+
+
+<link rel="stylesheet" href="/fancybox/jquery.fancybox.css" media="screen" type="text/css">
+<script src="/fancybox/jquery.fancybox.pack.js"></script>
+<script type="text/javascript">
+$('#intro').find('img').each(function(){
+  var alt = this.alt;
+
+  if (alt){
+    $(this).after('<span class="caption" style="display:none">' + alt + '</span>');
+  }
+
+  $(this).wrap('<a href="' + this.src + '" title="' + alt + '" class="fancybox" rel="gallery" />');
+});
+(function($){
+  $('.fancybox').fancybox();
+})(jQuery);
+</script>
+
+<!-- Initiate flexslider plugin -->
+<script type="text/javascript">
+    $(document).ready(function($) {
+      (function(){
+        console.log('font');
+        var getCss = function(path) {
+          var head = document.getElementsByTagName('head')[0];
+          link = document.createElement('link');
+          link.href = path;
+          link.rel = 'stylesheet';
+          link.type = 'text/css';
+          head.appendChild(link);
+        };
+        getCss('https://fonts.googleapis.com/css?family=Montserrat:400,700');
+        getCss('https://fonts.googleapis.com/css?family=Open+Sans:400,600');
+      })();
+      $('.flexslider').flexslider({
+        animation: "fade",
+        prevText: "",
+        nextText: "",
+        directionNav: true
+      });
+    });
+</script>
+</body>
+</html>

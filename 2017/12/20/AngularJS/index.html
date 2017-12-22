@@ -1,0 +1,511 @@
+<!DOCTYPE html>
+<!--[if lte IE 8 ]>
+<html class="ie" xmlns="http://www.w3.org/1999/xhtml" xml:lang="en-US" lang="en-US">
+<![endif]-->
+<!--[if (gte IE 9)|!(IE)]><!-->
+<!--
+***************  *      *     *
+      8          *    *       *
+      8          *  *         *
+      8          **           *
+      8          *  *         *
+      8          *    *       *
+      8          *      *     *
+      8          *        *   ***********    -----Theme By Kieran(http://go.kieran.top)
+-->
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en-US" lang="en-US">
+<!--<![endif]-->
+
+<head>
+  <title>AngularJS学习笔记 | 极光轨迹</title>
+  <!-- Meta data -->
+    <meta http-equiv="Content-Type" content="text/html" charset="UTF-8" >
+    <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="generator" content="极光轨迹">
+    
+    <meta name="author" content="Jxust_CGS">
+    
+    <meta name="description" itemprop="description" content="AngularJS是一个JavaScript框架。它是一个以 JavaScript编写的库。我们需要将它的js库添加到HTML页面。AngularJS 通过指令扩展了HTML，且通过表达式绑定数据到HTML。">
+    
+	
+	<meta name="Keywords" content="Angular,Angular.js">
+    
+
+    <!-- Favicon, (keep icon in root folder) -->
+    <link rel="Shortcut Icon" href="/img/favicon.ico" type="image/ico">
+
+    <link rel="alternate" href="/atom.xml" title="极光轨迹" type="application/atom+xml">
+    <link rel="stylesheet" href="/css/all.css" media="screen" type="text/css">
+    
+    <link rel="stylesheet" href="/highlightjs/vs.css" type="text/css">
+    
+
+    <!--[if IE 8]>
+    <link rel="stylesheet" type="text/css" href="/css/ie8.css" />
+    <![endif]-->
+
+    <!-- jQuery | Load our jQuery, with an alternative source fallback to a local version if request is unavailable -->
+    <script src="/js/jquery-1.11.1.min.js"></script>
+    <script>window.jQuery || document.write('<script src="js/jquery-1.11.1.min.js"><\/script>')</script>
+
+    <!-- Load these in the <head> for quicker IE8+ load times -->
+    <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+    <script src="/js/html5shiv.min.js"></script>
+    <script src="/js/respond.min.js"></script>
+    <![endif]-->
+
+  
+  <link rel="alternate" type="application/rss+xml" title="RSS" href="atom.xml">
+  
+  
+  <link rel="alternate" type="application/atom+xml" title="Atom 0.3" href="atom.xml">
+  
+  
+
+  <style>.col-md-8.col-md-offset-2.opening-statement img{display:none;}</style>
+  
+  <script src="/js/busuanzi.pure.mini.js"></script>
+  <script src="/js/lufei.js"></script>
+</head>
+
+<!--
+<body class="post-template">
+-->
+<body id="index" class="lightnav animsition">
+	  <!-- ============================ START lufei =========================== -->
+		<div id="xiaoren" class="xiaoren">
+			<div id="message">正在加载中……</div>
+			<div id="lufei" class="lufei"></div>
+		</div>
+	  <!-- ============================ END lufei =========================== -->
+      <!-- ============================ Off-canvas navigation =========================== -->
+
+    <div class="sb-slidebar sb-right sb-style-overlay sb-momentum-scrolling">
+        <div class="sb-close" aria-label="Close Menu" aria-hidden="true">
+            <img src="/img/close.png" alt="Close"/>
+        </div>
+        <!-- Lists in Slidebars -->
+        <ul class="sb-menu">
+            <li><a href="/" class="animsition-link" title="Home">首页</a></li>
+            <li><a href="/archives" class="animsition-link" title="archive">文章</a></li>
+            <!-- Dropdown Menu -->
+            
+        	<li>
+        		<a class="sb-toggle-submenu">分类<span class="sb-caret"></span></a>
+            	<ul class="sb-submenu">
+				  	
+				    <li><a href="/categories/Angular/" class="animsition-link">Angular<small>(1)</small></a></li>
+				    
+				    <li><a href="/categories/Hibernate/" class="animsition-link">Hibernate<small>(6)</small></a></li>
+				    
+				    <li><a href="/categories/Java/" class="animsition-link">Java<small>(1)</small></a></li>
+				    
+				    <li><a href="/categories/Radis/" class="animsition-link">Radis<small>(1)</small></a></li>
+				    
+				    <li><a href="/categories/Spring/" class="animsition-link">Spring<small>(4)</small></a></li>
+				    
+				    <li><a href="/categories/Swagger2/" class="animsition-link">Swagger2<small>(1)</small></a></li>
+				    
+				    <li><a href="/categories/VBS/" class="animsition-link">VBS<small>(1)</small></a></li>
+				    
+				    <li><a href="/categories/android/" class="animsition-link">android<small>(13)</small></a></li>
+				    
+				    <li><a href="/categories/android源码/" class="animsition-link">android源码<small>(3)</small></a></li>
+				    
+				    <li><a href="/categories/fullcalendar-js/" class="animsition-link">fullcalendar.js<small>(1)</small></a></li>
+				    
+				    <li><a href="/categories/git/" class="animsition-link">git<small>(1)</small></a></li>
+				    
+				    <li><a href="/categories/html/" class="animsition-link">html<small>(2)</small></a></li>
+				    
+				    <li><a href="/categories/java/" class="animsition-link">java<small>(3)</small></a></li>
+				    
+				    <li><a href="/categories/linux/" class="animsition-link">linux<small>(2)</small></a></li>
+				    
+				    <li><a href="/categories/modem/" class="animsition-link">modem<small>(1)</small></a></li>
+				    
+				    <li><a href="/categories/python/" class="animsition-link">python<small>(1)</small></a></li>
+				    
+				    <li><a href="/categories/web/" class="animsition-link">web<small>(2)</small></a></li>
+				    
+				    <li><a href="/categories/杂谈/" class="animsition-link">杂谈<small>(2)</small></a></li>
+				    
+				    <li><a href="/categories/正则表达式/" class="animsition-link">正则表达式<small>(1)</small></a></li>
+				    
+				    <li><a href="/categories/设计模式/" class="animsition-link">设计模式<small>(1)</small></a></li>
+				    
+				    <li><a href="/categories/阿里云/" class="animsition-link">阿里云<small>(1)</small></a></li>
+				    
+				</ul>
+        	</li>
+			
+			
+        	<li>
+        		<a class="sb-toggle-submenu">标签<span class="sb-caret"></span></a>
+            	<ul class="sb-submenu">
+				  	
+				    <li><a href="/tags/Angular/" class="animsition-link">Angular<small>(1)</small></a></li>
+				    
+				    <li><a href="/tags/Hibernate/" class="animsition-link">Hibernate<small>(6)</small></a></li>
+				    
+				    <li><a href="/tags/Json/" class="animsition-link">Json<small>(1)</small></a></li>
+				    
+				    <li><a href="/tags/Maven/" class="animsition-link">Maven<small>(1)</small></a></li>
+				    
+				    <li><a href="/tags/Radis/" class="animsition-link">Radis<small>(1)</small></a></li>
+				    
+				    <li><a href="/tags/Spring/" class="animsition-link">Spring<small>(4)</small></a></li>
+				    
+				    <li><a href="/tags/Swagger2/" class="animsition-link">Swagger2<small>(1)</small></a></li>
+				    
+				    <li><a href="/tags/VBS/" class="animsition-link">VBS<small>(1)</small></a></li>
+				    
+				    <li><a href="/tags/android/" class="animsition-link">android<small>(12)</small></a></li>
+				    
+				    <li><a href="/tags/android源码/" class="animsition-link">android源码<small>(3)</small></a></li>
+				    
+				    <li><a href="/tags/android源码-android/" class="animsition-link">android源码,android<small>(1)</small></a></li>
+				    
+				    <li><a href="/tags/bootstrap/" class="animsition-link">bootstrap<small>(2)</small></a></li>
+				    
+				    <li><a href="/tags/first/" class="animsition-link">first<small>(1)</small></a></li>
+				    
+				    <li><a href="/tags/freemarker/" class="animsition-link">freemarker<small>(1)</small></a></li>
+				    
+				    <li><a href="/tags/fullcalendar-js/" class="animsition-link">fullcalendar.js<small>(1)</small></a></li>
+				    
+				    <li><a href="/tags/git/" class="animsition-link">git<small>(1)</small></a></li>
+				    
+				    <li><a href="/tags/html/" class="animsition-link">html<small>(2)</small></a></li>
+				    
+				    <li><a href="/tags/linux/" class="animsition-link">linux<small>(1)</small></a></li>
+				    
+				    <li><a href="/tags/selenium/" class="animsition-link">selenium<small>(1)</small></a></li>
+				    
+				    <li><a href="/tags/shell-linux/" class="animsition-link">shell,linux<small>(1)</small></a></li>
+				    
+				    <li><a href="/tags/velocity/" class="animsition-link">velocity<small>(1)</small></a></li>
+				    
+				    <li><a href="/tags/术语/" class="animsition-link">术语<small>(1)</small></a></li>
+				    
+				    <li><a href="/tags/正则表达式/" class="animsition-link">正则表达式<small>(1)</small></a></li>
+				    
+				    <li><a href="/tags/设计模式/" class="animsition-link">设计模式<small>(1)</small></a></li>
+				    
+				    <li><a href="/tags/超级终端-at指令/" class="animsition-link">超级终端,at指令<small>(1)</small></a></li>
+				    
+				    <li><a href="/tags/阿里云/" class="animsition-link">阿里云<small>(1)</small></a></li>
+				    
+				</ul>
+        	</li>
+			
+			
+            <li>
+                <a class="sb-toggle-submenu">其他<span class="sb-caret"></span></a>
+                <ul class="sb-submenu">
+                    
+                        <li><a href="/links" target="_BLANK" class="animsition-link">导航</a></li>
+                    
+                </ul>
+            </li>
+            
+            
+            <li>
+                <a class="sb-toggle-submenu">友情链接<span class="sb-caret"></span></a>
+                <ul class="sb-submenu">
+                    
+                    <li><a href="http://ykzhai.top/" class="animsition-link">砦龑堃</a></li>
+                    
+                </ul>
+            </li>
+            
+        </ul>
+        <!-- Lists in Slidebars -->
+        <ul class="sb-menu secondary">
+            <li><a href="/curriculumvitae" class="animsition-link" title="about">关于</a></li>
+            <li><a href="/atom.xml" class="animsition-link" title="rss">RSS</a></li>
+        </ul>
+    </div>
+    
+    <!-- ============================ END Off-canvas navigation =========================== -->
+
+    <!-- ============================ #sb-site Main Page Wrapper =========================== -->
+
+    <div id="sb-site">
+        <!-- #sb-site - All page content should be contained within this id, except the off-canvas navigation itself -->
+
+        <!-- ============================ Header & Logo bar =========================== -->
+
+        <div id="navigation" class="navbar navbar-fixed-top">
+            <div class="navbar-inner">
+                <div class="container">
+                    <!-- Nav logo -->
+                    <div class="logo">
+                        <a href="/" title="Logo" class="animsition-link">
+                         <img src="/img/logo.png" alt="Logo" width="35px;"/> 
+                        </a>
+                    </div>
+                    <!-- // Nav logo -->
+                    <!-- Info-bar -->
+                    <nav>
+                        <ul class="nav">
+                            <li><a href="/" class="animsition-link">极光轨迹</a></li>
+                            <li class="nolink"><span>Always </span>Creative.</li>
+                            
+                            <li><a href="https://github.com/jxust-CGS" title="Github" target="_blank"><i class="icon-github"></i></a></li>
+                            
+                            
+                            
+                            
+                            
+                            <li><a href="http://weibo.com/jxustCGS" title="Sina-Weibo" target="_blank"><i class="icon-sina-weibo"></i></a></li>
+                            
+                            <li class="nolink"><span>Welcome!</span></li>
+                        </ul>
+                    </nav>
+                    <!--// Info-bar -->
+                </div>
+                <!-- // .container -->
+                <div class="learnmore sb-toggle-right">更多</div>
+                <button type="button" class="navbar-toggle menu-icon sb-toggle-right" title="More">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar before"></span>
+                <span class="icon-bar main"></span>
+                <span class="icon-bar after"></span>
+                </button>
+            </div>
+            <!-- // .navbar-inner -->
+        </div>
+
+        <!-- ============================ Header & Logo bar =========================== -->
+
+
+      
+<section id="intro">
+    <div class="container">
+		<div class="row col-md-offset-2">
+            <div class="col-md-8">
+                <h1>AngularJS学习笔记</h1>
+		<span class="post-meta">
+      <time datetime="2017-12-20T15:29:16.468Z" itemprop="datePublished">
+          2017-12-20
+      </time>
+	
+    
+    | 分类：
+    <a class="categories" href='/categories/Angular/'>Angular</a>
+    
+    
+    
+    
+    | 标签：
+    <a class="tags" href='/tags/Angular/'>Angular</a>
+    
+    
+</span>
+		<br/>
+            </div>
+        </div>
+        <div class="col-md-8 col-md-offset-2">
+      		<h1 id="Angular-js是做什么用的？"><a href="#Angular-js是做什么用的？" class="headerlink" title="Angular.js是做什么用的？"></a>Angular.js是做什么用的？</h1><p>Angular.js扩展了html的标签，通过表达式绑定数据到html，比如向页面发送了一个日期，通过angular.js可以绑定日期数据，并且处理显示的格式；也就是说angular就是绑定服务端或页面的数据并进行数据的渲染（输出格式、排序、筛选等操作）。</p>
+<h1 id="Angular-js是怎么使用的？"><a href="#Angular-js是怎么使用的？" class="headerlink" title="Angular.js是怎么使用的？"></a>Angular.js是怎么使用的？</h1><ol>
+<li><p>引入js包</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&lt;script src=&quot;xxx/angular.min.js&quot;&gt;&lt;/script&gt;</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>表达式  </p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line">在Angular.js中将表达式写在双大括号中，eg:`&#123;&#123; x+y &#125;&#125;`  </span><br><span class="line">表达式可以执行数值计算、字符串拼接、数据过滤  </span><br><span class="line">* 数值计算`&#123;&#123; x+y &#125;&#125;`</span><br><span class="line">* 字符串拼接 `&#123;&#123; x+&quot;&quot;+y &#125;&#125;`</span><br><span class="line">* 读取对象，数值`&#123;&#123; array[1] &#125;&#125;`、对象`&#123;&#123; object.param &#125;&#125;`</span><br><span class="line">* 数据状态 `&#123;&#123;myForm.myAddress.$valid&#125;&#125;`</span><br><span class="line">* 数据过滤`&#123;&#123;x. name | uppercase&#125;&#125;`名字以大写形式输出</span><br><span class="line">  * 自定义过滤</span><br><span class="line">  * `orderBy:&apos;id&apos;:true以id降序排列`</span><br><span class="line">  * `orderBy:&apos;id&apos;以id升序排列`</span><br><span class="line">  * `limitTo :6 // 从前面开始截取6位`</span><br><span class="line">  * `limitTo :-6 // 从后面开始截取6位`</span><br><span class="line">  * `filter:&#123;&apos;name&apos;:&apos;iphone&apos;&#125;`：</span><br><span class="line">  * `currency:&quot;RMB ￥ &quot;`：货币形式输出</span><br><span class="line">  * `&#123;&#123;149016.1945000 | number:2&#125;&#125;`：2保留2位小数</span><br><span class="line">  * `&#123;&#123;1490161945000 | date:&quot;yyyy-MM-dd HH:mm:ss&quot;&#125;&#125;`：日期格式化</span><br><span class="line">  * `&#123;&#123; &quot;TANK is GOOD&quot; | lowercase &#125;&#125;`  小写输出</span><br></pre></td></tr></table></figure>
+</li>
+</ol>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">&lt;div ng-app=&quot;myApp&quot; ng-controller=&quot;namesCtrl&quot;&gt;</span><br><span class="line">&lt;p&gt;输入过滤:&lt;/p&gt;</span><br><span class="line">&lt;p&gt;&lt;input type=&quot;text&quot; ng-model=&quot;test&quot;&gt;&lt;/p&gt;</span><br><span class="line">&lt;ul&gt;</span><br><span class="line">  &lt;li ng-repeat=&quot;x in names | filter:test | orderBy:&apos;country&apos;&quot;&gt;//filter按test的值筛选结果，orderBy以对象中的country属性排序</span><br><span class="line">    &#123;&#123; (x.name | uppercase) + &apos;, &apos; + x.country &#125;&#125;//uppercase大写输出</span><br><span class="line">  &lt;/li&gt;</span><br><span class="line">&lt;/ul&gt;</span><br><span class="line">&lt;/div&gt;</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">var app = angular.module(&apos;myApp&apos;, []);</span><br><span class="line">app.controller(&apos;myCtrl&apos;, function($scope) &#123;</span><br><span class="line">    $scope.msg = &quot;Runoob&quot;;</span><br><span class="line">&#125;);</span><br><span class="line">app.filter(&apos;reverse&apos;, function() &#123; //可以注入依赖</span><br><span class="line">    return function(text) &#123;</span><br><span class="line">        return text.split(&quot;&quot;).reverse().join(&quot;&quot;);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
+<p>表达式中不可以执行循环、判断  </p>
+<ol>
+<li>应用angular的标签<ul>
+<li>ng-app 指令定义一个 AngularJS 应用程序。</li>
+<li>ng-init 指令初始化应用程序数据。</li>
+<li>ng-bind 绑定对象到dom</li>
+<li>ng-repeat 指令对于集合中（数组中）的每个项会克隆一次HTML元素。</li>
+<li>ng-model 获取当前dom的value赋值到对象,实现双向数据绑定<br>css类ng-valid, ng-invalid, ng-dirty, ng-pristine, ng-touched, ng-untouched</li>
+<li>ng-include=”‘runoob.htm’”包含文件  <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">&lt;select ng-init=&quot;selectedName = names[0]&quot; ng-model=&quot;selectedName&quot; ng-options=&quot;x for x in names&quot;&gt;</span><br><span class="line">&lt;/select&gt;</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+</li>
+</ol>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line">&lt;style&gt;</span><br><span class="line">input.ng-invalid &#123;//根据绑定数据的合法性判断，为dom设置css样式</span><br><span class="line">    background-color: lightblue;</span><br><span class="line">&#125;</span><br><span class="line">&lt;/style&gt;</span><br><span class="line">&lt;body&gt;</span><br><span class="line"></span><br><span class="line">&lt;form ng-app=&quot;&quot; name=&quot;myForm&quot;&gt;</span><br><span class="line">    输入你的名字:</span><br><span class="line">    &lt;input name=&quot;myAddress&quot; ng-model=&quot;text&quot; required&gt;</span><br><span class="line">    &lt;h1&gt;状态&lt;/h1&gt;</span><br><span class="line">    &#123;&#123;myForm.myAddress.$valid&#125;&#125;//运用表达式对绑定数据进行合法性运算</span><br><span class="line">    &#123;&#123;myForm.myAddress.$dirty&#125;&#125;</span><br><span class="line">    &#123;&#123;myForm.myAddress.$touched&#125;&#125;</span><br><span class="line">&lt;/form&gt;</span><br></pre></td></tr></table></figure>
+<ul>
+<li>自定义指令（directive ）<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br></pre></td><td class="code"><pre><span class="line">&lt;!DOCTYPE html&gt;</span><br><span class="line">&lt;html&gt;</span><br><span class="line">&lt;head&gt;</span><br><span class="line">&lt;meta charset=&quot;utf-8&quot;&gt;</span><br><span class="line">&lt;script src=&quot;http://cdn.static.runoob.com/libs/angular.js/1.4.6/angular.min.js&quot;&gt;&lt;/script&gt;</span><br><span class="line">&lt;/head&gt;</span><br><span class="line">&lt;body ng-app=&quot;myApp&quot;&gt;</span><br><span class="line"></span><br><span class="line">&lt;runoob-directive&gt;&lt;/runoob-directive&gt;</span><br><span class="line">&lt;div runoob-directive&gt;&lt;/div&gt;</span><br><span class="line">&lt;div class=&quot;runoob-directive&quot;&gt;&lt;/div&gt;</span><br><span class="line">&lt;!-- directive: runoob-directive --&gt;</span><br><span class="line"></span><br><span class="line">&lt;script&gt;</span><br><span class="line">var app = angular.module(&quot;myApp&quot;, []);</span><br><span class="line">app.directive(&quot;runoobDirective&quot;, function() &#123;</span><br><span class="line">    return &#123;</span><br><span class="line">        restrict : &quot;EACM&quot;,</span><br><span class="line">        replace : true,</span><br><span class="line">        template : &quot;&lt;h1&gt;自定义指令!&lt;/h1&gt;&quot;</span><br><span class="line">    &#125;;</span><br><span class="line">&#125;);</span><br><span class="line">&lt;/script&gt;</span><br><span class="line">&lt;p&gt;&lt;strong&gt;注意：&lt;/strong&gt;</span><br><span class="line">&lt;p&gt;E 作为元素名使用&lt;/p&gt;</span><br><span class="line">&lt;p&gt;A 作为属性使用&lt;/p&gt;</span><br><span class="line">&lt;p&gt;C 作为类名使用&lt;/p&gt;</span><br><span class="line">&lt;p&gt;M 作为注释使用，我们还需要在该实例添加 &lt;strong&gt;replace&lt;/strong&gt; 属性， 否则注释评论还是不可见的。&lt;/p&gt;&lt;/p&gt;</span><br><span class="line">&lt;p&gt;restrict，默认AE&lt;/p&gt;</span><br><span class="line">&lt;/body&gt;</span><br><span class="line">&lt;/html&gt;</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+<ol>
+<li>作用域<br>$scope 局部作用域，包含了当前controller中的所有变量及方法，优先于$rootScope<br>$rootScope 全局作用域，包含了当前app中所有的变量及方法  <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br></pre></td><td class="code"><pre><span class="line">&lt;!DOCTYPE html&gt;</span><br><span class="line">&lt;html&gt;</span><br><span class="line">&lt;head&gt;</span><br><span class="line">&lt;meta charset=&quot;utf-8&quot;&gt;</span><br><span class="line">&lt;script src=&quot;http://cdn.static.runoob.com/libs/angular.js/1.4.6/angular.min.js&quot;&gt;&lt;/script&gt;</span><br><span class="line">&lt;/head&gt;</span><br><span class="line">&lt;body&gt;</span><br><span class="line"></span><br><span class="line">&lt;div ng-app=&quot;myApp&quot; ng-controller=&quot;myCtrl&quot;&gt;</span><br><span class="line"></span><br><span class="line">&lt;h1&gt;姓氏为 &#123;&#123;lastname&#125;&#125; 家族成员:&lt;/h1&gt;</span><br><span class="line"></span><br><span class="line">&lt;ul&gt;</span><br><span class="line">    &lt;li ng-repeat=&quot;x in names&quot;&gt;&#123;&#123;x&#125;&#125; &#123;&#123;lastname&#125;&#125;&lt;/li&gt;</span><br><span class="line">&lt;/ul&gt;</span><br><span class="line"></span><br><span class="line">&lt;/div&gt;</span><br><span class="line"></span><br><span class="line">&lt;script&gt;</span><br><span class="line">var app = angular.module(&apos;myApp&apos;, []);</span><br><span class="line"></span><br><span class="line">app.controller(&apos;myCtrl&apos;, function($scope, $rootScope) &#123;</span><br><span class="line">    $scope.names = [&quot;Emil&quot;, &quot;Tobias&quot;, &quot;Linus&quot;];</span><br><span class="line">    $rootScope.lastname = &quot;Refsnes&quot;;</span><br><span class="line">&#125;);</span><br><span class="line">&lt;/script&gt;</span><br><span class="line"></span><br><span class="line">&lt;p&gt;注意 $rootScope 在循环对象内外都可以访问。&lt;/p&gt;</span><br><span class="line"></span><br><span class="line">&lt;/body&gt;</span><br><span class="line">&lt;/html&gt;</span><br></pre></td></tr></table></figure>
+</li>
+</ol>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br></pre></td><td class="code"><pre><span class="line">&lt;script src=&quot;https://cdn.bootcss.com/angular.js/1.6.6/angular.min.js&quot;&gt;&lt;/script&gt;</span><br><span class="line">&lt;p&gt;$rootScope 全局对象的属性可在所有子作用域中访问，子作用域互相无法访问对方的私有变量，这一点与js的函数作用域完全一致。&lt;/p&gt;</span><br><span class="line">&lt;form ng-app=&apos;myApp&apos; name=&quot;myForm&quot; ng-init=&quot; myText=&apos;test&apos; &quot;&gt;</span><br><span class="line">	&lt;div ng-controller=&quot;myCtrl&quot;&gt;</span><br><span class="line">		&#123;&#123;myf + allf + mys + alls&#125;&#125; // 1 一 二</span><br><span class="line">	&lt;/div&gt;</span><br><span class="line">	&lt;div ng-controller=&quot;myCtrl2&quot;&gt;</span><br><span class="line">		&#123;&#123;myf + allf + mys + alls&#125;&#125; // 一 2 二</span><br><span class="line">	&lt;/div&gt;</span><br><span class="line">&lt;/form&gt;</span><br><span class="line">var app = angular.module(&apos;myApp&apos;,[]);</span><br><span class="line">// 两个控制器</span><br><span class="line">app.controller(&apos;myCtrl&apos;, [&apos;$scope&apos;, &apos;$rootScope&apos;,myCtrl]);</span><br><span class="line">app.controller(&apos;myCtrl2&apos;, [&apos;$scope&apos;,&apos;$rootScope&apos;, myCtrl2]);</span><br><span class="line"></span><br><span class="line">function myCtrl($scope,$rootScope)&#123;</span><br><span class="line">  $scope.myf = &apos;1&apos;;</span><br><span class="line">  $rootScope.allf = &apos;一&apos;;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">function myCtrl2($scope,$rootScope)&#123;</span><br><span class="line">  $scope.mys = &apos;2&apos;;</span><br><span class="line">  $rootScope.alls = &apos;二&apos;;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<ol>
+<li>AngularJS 内建了30 多个服务</li>
+</ol>
+<ul>
+<li>$location.absUrl();当前页面url</li>
+<li>自定义服务<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">var app = angular.module(&apos;myApp&apos;, []);</span><br><span class="line">app.controller(&apos;myCtrl&apos;, function($scope, $http) &#123;//调用http服务</span><br><span class="line">    $http.get(&quot;welcome.htm&quot;).then(function (response) &#123;</span><br><span class="line">        $scope.myWelcome = response.data;</span><br><span class="line">    &#125;);</span><br><span class="line">&#125;);</span><br><span class="line"> $timeout(function () &#123;//调用timeout服务</span><br><span class="line">        $scope.myHeader = &quot;How are you today?&quot;;</span><br><span class="line">    &#125;, 2000);</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">app.service(&apos;hexafy&apos;, function() &#123;//申明自定义服务hexafy</span><br><span class="line">    this.myFunc = function (x) &#123;</span><br><span class="line">        return x.toString(16);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;);</span><br><span class="line">app.controller(&apos;myCtrl&apos;, function($scope, hexafy) &#123;//调用自定义服务</span><br><span class="line">    $scope.hex = hexafy.myFunc(255);</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
+<ol>
+<li>AngularJS 动画<br>AngularJS 提供了动画效果，可以配合 CSS 使用。<br>AngularJS 使用动画需要引入 angular-animate.min.js 库。<br><script src="http://xxx/angular.js/1.4.6/angular-animate.min.js"></script><br>还需在应用中使用模型 ngAnimate：<br><body ng-app="ngAnimate"><br>如果ng-app的名字已经设置了其他名字就需要引入module  </body></li>
+</ol>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">&lt;body ng-app=&quot;myApp&quot;&gt;</span><br><span class="line">&lt;h1&gt;隐藏 DIV: &lt;input type=&quot;checkbox&quot; ng-model=&quot;myCheck&quot;&gt;&lt;/h1&gt;</span><br><span class="line">&lt;div ng-hide=&quot;myCheck&quot;&gt;&lt;/div&gt;</span><br><span class="line">&lt;script&gt;</span><br><span class="line">var app = angular.module(&apos;myApp&apos;, [&apos;ngAnimate&apos;]);</span><br><span class="line">&lt;/script&gt;</span><br></pre></td></tr></table></figure>
+<ol>
+<li>路由<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br></pre></td><td class="code"><pre><span class="line">&lt;html&gt;</span><br><span class="line">    &lt;head&gt;</span><br><span class="line">    	&lt;meta charset=&quot;utf-8&quot;&gt;</span><br><span class="line">        &lt;title&gt;AngularJS 路由实例 - 菜鸟教程&lt;/title&gt;</span><br><span class="line">    &lt;/head&gt;</span><br><span class="line">    &lt;body ng-app=&apos;routingDemoApp&apos;&gt;</span><br><span class="line"></span><br><span class="line">        &lt;h2&gt;AngularJS 路由应用&lt;/h2&gt;</span><br><span class="line">        &lt;ul&gt;</span><br><span class="line">            &lt;li&gt;&lt;a href=&quot;#/&quot;&gt;首页&lt;/a&gt;&lt;/li&gt;</span><br><span class="line">            &lt;li&gt;&lt;a href=&quot;#/computers&quot;&gt;电脑&lt;/a&gt;&lt;/li&gt;</span><br><span class="line">            &lt;li&gt;&lt;a href=&quot;#/printers&quot;&gt;打印机&lt;/a&gt;&lt;/li&gt;</span><br><span class="line">            &lt;li&gt;&lt;a href=&quot;#/blabla&quot;&gt;其他&lt;/a&gt;&lt;/li&gt;</span><br><span class="line">        &lt;/ul&gt;</span><br><span class="line"></span><br><span class="line">        &lt;div ng-view&gt;&lt;/div&gt;</span><br><span class="line">        &lt;script src=&quot;http://cdn.static.runoob.com/libs/angular.js/1.4.6/angular.min.js&quot;&gt;&lt;/script&gt;</span><br><span class="line">        &lt;script src=&quot;https://apps.bdimg.com/libs/angular-route/1.3.13/angular-route.js&quot;&gt;&lt;/script&gt;</span><br><span class="line">        &lt;script&gt;</span><br><span class="line">            angular.module(&apos;routingDemoApp&apos;,[&apos;ngRoute&apos;])</span><br><span class="line">            .config([&apos;$routeProvider&apos;, function($routeProvider)&#123;</span><br><span class="line">                $routeProvider</span><br><span class="line">                .when(&apos;/&apos;,&#123;template:&apos;这是首页页面&apos;&#125;)</span><br><span class="line">                .when(&apos;/computers&apos;,&#123;template:&apos;这是电脑分类页面&apos;&#125;)</span><br><span class="line">                .when(&apos;/printers&apos;,&#123;template:&apos;这是打印机页面&apos;&#125;)</span><br><span class="line">                .otherwise(&#123;redirectTo:&apos;/&apos;&#125;);</span><br><span class="line">            &#125;]);</span><br><span class="line">        &lt;/script&gt;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">    &lt;/body&gt;</span><br><span class="line">&lt;/html&gt;</span><br></pre></td></tr></table></figure>
+</li>
+</ol>
+<h1 id="相关链接"><a href="#相关链接" class="headerlink" title="相关链接"></a>相关链接</h1><p><a href="http://www.runoob.com/angularjs/angularjs-tutorial.html" target="_blank" rel="noopener">AngularJS 教程 | 菜鸟教程</a>  </p>
+
+            <div class="clearfix"></div>
+            <hr class="nogutter">
+        </div>
+        <nav class="pagination" role="pagination">
+    
+    <a class="pull-left" href="/2017/12/20/Android源码学习——开机过程/" style="float: left;">
+        ← Android源码学习——开机过程
+    </a>
+    
+    
+    <a class="pull-right" href="/2017/03/03/安卓源码学习（2）——内置系统app/">
+        安卓源码学习（2）——内置系统app →
+    </a>
+    
+	<br/>
+</nav>
+
+        <br/>
+	<div class="row col-md-offset-2">
+            <div class="col-md-8">
+    			<div class="wumi">
+<!-- WUMI BEGIN -->
+<script type="text/javascript" id="wumiiComments">
+    var wumiiPermaLink = ""; 
+    var wumiiTitle = "AngularJS学习笔记"; 
+    var wumiiSitePrefix = "http://www.chenguangsong.online"; 
+    var wumiiCommentParams = "&pf=JAVASCRIPT";
+</script>
+<script type="text/javascript" src="http://widget.wumii.cn/ext/cw/widget"></script>
+<!-- WUMI END -->
+
+</div>
+            </div>
+        </div>
+    </div>
+</section>
+
+
+      
+<!-- ============================ Footer =========================== -->
+
+<footer>
+    <div class="container">
+            <div class="copy">
+                <p>
+                    &copy; 2014<script>new Date().getFullYear()>2010&&document.write("-"+new Date().getFullYear());</script>, Content By Jxust_CGS. All Rights Reserved.<br>
+					<span id="busuanzi_container_site_pv">本站总访问量<span id="busuanzi_value_site_pv"></span>次</span>
+					<span id="busuanzi_container_site_uv">本站访客数<span id="busuanzi_value_site_uv"></span>人次</span><br />
+                </p>
+                <p>Theme By <a href="//go.kieran.top" style="color: #767D84">Kieran</a></p>
+            </div>
+            <div class="social">
+                <ul>
+                    
+                    <li><a href="https://github.com/jxust-CGS" title="Github" target="_blank"><i class="icon-github"></i></a>&nbsp;</li>
+                    
+                    
+                    
+                    
+                    
+                    <li><a href="http://weibo.com/jxustCGS" title="Sina-Weibo" target="_blank"><i class="icon-sina-weibo"></i></a>&nbsp;</li>
+                    
+                </ul>
+            </div>
+            <div class="clearfix"> </div>
+        </div>
+</footer>
+<script>
+(function(){
+    var bp = document.createElement('script');
+    var curProtocol = window.location.protocol.split(':')[0];
+    if (curProtocol === 'https') {
+        bp.src = 'https://zz.bdstatic.com/linksubmit/push.js';        
+    }
+    else {
+        bp.src = 'http://push.zhanzhang.baidu.com/push.js';
+    }
+    var s = document.getElementsByTagName("script")[0];
+    s.parentNode.insertBefore(bp, s);
+})();
+</script>
+<!-- ============================ END Footer =========================== -->
+      <!-- Load our scripts -->
+<!-- Resizable 'on-demand' full-height hero -->
+<script type="text/javascript">
+    var resizeHero = function () {
+        var hero = $(".cover,.heightblock"),
+            window1 = $(window);
+        hero.css({
+            "height": window1.height()
+        });
+    };
+
+    resizeHero();
+
+    $(window).resize(function () {
+        resizeHero();
+    });
+</script>
+<script src="/js/plugins.min.js"></script><!-- Bootstrap core and concatenated plugins always load here -->
+<script src="/js/jquery.flexslider-min.js"></script><!-- Flexslider plugin -->
+<script src="/js/scripts.js"></script><!-- Theme scripts -->
+
+
+<link rel="stylesheet" href="/fancybox/jquery.fancybox.css" media="screen" type="text/css">
+<script src="/fancybox/jquery.fancybox.pack.js"></script>
+<script type="text/javascript">
+$('#intro').find('img').each(function(){
+  var alt = this.alt;
+
+  if (alt){
+    $(this).after('<span class="caption" style="display:none">' + alt + '</span>');
+  }
+
+  $(this).wrap('<a href="' + this.src + '" title="' + alt + '" class="fancybox" rel="gallery" />');
+});
+(function($){
+  $('.fancybox').fancybox();
+})(jQuery);
+</script>
+
+<!-- Initiate flexslider plugin -->
+<script type="text/javascript">
+    $(document).ready(function($) {
+      (function(){
+        console.log('font');
+        var getCss = function(path) {
+          var head = document.getElementsByTagName('head')[0];
+          link = document.createElement('link');
+          link.href = path;
+          link.rel = 'stylesheet';
+          link.type = 'text/css';
+          head.appendChild(link);
+        };
+        getCss('https://fonts.googleapis.com/css?family=Montserrat:400,700');
+        getCss('https://fonts.googleapis.com/css?family=Open+Sans:400,600');
+      })();
+      $('.flexslider').flexslider({
+        animation: "fade",
+        prevText: "",
+        nextText: "",
+        directionNav: true
+      });
+    });
+</script>
+</body>
+</html>

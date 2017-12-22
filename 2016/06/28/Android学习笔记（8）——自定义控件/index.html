@@ -1,0 +1,629 @@
+<!DOCTYPE html>
+<!--[if lte IE 8 ]>
+<html class="ie" xmlns="http://www.w3.org/1999/xhtml" xml:lang="en-US" lang="en-US">
+<![endif]-->
+<!--[if (gte IE 9)|!(IE)]><!-->
+<!--
+***************  *      *     *
+      8          *    *       *
+      8          *  *         *
+      8          **           *
+      8          *  *         *
+      8          *    *       *
+      8          *      *     *
+      8          *        *   ***********    -----Theme By Kieran(http://go.kieran.top)
+-->
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en-US" lang="en-US">
+<!--<![endif]-->
+
+<head>
+  <title>Android学习笔记(8)——自定义控件 | 极光轨迹</title>
+  <!-- Meta data -->
+    <meta http-equiv="Content-Type" content="text/html" charset="UTF-8" >
+    <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="generator" content="极光轨迹">
+    
+    <meta name="author" content="Jxust_CGS">
+    
+    <meta name="description" itemprop="description" content="在Android中默认控件不足以满足需求时就需要自定义控件，可以在view类的基础上扩展也可以在其他扩展的view上继承后自定义，本文主要是在view的基础上自定义。">
+    
+	
+	<meta name="Keywords" content="android,自定义控件,安卓">
+    
+
+    <!-- Favicon, (keep icon in root folder) -->
+    <link rel="Shortcut Icon" href="/img/favicon.ico" type="image/ico">
+
+    <link rel="alternate" href="/atom.xml" title="极光轨迹" type="application/atom+xml">
+    <link rel="stylesheet" href="/css/all.css" media="screen" type="text/css">
+    
+    <link rel="stylesheet" href="/highlightjs/vs.css" type="text/css">
+    
+
+    <!--[if IE 8]>
+    <link rel="stylesheet" type="text/css" href="/css/ie8.css" />
+    <![endif]-->
+
+    <!-- jQuery | Load our jQuery, with an alternative source fallback to a local version if request is unavailable -->
+    <script src="/js/jquery-1.11.1.min.js"></script>
+    <script>window.jQuery || document.write('<script src="js/jquery-1.11.1.min.js"><\/script>')</script>
+
+    <!-- Load these in the <head> for quicker IE8+ load times -->
+    <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+    <script src="/js/html5shiv.min.js"></script>
+    <script src="/js/respond.min.js"></script>
+    <![endif]-->
+
+  
+  <link rel="alternate" type="application/rss+xml" title="RSS" href="atom.xml">
+  
+  
+  <link rel="alternate" type="application/atom+xml" title="Atom 0.3" href="atom.xml">
+  
+  
+
+  <style>.col-md-8.col-md-offset-2.opening-statement img{display:none;}</style>
+  
+  <script src="/js/busuanzi.pure.mini.js"></script>
+  <script src="/js/lufei.js"></script>
+</head>
+
+<!--
+<body class="post-template">
+-->
+<body id="index" class="lightnav animsition">
+	  <!-- ============================ START lufei =========================== -->
+		<div id="xiaoren" class="xiaoren">
+			<div id="message">正在加载中……</div>
+			<div id="lufei" class="lufei"></div>
+		</div>
+	  <!-- ============================ END lufei =========================== -->
+      <!-- ============================ Off-canvas navigation =========================== -->
+
+    <div class="sb-slidebar sb-right sb-style-overlay sb-momentum-scrolling">
+        <div class="sb-close" aria-label="Close Menu" aria-hidden="true">
+            <img src="/img/close.png" alt="Close"/>
+        </div>
+        <!-- Lists in Slidebars -->
+        <ul class="sb-menu">
+            <li><a href="/" class="animsition-link" title="Home">首页</a></li>
+            <li><a href="/archives" class="animsition-link" title="archive">文章</a></li>
+            <!-- Dropdown Menu -->
+            
+        	<li>
+        		<a class="sb-toggle-submenu">分类<span class="sb-caret"></span></a>
+            	<ul class="sb-submenu">
+				  	
+				    <li><a href="/categories/Angular/" class="animsition-link">Angular<small>(1)</small></a></li>
+				    
+				    <li><a href="/categories/Hibernate/" class="animsition-link">Hibernate<small>(6)</small></a></li>
+				    
+				    <li><a href="/categories/Java/" class="animsition-link">Java<small>(1)</small></a></li>
+				    
+				    <li><a href="/categories/Radis/" class="animsition-link">Radis<small>(1)</small></a></li>
+				    
+				    <li><a href="/categories/Spring/" class="animsition-link">Spring<small>(4)</small></a></li>
+				    
+				    <li><a href="/categories/Swagger2/" class="animsition-link">Swagger2<small>(1)</small></a></li>
+				    
+				    <li><a href="/categories/VBS/" class="animsition-link">VBS<small>(1)</small></a></li>
+				    
+				    <li><a href="/categories/android/" class="animsition-link">android<small>(13)</small></a></li>
+				    
+				    <li><a href="/categories/android源码/" class="animsition-link">android源码<small>(3)</small></a></li>
+				    
+				    <li><a href="/categories/fullcalendar-js/" class="animsition-link">fullcalendar.js<small>(1)</small></a></li>
+				    
+				    <li><a href="/categories/git/" class="animsition-link">git<small>(1)</small></a></li>
+				    
+				    <li><a href="/categories/html/" class="animsition-link">html<small>(2)</small></a></li>
+				    
+				    <li><a href="/categories/java/" class="animsition-link">java<small>(3)</small></a></li>
+				    
+				    <li><a href="/categories/linux/" class="animsition-link">linux<small>(2)</small></a></li>
+				    
+				    <li><a href="/categories/modem/" class="animsition-link">modem<small>(1)</small></a></li>
+				    
+				    <li><a href="/categories/python/" class="animsition-link">python<small>(1)</small></a></li>
+				    
+				    <li><a href="/categories/web/" class="animsition-link">web<small>(2)</small></a></li>
+				    
+				    <li><a href="/categories/杂谈/" class="animsition-link">杂谈<small>(2)</small></a></li>
+				    
+				    <li><a href="/categories/正则表达式/" class="animsition-link">正则表达式<small>(1)</small></a></li>
+				    
+				    <li><a href="/categories/设计模式/" class="animsition-link">设计模式<small>(1)</small></a></li>
+				    
+				    <li><a href="/categories/阿里云/" class="animsition-link">阿里云<small>(1)</small></a></li>
+				    
+				</ul>
+        	</li>
+			
+			
+        	<li>
+        		<a class="sb-toggle-submenu">标签<span class="sb-caret"></span></a>
+            	<ul class="sb-submenu">
+				  	
+				    <li><a href="/tags/Angular/" class="animsition-link">Angular<small>(1)</small></a></li>
+				    
+				    <li><a href="/tags/Hibernate/" class="animsition-link">Hibernate<small>(6)</small></a></li>
+				    
+				    <li><a href="/tags/Json/" class="animsition-link">Json<small>(1)</small></a></li>
+				    
+				    <li><a href="/tags/Maven/" class="animsition-link">Maven<small>(1)</small></a></li>
+				    
+				    <li><a href="/tags/Radis/" class="animsition-link">Radis<small>(1)</small></a></li>
+				    
+				    <li><a href="/tags/Spring/" class="animsition-link">Spring<small>(4)</small></a></li>
+				    
+				    <li><a href="/tags/Swagger2/" class="animsition-link">Swagger2<small>(1)</small></a></li>
+				    
+				    <li><a href="/tags/VBS/" class="animsition-link">VBS<small>(1)</small></a></li>
+				    
+				    <li><a href="/tags/android/" class="animsition-link">android<small>(12)</small></a></li>
+				    
+				    <li><a href="/tags/android源码/" class="animsition-link">android源码<small>(3)</small></a></li>
+				    
+				    <li><a href="/tags/android源码-android/" class="animsition-link">android源码,android<small>(1)</small></a></li>
+				    
+				    <li><a href="/tags/bootstrap/" class="animsition-link">bootstrap<small>(2)</small></a></li>
+				    
+				    <li><a href="/tags/first/" class="animsition-link">first<small>(1)</small></a></li>
+				    
+				    <li><a href="/tags/freemarker/" class="animsition-link">freemarker<small>(1)</small></a></li>
+				    
+				    <li><a href="/tags/fullcalendar-js/" class="animsition-link">fullcalendar.js<small>(1)</small></a></li>
+				    
+				    <li><a href="/tags/git/" class="animsition-link">git<small>(1)</small></a></li>
+				    
+				    <li><a href="/tags/html/" class="animsition-link">html<small>(2)</small></a></li>
+				    
+				    <li><a href="/tags/linux/" class="animsition-link">linux<small>(1)</small></a></li>
+				    
+				    <li><a href="/tags/selenium/" class="animsition-link">selenium<small>(1)</small></a></li>
+				    
+				    <li><a href="/tags/shell-linux/" class="animsition-link">shell,linux<small>(1)</small></a></li>
+				    
+				    <li><a href="/tags/velocity/" class="animsition-link">velocity<small>(1)</small></a></li>
+				    
+				    <li><a href="/tags/术语/" class="animsition-link">术语<small>(1)</small></a></li>
+				    
+				    <li><a href="/tags/正则表达式/" class="animsition-link">正则表达式<small>(1)</small></a></li>
+				    
+				    <li><a href="/tags/设计模式/" class="animsition-link">设计模式<small>(1)</small></a></li>
+				    
+				    <li><a href="/tags/超级终端-at指令/" class="animsition-link">超级终端,at指令<small>(1)</small></a></li>
+				    
+				    <li><a href="/tags/阿里云/" class="animsition-link">阿里云<small>(1)</small></a></li>
+				    
+				</ul>
+        	</li>
+			
+			
+            <li>
+                <a class="sb-toggle-submenu">其他<span class="sb-caret"></span></a>
+                <ul class="sb-submenu">
+                    
+                        <li><a href="/links" target="_BLANK" class="animsition-link">导航</a></li>
+                    
+                </ul>
+            </li>
+            
+            
+            <li>
+                <a class="sb-toggle-submenu">友情链接<span class="sb-caret"></span></a>
+                <ul class="sb-submenu">
+                    
+                    <li><a href="http://ykzhai.top/" class="animsition-link">砦龑堃</a></li>
+                    
+                </ul>
+            </li>
+            
+        </ul>
+        <!-- Lists in Slidebars -->
+        <ul class="sb-menu secondary">
+            <li><a href="/curriculumvitae" class="animsition-link" title="about">关于</a></li>
+            <li><a href="/atom.xml" class="animsition-link" title="rss">RSS</a></li>
+        </ul>
+    </div>
+    
+    <!-- ============================ END Off-canvas navigation =========================== -->
+
+    <!-- ============================ #sb-site Main Page Wrapper =========================== -->
+
+    <div id="sb-site">
+        <!-- #sb-site - All page content should be contained within this id, except the off-canvas navigation itself -->
+
+        <!-- ============================ Header & Logo bar =========================== -->
+
+        <div id="navigation" class="navbar navbar-fixed-top">
+            <div class="navbar-inner">
+                <div class="container">
+                    <!-- Nav logo -->
+                    <div class="logo">
+                        <a href="/" title="Logo" class="animsition-link">
+                         <img src="/img/logo.png" alt="Logo" width="35px;"/> 
+                        </a>
+                    </div>
+                    <!-- // Nav logo -->
+                    <!-- Info-bar -->
+                    <nav>
+                        <ul class="nav">
+                            <li><a href="/" class="animsition-link">极光轨迹</a></li>
+                            <li class="nolink"><span>Always </span>Creative.</li>
+                            
+                            <li><a href="https://github.com/jxust-CGS" title="Github" target="_blank"><i class="icon-github"></i></a></li>
+                            
+                            
+                            
+                            
+                            
+                            <li><a href="http://weibo.com/jxustCGS" title="Sina-Weibo" target="_blank"><i class="icon-sina-weibo"></i></a></li>
+                            
+                            <li class="nolink"><span>Welcome!</span></li>
+                        </ul>
+                    </nav>
+                    <!--// Info-bar -->
+                </div>
+                <!-- // .container -->
+                <div class="learnmore sb-toggle-right">更多</div>
+                <button type="button" class="navbar-toggle menu-icon sb-toggle-right" title="More">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar before"></span>
+                <span class="icon-bar main"></span>
+                <span class="icon-bar after"></span>
+                </button>
+            </div>
+            <!-- // .navbar-inner -->
+        </div>
+
+        <!-- ============================ Header & Logo bar =========================== -->
+
+
+      
+<section id="intro">
+    <div class="container">
+		<div class="row col-md-offset-2">
+            <div class="col-md-8">
+                <h1>Android学习笔记(8)——自定义控件</h1>
+		<span class="post-meta">
+      <time datetime="2016-06-28T08:18:39.000Z" itemprop="datePublished">
+          2016-06-28
+      </time>
+	
+    
+    | 分类：
+    <a class="categories" href='/categories/android/'>android</a>
+    
+    
+    
+    
+    | 标签：
+    <a class="tags" href='/tags/android/'>android</a>
+    
+    
+</span>
+		<br/>
+            </div>
+        </div>
+        <div class="col-md-8 col-md-offset-2">
+      		<h1 id="如何实现一个自定义控件"><a href="#如何实现一个自定义控件" class="headerlink" title="如何实现一个自定义控件"></a>如何实现一个自定义控件</h1><ul>
+<li>定义自定义属性</li>
+<li>在layout文件中放置自定义控件</li>
+<li>新建一个类CustomView继承view</li>
+<li>实现其中的方法<ul>
+<li>构造方法<ul>
+<li>CustomView（Context context）{}//在java代码中实例化这个对象是调用</li>
+<li>CustomView（Context context,AttributeSet attrs）{}//通过xml中实例化对象时调用</li>
+<li>CustomView（Context context,AttributeSet attrs,int defStyle）{}//通过xml实例化对象并应用默认熟悉（如：在theme中定义的属性）</li>
+</ul>
+</li>
+<li>onMeasure（int widthMeasureSpec,int heightMeasureSpec）{}//此方法非必须，通过重写此方法来定义控件的大小</li>
+<li>onDraw（Canvas canvas）{}//通过实现此方法来绘制自定义组件</li>
+</ul>
+</li>
+</ul>
+<h1 id="定义自定义控件属性"><a href="#定义自定义控件属性" class="headerlink" title="定义自定义控件属性"></a>定义自定义控件属性</h1><h2 id="定义属性的作用"><a href="#定义属性的作用" class="headerlink" title="定义属性的作用"></a>定义属性的作用</h2><p>定义自定义控件属性的作用是在layout文件中放置自定义组件时为自定义控件初始化参数（如同默认控件中有android：layout_width=“warp_context”）。  </p>
+<h2 id="如何定义属性？"><a href="#如何定义属性？" class="headerlink" title="如何定义属性？"></a>如何定义属性？</h2><p>在项目中的values文件夹下新建attr.xml并进行编辑。  </p>
+<pre><code>&lt;?xml version=&quot;1.0&quot; encoding=&quot;utf-8&quot;?&gt;
+&lt;resources&gt;
+    &lt;!-- 定义自定义组件中的参数 --&gt;
+    &lt;attr name=&quot;titleText&quot; format=&quot;string&quot;/&gt;
+
+    &lt;declare-styleable name=&quot;CustomTitleView&quot;&gt;//定义组件&quot;CustomTitleView&quot;的属性
+        &lt;attr name=&quot;titleText&quot;&gt;&lt;/attr&gt;
+        &lt;attr name=&quot;titleTextColor&quot; format=&quot;color&quot;&gt;&lt;/attr&gt;
+        &lt;attr name=&quot;titleTextSize&quot; format=&quot;dimension&quot;&gt;&lt;/attr&gt;
+    &lt;/declare-styleable&gt;
+&lt;/resources&gt;
+</code></pre><h2 id="常见属性"><a href="#常见属性" class="headerlink" title="常见属性"></a>常见属性</h2><table>
+<thead>
+<tr>
+<th>属性类型</th>
+<th>format</th>
+<th>获取方式</th>
+<th>应用场景</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>int</td>
+<td>integer</td>
+<td>getInteger（attr，defultInt）</td>
+<td>获取数字</td>
+</tr>
+<tr>
+<td>string</td>
+<td>string</td>
+<td>getString（attr）</td>
+<td>获取字符串</td>
+</tr>
+<tr>
+<td>int</td>
+<td>color</td>
+<td>getColor（attr，defultCol）</td>
+<td>获取颜色</td>
+</tr>
+<tr>
+<td>int</td>
+<td>dimension</td>
+<td>getDimensionPixelSize(attr,(int) TypedValue.applyDimension(TypedValue.COMPLEX_UNIT_SP, 16, getResources().getDisplayMetrics()));</td>
+<td>获取字体大小</td>
+</tr>
+<tr>
+<td>bitmap</td>
+<td>reference</td>
+<td>BitmapFactory.decodeResource(getResources(), array.getResourceId(attr, 0));</td>
+<td>获取图片资源</td>
+</tr>
+</tbody>
+</table>
+<p>另附枚举类型  </p>
+<pre><code>&lt;attr name=&quot;image_align&quot;&gt;
+    &lt;enum name=&quot;center&quot; value=&quot;0&quot;/&gt;
+    &lt;enum name=&quot;left&quot; value=&quot;1&quot;/&gt;
+    &lt;enum name=&quot;right&quot; value=&quot;2&quot;/&gt;
+&lt;/attr&gt;
+</code></pre><h1 id="在layout文件中放置自定义控件"><a href="#在layout文件中放置自定义控件" class="headerlink" title="在layout文件中放置自定义控件"></a>在layout文件中放置自定义控件</h1><p>方法和默认控件一样有一点不同的是需要配置自定义属性就需要定义属性命名控件（即注册之前定义的属性）。</p>
+<pre><code>&lt;RelativeLayout xmlns:android=&quot;http://schemas.android.com/apk/res/android&quot;
+    xmlns:tools=&quot;http://schemas.android.com/tools&quot;
+    xmlns:custom=&quot;http://schemas.android.com/apk/res/com.example.privateview（项目包名）&quot; //注册自定义属性命名空间
+    android:layout_width=&quot;match_parent&quot;
+    android:layout_height=&quot;match_parent&quot;
+    tools:context=&quot;${relativePackage}.${activityClass}&quot; &gt;
+    &lt;com.example.privateview.CustomTitleView//自定义控件的类名
+        android:id=&quot;@+id/customTitleView1&quot;
+        android:layout_width=&quot;wrap_content&quot;
+        android:layout_height=&quot;wrap_content&quot;
+        android:padding=&quot;10pt&quot;
+        custom:titleText=&quot;2345&quot;//配置自定义属性
+        custom:titleTextColor=&quot;#ffffff&quot;
+        custom:titleTextSize=&quot;90sp&quot; /&gt;
+&lt;/RelativeLayout&gt;
+</code></pre><h1 id="构造方法"><a href="#构造方法" class="headerlink" title="构造方法"></a>构造方法</h1><p>构造方法的作用就是实例化此对象，也就是要对此对象进行初始化，所以此方法中需要完成的工作就是对此自定义的控件中定义的各个属性进行赋值。<br>赋值需要的参数需要读取到在layout文件中配置的属性，我们通过TypedArray获取  </p>
+<pre><code>public CustomTitleView(Context context) {
+    this(context,null);
+}
+public CustomTitleView(Context context,AttributeSet attrs) {
+    this(context,attrs,0);
+}
+public CustomTitleView(Context context,AttributeSet attrs,int defStyle) {
+        super(context, attrs, defStyle);
+        TypedArray array=context.getTheme().obtainStyledAttributes(attrs,R.styleable.CustomTitleView,defStyle,0);//获取配置的参数
+        int n=array.getIndexCount();
+        for(int i=0;i&lt;n;i++){
+            int attr=array.getIndex(i);
+            switch (attr) {
+            case R.styleable.CustomTitleView_titleText:
+                mTitleText=array.getString(attr);
+                break;
+            case R.styleable.CustomTitleView_titleTextColor:
+                mTitleTextColor=array.getColor(attr, Color.BLACK);
+                break;
+            case R.styleable.CustomTitleView_titleTextSize:
+                mTitleTextSize=array.getDimensionPixelSize(attr, (int) TypedValue.applyDimension(TypedValue.COMPLEX_UNIT_SP, 16, getResources().getDisplayMetrics()));
+                break;
+            }
+        }
+        array.recycle();//读取完毕后一定要记得回收
+        mPaint_background=new Paint();//画笔
+        mPaint_background.setColor(Color.GRAY);
+        mPaint_word=new Paint();
+        mPaint_word.setTextSize(mTitleTextSize);
+        mPaint_word.setColor(mTitleTextColor);
+        mBound=new Rect();//矩形（文本框）
+        mPaint_word.getTextBounds(mTitleText, 0, mTitleText.length(), mBound);
+        this.setOnClickListener(new OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                mTitleText=randomText();
+                postInvalidate();//刷新控件，重新绘制控件
+            }
+        });
+    }
+</code></pre><h1 id="onMeasure"><a href="#onMeasure" class="headerlink" title="onMeasure"></a>onMeasure</h1><p>用于向ViewGroup反馈组件的大小所占空间，如果不写此方法控件会占据界面所有剩余空间，无论是match_parent还是warp_content.  </p>
+<pre><code>/**
+ * MeasureSpec的specMode,一共三种类型：
+ * EXACTLY：一般是设置了明确的值或者是MATCH_PARENT
+ * AT_MOST：表示子布局限制在一个最大值内，一般为WARP_CONTENT
+ * UNSPECIFIED：表示子布局想要多大就多大，很少使用
+ */
+@Override
+protected void onMeasure(int widthMeasureSpec,int heightMeasureSpec){
+    super.onMeasure(widthMeasureSpec, heightMeasureSpec);
+    int widthMode=MeasureSpec.getMode(widthMeasureSpec);
+    int heightMode=MeasureSpec.getMode(heightMeasureSpec);
+    int widthSize=MeasureSpec.getSize(widthMeasureSpec);
+    int heightSize=MeasureSpec.getSize(heightMeasureSpec);
+    int width;
+    int height;
+    if(widthMode==MeasureSpec.EXACTLY){
+        width=widthSize;
+    }else{
+        width=getPaddingLeft()+mBound.width()+getPaddingRight();
+    }
+    if(heightMode==MeasureSpec.EXACTLY){
+        height=heightSize;
+    }else{
+        height=getPaddingTop()+mBound.height()+getPaddingBottom();
+    }
+    setMeasuredDimension(width, height);
+}
+</code></pre><h1 id="onDraw"><a href="#onDraw" class="headerlink" title="onDraw"></a>onDraw</h1><p>在界面中绘制出控件</p>
+<pre><code>@Override
+protected void onDraw(Canvas canvas){
+    super.onDraw(canvas);
+    canvas.drawRect(0, 0,getMeasuredWidth(),getMeasuredHeight(),mPaint_background);//在画布上画下背景矩形
+    canvas.drawText(mTitleText, getWidth()/2-mBound.width()/2, getHeight()/2+mBound.height()/2,mPaint_word);//在画布上画下文本框
+}
+</code></pre><p>具体绘制相关的另开一篇文章吧<br>Canvas画板<br>Paint画笔<br>Rect操作框  </p>
+
+            <div class="clearfix"></div>
+            <hr class="nogutter">
+        </div>
+        <nav class="pagination" role="pagination">
+    
+    <a class="pull-left" href="/2016/06/29/Android学习笔记（9）——广播/" style="float: left;">
+        ← Android学习笔记(9)——广播
+    </a>
+    
+    
+    <a class="pull-right" href="/2016/05/05/Android学习笔记（7）——Bitmap/">
+        android学习笔记（7） ——Bitmap →
+    </a>
+    
+	<br/>
+</nav>
+
+        <br/>
+	<div class="row col-md-offset-2">
+            <div class="col-md-8">
+    			<div class="wumi">
+<!-- WUMI BEGIN -->
+<script type="text/javascript" id="wumiiComments">
+    var wumiiPermaLink = ""; 
+    var wumiiTitle = "Android学习笔记(8)——自定义控件"; 
+    var wumiiSitePrefix = "http://www.chenguangsong.online"; 
+    var wumiiCommentParams = "&pf=JAVASCRIPT";
+</script>
+<script type="text/javascript" src="http://widget.wumii.cn/ext/cw/widget"></script>
+<!-- WUMI END -->
+
+</div>
+            </div>
+        </div>
+    </div>
+</section>
+
+
+      
+<!-- ============================ Footer =========================== -->
+
+<footer>
+    <div class="container">
+            <div class="copy">
+                <p>
+                    &copy; 2014<script>new Date().getFullYear()>2010&&document.write("-"+new Date().getFullYear());</script>, Content By Jxust_CGS. All Rights Reserved.<br>
+					<span id="busuanzi_container_site_pv">本站总访问量<span id="busuanzi_value_site_pv"></span>次</span>
+					<span id="busuanzi_container_site_uv">本站访客数<span id="busuanzi_value_site_uv"></span>人次</span><br />
+                </p>
+                <p>Theme By <a href="//go.kieran.top" style="color: #767D84">Kieran</a></p>
+            </div>
+            <div class="social">
+                <ul>
+                    
+                    <li><a href="https://github.com/jxust-CGS" title="Github" target="_blank"><i class="icon-github"></i></a>&nbsp;</li>
+                    
+                    
+                    
+                    
+                    
+                    <li><a href="http://weibo.com/jxustCGS" title="Sina-Weibo" target="_blank"><i class="icon-sina-weibo"></i></a>&nbsp;</li>
+                    
+                </ul>
+            </div>
+            <div class="clearfix"> </div>
+        </div>
+</footer>
+<script>
+(function(){
+    var bp = document.createElement('script');
+    var curProtocol = window.location.protocol.split(':')[0];
+    if (curProtocol === 'https') {
+        bp.src = 'https://zz.bdstatic.com/linksubmit/push.js';        
+    }
+    else {
+        bp.src = 'http://push.zhanzhang.baidu.com/push.js';
+    }
+    var s = document.getElementsByTagName("script")[0];
+    s.parentNode.insertBefore(bp, s);
+})();
+</script>
+<!-- ============================ END Footer =========================== -->
+      <!-- Load our scripts -->
+<!-- Resizable 'on-demand' full-height hero -->
+<script type="text/javascript">
+    var resizeHero = function () {
+        var hero = $(".cover,.heightblock"),
+            window1 = $(window);
+        hero.css({
+            "height": window1.height()
+        });
+    };
+
+    resizeHero();
+
+    $(window).resize(function () {
+        resizeHero();
+    });
+</script>
+<script src="/js/plugins.min.js"></script><!-- Bootstrap core and concatenated plugins always load here -->
+<script src="/js/jquery.flexslider-min.js"></script><!-- Flexslider plugin -->
+<script src="/js/scripts.js"></script><!-- Theme scripts -->
+
+
+<link rel="stylesheet" href="/fancybox/jquery.fancybox.css" media="screen" type="text/css">
+<script src="/fancybox/jquery.fancybox.pack.js"></script>
+<script type="text/javascript">
+$('#intro').find('img').each(function(){
+  var alt = this.alt;
+
+  if (alt){
+    $(this).after('<span class="caption" style="display:none">' + alt + '</span>');
+  }
+
+  $(this).wrap('<a href="' + this.src + '" title="' + alt + '" class="fancybox" rel="gallery" />');
+});
+(function($){
+  $('.fancybox').fancybox();
+})(jQuery);
+</script>
+
+<!-- Initiate flexslider plugin -->
+<script type="text/javascript">
+    $(document).ready(function($) {
+      (function(){
+        console.log('font');
+        var getCss = function(path) {
+          var head = document.getElementsByTagName('head')[0];
+          link = document.createElement('link');
+          link.href = path;
+          link.rel = 'stylesheet';
+          link.type = 'text/css';
+          head.appendChild(link);
+        };
+        getCss('https://fonts.googleapis.com/css?family=Montserrat:400,700');
+        getCss('https://fonts.googleapis.com/css?family=Open+Sans:400,600');
+      })();
+      $('.flexslider').flexslider({
+        animation: "fade",
+        prevText: "",
+        nextText: "",
+        directionNav: true
+      });
+    });
+</script>
+</body>
+</html>

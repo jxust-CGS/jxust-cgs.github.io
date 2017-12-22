@@ -1,0 +1,488 @@
+<!DOCTYPE html>
+<!--[if lte IE 8 ]>
+<html class="ie" xmlns="http://www.w3.org/1999/xhtml" xml:lang="en-US" lang="en-US">
+<![endif]-->
+<!--[if (gte IE 9)|!(IE)]><!-->
+<!--
+***************  *      *     *
+      8          *    *       *
+      8          *  *         *
+      8          **           *
+      8          *  *         *
+      8          *    *       *
+      8          *      *     *
+      8          *        *   ***********    -----Theme By Kieran(http://go.kieran.top)
+-->
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en-US" lang="en-US">
+<!--<![endif]-->
+
+<head>
+  <title>Android源码学习——开机过程 | 极光轨迹</title>
+  <!-- Meta data -->
+    <meta http-equiv="Content-Type" content="text/html" charset="UTF-8" >
+    <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="generator" content="极光轨迹">
+    
+    <meta name="author" content="Jxust_CGS">
+    
+    <meta name="description" itemprop="description" content="本篇介绍一下安卓手机从开机进入java层运行到启动网络注册apn的过程，用于分析手机网络问题">
+    
+	
+	<meta name="Keywords" content="android,android源码,开机">
+    
+
+    <!-- Favicon, (keep icon in root folder) -->
+    <link rel="Shortcut Icon" href="/img/favicon.ico" type="image/ico">
+
+    <link rel="alternate" href="/atom.xml" title="极光轨迹" type="application/atom+xml">
+    <link rel="stylesheet" href="/css/all.css" media="screen" type="text/css">
+    
+    <link rel="stylesheet" href="/highlightjs/vs.css" type="text/css">
+    
+
+    <!--[if IE 8]>
+    <link rel="stylesheet" type="text/css" href="/css/ie8.css" />
+    <![endif]-->
+
+    <!-- jQuery | Load our jQuery, with an alternative source fallback to a local version if request is unavailable -->
+    <script src="/js/jquery-1.11.1.min.js"></script>
+    <script>window.jQuery || document.write('<script src="js/jquery-1.11.1.min.js"><\/script>')</script>
+
+    <!-- Load these in the <head> for quicker IE8+ load times -->
+    <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+    <script src="/js/html5shiv.min.js"></script>
+    <script src="/js/respond.min.js"></script>
+    <![endif]-->
+
+  
+  <link rel="alternate" type="application/rss+xml" title="RSS" href="atom.xml">
+  
+  
+  <link rel="alternate" type="application/atom+xml" title="Atom 0.3" href="atom.xml">
+  
+  
+
+  <style>.col-md-8.col-md-offset-2.opening-statement img{display:none;}</style>
+  
+  <script src="/js/busuanzi.pure.mini.js"></script>
+  <script src="/js/lufei.js"></script>
+</head>
+
+<!--
+<body class="post-template">
+-->
+<body id="index" class="lightnav animsition">
+	  <!-- ============================ START lufei =========================== -->
+		<div id="xiaoren" class="xiaoren">
+			<div id="message">正在加载中……</div>
+			<div id="lufei" class="lufei"></div>
+		</div>
+	  <!-- ============================ END lufei =========================== -->
+      <!-- ============================ Off-canvas navigation =========================== -->
+
+    <div class="sb-slidebar sb-right sb-style-overlay sb-momentum-scrolling">
+        <div class="sb-close" aria-label="Close Menu" aria-hidden="true">
+            <img src="/img/close.png" alt="Close"/>
+        </div>
+        <!-- Lists in Slidebars -->
+        <ul class="sb-menu">
+            <li><a href="/" class="animsition-link" title="Home">首页</a></li>
+            <li><a href="/archives" class="animsition-link" title="archive">文章</a></li>
+            <!-- Dropdown Menu -->
+            
+        	<li>
+        		<a class="sb-toggle-submenu">分类<span class="sb-caret"></span></a>
+            	<ul class="sb-submenu">
+				  	
+				    <li><a href="/categories/Angular/" class="animsition-link">Angular<small>(1)</small></a></li>
+				    
+				    <li><a href="/categories/Hibernate/" class="animsition-link">Hibernate<small>(6)</small></a></li>
+				    
+				    <li><a href="/categories/Java/" class="animsition-link">Java<small>(1)</small></a></li>
+				    
+				    <li><a href="/categories/Radis/" class="animsition-link">Radis<small>(1)</small></a></li>
+				    
+				    <li><a href="/categories/Spring/" class="animsition-link">Spring<small>(4)</small></a></li>
+				    
+				    <li><a href="/categories/Swagger2/" class="animsition-link">Swagger2<small>(1)</small></a></li>
+				    
+				    <li><a href="/categories/VBS/" class="animsition-link">VBS<small>(1)</small></a></li>
+				    
+				    <li><a href="/categories/android/" class="animsition-link">android<small>(13)</small></a></li>
+				    
+				    <li><a href="/categories/android源码/" class="animsition-link">android源码<small>(3)</small></a></li>
+				    
+				    <li><a href="/categories/fullcalendar-js/" class="animsition-link">fullcalendar.js<small>(1)</small></a></li>
+				    
+				    <li><a href="/categories/git/" class="animsition-link">git<small>(1)</small></a></li>
+				    
+				    <li><a href="/categories/html/" class="animsition-link">html<small>(2)</small></a></li>
+				    
+				    <li><a href="/categories/java/" class="animsition-link">java<small>(3)</small></a></li>
+				    
+				    <li><a href="/categories/linux/" class="animsition-link">linux<small>(2)</small></a></li>
+				    
+				    <li><a href="/categories/modem/" class="animsition-link">modem<small>(1)</small></a></li>
+				    
+				    <li><a href="/categories/python/" class="animsition-link">python<small>(1)</small></a></li>
+				    
+				    <li><a href="/categories/web/" class="animsition-link">web<small>(2)</small></a></li>
+				    
+				    <li><a href="/categories/杂谈/" class="animsition-link">杂谈<small>(2)</small></a></li>
+				    
+				    <li><a href="/categories/正则表达式/" class="animsition-link">正则表达式<small>(1)</small></a></li>
+				    
+				    <li><a href="/categories/设计模式/" class="animsition-link">设计模式<small>(1)</small></a></li>
+				    
+				    <li><a href="/categories/阿里云/" class="animsition-link">阿里云<small>(1)</small></a></li>
+				    
+				</ul>
+        	</li>
+			
+			
+        	<li>
+        		<a class="sb-toggle-submenu">标签<span class="sb-caret"></span></a>
+            	<ul class="sb-submenu">
+				  	
+				    <li><a href="/tags/Angular/" class="animsition-link">Angular<small>(1)</small></a></li>
+				    
+				    <li><a href="/tags/Hibernate/" class="animsition-link">Hibernate<small>(6)</small></a></li>
+				    
+				    <li><a href="/tags/Json/" class="animsition-link">Json<small>(1)</small></a></li>
+				    
+				    <li><a href="/tags/Maven/" class="animsition-link">Maven<small>(1)</small></a></li>
+				    
+				    <li><a href="/tags/Radis/" class="animsition-link">Radis<small>(1)</small></a></li>
+				    
+				    <li><a href="/tags/Spring/" class="animsition-link">Spring<small>(4)</small></a></li>
+				    
+				    <li><a href="/tags/Swagger2/" class="animsition-link">Swagger2<small>(1)</small></a></li>
+				    
+				    <li><a href="/tags/VBS/" class="animsition-link">VBS<small>(1)</small></a></li>
+				    
+				    <li><a href="/tags/android/" class="animsition-link">android<small>(12)</small></a></li>
+				    
+				    <li><a href="/tags/android源码/" class="animsition-link">android源码<small>(3)</small></a></li>
+				    
+				    <li><a href="/tags/android源码-android/" class="animsition-link">android源码,android<small>(1)</small></a></li>
+				    
+				    <li><a href="/tags/bootstrap/" class="animsition-link">bootstrap<small>(2)</small></a></li>
+				    
+				    <li><a href="/tags/first/" class="animsition-link">first<small>(1)</small></a></li>
+				    
+				    <li><a href="/tags/freemarker/" class="animsition-link">freemarker<small>(1)</small></a></li>
+				    
+				    <li><a href="/tags/fullcalendar-js/" class="animsition-link">fullcalendar.js<small>(1)</small></a></li>
+				    
+				    <li><a href="/tags/git/" class="animsition-link">git<small>(1)</small></a></li>
+				    
+				    <li><a href="/tags/html/" class="animsition-link">html<small>(2)</small></a></li>
+				    
+				    <li><a href="/tags/linux/" class="animsition-link">linux<small>(1)</small></a></li>
+				    
+				    <li><a href="/tags/selenium/" class="animsition-link">selenium<small>(1)</small></a></li>
+				    
+				    <li><a href="/tags/shell-linux/" class="animsition-link">shell,linux<small>(1)</small></a></li>
+				    
+				    <li><a href="/tags/velocity/" class="animsition-link">velocity<small>(1)</small></a></li>
+				    
+				    <li><a href="/tags/术语/" class="animsition-link">术语<small>(1)</small></a></li>
+				    
+				    <li><a href="/tags/正则表达式/" class="animsition-link">正则表达式<small>(1)</small></a></li>
+				    
+				    <li><a href="/tags/设计模式/" class="animsition-link">设计模式<small>(1)</small></a></li>
+				    
+				    <li><a href="/tags/超级终端-at指令/" class="animsition-link">超级终端,at指令<small>(1)</small></a></li>
+				    
+				    <li><a href="/tags/阿里云/" class="animsition-link">阿里云<small>(1)</small></a></li>
+				    
+				</ul>
+        	</li>
+			
+			
+            <li>
+                <a class="sb-toggle-submenu">其他<span class="sb-caret"></span></a>
+                <ul class="sb-submenu">
+                    
+                        <li><a href="/links" target="_BLANK" class="animsition-link">导航</a></li>
+                    
+                </ul>
+            </li>
+            
+            
+            <li>
+                <a class="sb-toggle-submenu">友情链接<span class="sb-caret"></span></a>
+                <ul class="sb-submenu">
+                    
+                    <li><a href="http://ykzhai.top/" class="animsition-link">砦龑堃</a></li>
+                    
+                </ul>
+            </li>
+            
+        </ul>
+        <!-- Lists in Slidebars -->
+        <ul class="sb-menu secondary">
+            <li><a href="/curriculumvitae" class="animsition-link" title="about">关于</a></li>
+            <li><a href="/atom.xml" class="animsition-link" title="rss">RSS</a></li>
+        </ul>
+    </div>
+    
+    <!-- ============================ END Off-canvas navigation =========================== -->
+
+    <!-- ============================ #sb-site Main Page Wrapper =========================== -->
+
+    <div id="sb-site">
+        <!-- #sb-site - All page content should be contained within this id, except the off-canvas navigation itself -->
+
+        <!-- ============================ Header & Logo bar =========================== -->
+
+        <div id="navigation" class="navbar navbar-fixed-top">
+            <div class="navbar-inner">
+                <div class="container">
+                    <!-- Nav logo -->
+                    <div class="logo">
+                        <a href="/" title="Logo" class="animsition-link">
+                         <img src="/img/logo.png" alt="Logo" width="35px;"/> 
+                        </a>
+                    </div>
+                    <!-- // Nav logo -->
+                    <!-- Info-bar -->
+                    <nav>
+                        <ul class="nav">
+                            <li><a href="/" class="animsition-link">极光轨迹</a></li>
+                            <li class="nolink"><span>Always </span>Creative.</li>
+                            
+                            <li><a href="https://github.com/jxust-CGS" title="Github" target="_blank"><i class="icon-github"></i></a></li>
+                            
+                            
+                            
+                            
+                            
+                            <li><a href="http://weibo.com/jxustCGS" title="Sina-Weibo" target="_blank"><i class="icon-sina-weibo"></i></a></li>
+                            
+                            <li class="nolink"><span>Welcome!</span></li>
+                        </ul>
+                    </nav>
+                    <!--// Info-bar -->
+                </div>
+                <!-- // .container -->
+                <div class="learnmore sb-toggle-right">更多</div>
+                <button type="button" class="navbar-toggle menu-icon sb-toggle-right" title="More">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar before"></span>
+                <span class="icon-bar main"></span>
+                <span class="icon-bar after"></span>
+                </button>
+            </div>
+            <!-- // .navbar-inner -->
+        </div>
+
+        <!-- ============================ Header & Logo bar =========================== -->
+
+
+      
+<section id="intro">
+    <div class="container">
+		<div class="row col-md-offset-2">
+            <div class="col-md-8">
+                <h1>Android源码学习——开机过程</h1>
+		<span class="post-meta">
+      <time datetime="2017-12-20T15:29:16.468Z" itemprop="datePublished">
+          2017-12-20
+      </time>
+	
+    
+    | 分类：
+    <a class="categories" href='/categories/android源码/'>android源码</a>
+    
+    
+    
+    
+    | 标签：
+    <a class="tags" href='/tags/android源码-android/'>android源码,android</a>
+    
+    
+</span>
+		<br/>
+            </div>
+        </div>
+        <div class="col-md-8 col-md-offset-2">
+      		<h1 id="从开机到注册APN的过程分析"><a href="#从开机到注册APN的过程分析" class="headerlink" title="从开机到注册APN的过程分析"></a>从开机到注册APN的过程分析</h1><hr>
+<h2 id="手机启动"><a href="#手机启动" class="headerlink" title="手机启动"></a>手机启动</h2><p><img src="http://oeb33qix3.bkt.clouddn.com/16-12-16/21583324-file_1481868417041_61ad.png" alt="">  </p>
+<h2 id="SystemServer-java"><a href="#SystemServer-java" class="headerlink" title="SystemServer.java"></a>SystemServer.java</h2><p>SystemServer.java类是java的系统服务类，在开机后首先会实例化一个SystemServer<br>1、执行main方法，new SystemServer().run();<br>2、执行run方法，调用startBootstrapServices()<br>3、在startBootstrapServices()中调用<br><img src="http://oeb33qix3.bkt.clouddn.com/16-12-11/77821418-file_1481434774122_16d6a.png" alt="">   </p>
+<h2 id="ActivityManagerService-java"><a href="#ActivityManagerService-java" class="headerlink" title="ActivityManagerService.java"></a>ActivityManagerService.java</h2><p>通过AndroidManagerService中的方法将启动配置了属性<code>andriod:persistion=&quot;true&quot;;</code>的app</p>
+<h2 id="PhoneApp"><a href="#PhoneApp" class="headerlink" title="PhoneApp"></a>PhoneApp</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">PhoneApp.onCreate()&#123;</span><br><span class="line">    new PhoneGlobals(this);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h2 id="PhoneGlobals"><a href="#PhoneGlobals" class="headerlink" title="PhoneGlobals"></a>PhoneGlobals</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">PhoneGlobals.onCreate()&#123;</span><br><span class="line">    PhoneFactory.makeDefultPhones(this);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">public static void makeDefaultPhone(Context context) &#123;</span><br><span class="line">    sPhoneNotifier = new DefaultPhoneNotifier();</span><br><span class="line">    sProxyPhone = new PhoneProxy(new GSMPhone(context,</span><br><span class="line">    sCommandsInterface, sPhoneNotifier));</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h2 id="GSMPhone"><a href="#GSMPhone" class="headerlink" title="GSMPhone"></a>GSMPhone</h2><p><img src="http://oeb33qix3.bkt.clouddn.com/16-12-11/92278190-file_1481436430080_e396.png" alt=""></p>
+<h2 id="DcTracker"><a href="#DcTracker" class="headerlink" title="DcTracker"></a>DcTracker</h2><p>DataConnectionTracker：数据连接跟踪者<br>DcTracker是Telephony框架中负责数据业务的核心(类似于GsmCallTracker是通话业务核心，GsmServiceStateTracker是网络CS业务的核心)，所有对数据网络的请求(打开关闭数据开关、切换数据卡、修改APN参数等)都会发送到该处理中心来处理。<br>DcTracker的初始化<br>1、初始化各种监听器；<br>//2、初始化TelephonyNetworkFactory对象；<br>3、初始化一些基本的APN参数；  </p>
+<p><img src="http://oeb33qix3.bkt.clouddn.com/16-12-16/63555222-file_1481858289936_a47d.png" alt=""><br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br></pre></td><td class="code"><pre><span class="line">public DcTracker(PhoneBase p) &#123;</span><br><span class="line">	super(p);</span><br><span class="line">	if (DBG) log(&quot;DcTracker.constructor&quot;);</span><br><span class="line"></span><br><span class="line">	mDataConnectionTracker = this;</span><br><span class="line">	//更新状态</span><br><span class="line">	update();</span><br><span class="line"></span><br><span class="line">	/** M: create worker handler to handle DB/IO access */</span><br><span class="line">	createWorkerHandler();//这里是mtk改的，另启一个线程去添加紧急apn</span><br><span class="line"></span><br><span class="line">	//M: Move register all event from update to construct, to avoid register more times.</span><br><span class="line">	registerForAllEvents();//注册事件监听（从update方法中移动到这里，为了节省时间）</span><br><span class="line"></span><br><span class="line">	mApnObserver = new ApnChangeObserver();//监听apn的变化</span><br><span class="line">	p.getContext().getContentResolver().registerContentObserver(</span><br><span class="line">			Telephony.Carriers.CONTENT_URI, true, mApnObserver);</span><br><span class="line"></span><br><span class="line">	initApnContexts();//初始化apn</span><br><span class="line"></span><br><span class="line">	for (ApnContext apnContext : mApnContexts.values()) &#123;</span><br><span class="line">		// Register the reconnect and restart actions.</span><br><span class="line">		IntentFilter filter = new IntentFilter();</span><br><span class="line">		filter.addAction(INTENT_RECONNECT_ALARM + &apos;.&apos; + apnContext.getApnType());</span><br><span class="line">		filter.addAction(INTENT_RESTART_TRYSETUP_ALARM + &apos;.&apos; + apnContext.getApnType());</span><br><span class="line">		mPhone.getContext().registerReceiver(mIntentReceiver, filter, null, mPhone);</span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line">	// M: Fast Dormancy init</span><br><span class="line">	mFdMgr = FdManager.getInstance(p);</span><br><span class="line"></span><br><span class="line">	//MTK START: Add Plug in</span><br><span class="line">	if (!BSP_PACKAGE) &#123;</span><br><span class="line">		try &#123;</span><br><span class="line">			mGsmDctExt =</span><br><span class="line">				MPlugin.createInstance(IGsmDCTExt.class.getName(), mPhone.getContext());</span><br><span class="line">		&#125; catch (Exception e) &#123;</span><br><span class="line">			if (DBG) &#123;</span><br><span class="line">				log(&quot;mGsmDctExt init fail&quot;);</span><br><span class="line">			&#125;</span><br><span class="line">			e.printStackTrace();</span><br><span class="line">		&#125;</span><br><span class="line">	&#125;</span><br><span class="line">	//MTK END</span><br><span class="line"></span><br><span class="line">	mProvisionActionName = &quot;com.android.internal.telephony.PROVISION&quot; + p.getPhoneId();</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<h3 id="update"><a href="#update" class="headerlink" title="update"></a>update</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line">public void update() &#123;</span><br><span class="line">	log(&quot;update sub = &quot; + mPhone.getSubId());</span><br><span class="line">	// M: remove for redundantly register that cause ANR</span><br><span class="line">	//log(&quot;update(): Active DDS, register for all events now!&quot;);</span><br><span class="line">	//registerForAllEvents();</span><br><span class="line">	onUpdateIcc();//注册监听sim卡状态、添加了sim载入监听、和fdn定向拨号功能</span><br><span class="line"></span><br><span class="line">	mUserDataEnabled = getDataEnabled();//获取用户设置网络的开关状态</span><br><span class="line"></span><br><span class="line">	if (mPhone instanceof CDMALTEPhone) &#123;</span><br><span class="line">		((CDMALTEPhone)mPhone).updateCurrentCarrierInProvider();</span><br><span class="line">	&#125; else if (mPhone instanceof GSMPhone) &#123;</span><br><span class="line">		((GSMPhone)mPhone).updateCurrentCarrierInProvider();</span><br><span class="line">	&#125; else &#123;</span><br><span class="line">		log(&quot;Phone object is not MultiSim. This should not hit!!!!&quot;);</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h3 id="createWorkerHandler"><a href="#createWorkerHandler" class="headerlink" title="createWorkerHandler"></a>createWorkerHandler</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br></pre></td><td class="code"><pre><span class="line">/** M: worker handler to handle DB/IO access */</span><br><span class="line">private void createWorkerHandler() &#123;</span><br><span class="line">	if (mWorkerHandler == null) &#123;</span><br><span class="line">		Thread thread = new Thread() &#123;//另开了一个新的工作线程</span><br><span class="line">			@Override</span><br><span class="line">			public void run() &#123;</span><br><span class="line">				Looper.prepare();</span><br><span class="line">				mWorkerHandler = new WorkerHandler();</span><br><span class="line">				mWorkerHandler.sendEmptyMessage(DctConstants.EVENT_INIT_EMERGENCY_APN_SETTINGS);</span><br><span class="line">				Looper.loop();</span><br><span class="line">			&#125;</span><br><span class="line">		&#125;;</span><br><span class="line">		thread.start();</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">private class WorkerHandler extends Handler &#123;</span><br><span class="line">	@Override</span><br><span class="line">	public void handleMessage(Message msg) &#123;</span><br><span class="line">		switch (msg.what) &#123;</span><br><span class="line">			case DctConstants.EVENT_INIT_EMERGENCY_APN_SETTINGS:</span><br><span class="line">				// Add Emergency APN to APN setting list by default to support EPDN in sim absent cases</span><br><span class="line">				log(&quot;WorkerHandler received EVENT_INIT_EMERGENCY_APN_SETTINGS&quot;);</span><br><span class="line">				initEmergencyApnSetting();//在新的线程中进行紧急apn的初始化和添加</span><br><span class="line">				addEmergencyApnSetting();</span><br><span class="line">				break;</span><br><span class="line">		&#125;</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h3 id="registerForAllEvents"><a href="#registerForAllEvents" class="headerlink" title="registerForAllEvents"></a>registerForAllEvents</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br></pre></td><td class="code"><pre><span class="line">protected void registerForAllEvents() &#123;</span><br><span class="line">	if (DBG) &#123;</span><br><span class="line">		log(&quot;registerForAllEvents: mPhone = &quot; + mPhone);</span><br><span class="line">	&#125;</span><br><span class="line">	//监听射频是否打开</span><br><span class="line">	mPhone.mCi.registerForAvailable(this, DctConstants.EVENT_RADIO_AVAILABLE, null);</span><br><span class="line">	//监听射频是否可用</span><br><span class="line">	mPhone.mCi.registerForOffOrNotAvailable(this,</span><br><span class="line">		   DctConstants.EVENT_RADIO_OFF_OR_NOT_AVAILABLE, null);</span><br><span class="line">	//监听当前链接状态</span><br><span class="line">	mPhone.mCi.registerForDataNetworkStateChanged(this,</span><br><span class="line">		   DctConstants.EVENT_DATA_STATE_CHANGED, null);</span><br><span class="line">	// Note, this is fragile - the Phone is now presenting a merged picture</span><br><span class="line">	// of PS (volte) &amp; CS and by diving into its internals you&apos;re just seeing</span><br><span class="line">	// the CS data.  This works well for the purposes this is currently used for</span><br><span class="line">	// but that may not always be the case.  Should probably be redesigned to</span><br><span class="line">	// accurately reflect what we&apos;re really interested in (registerForCSVoiceCallEnded).</span><br><span class="line"></span><br><span class="line">	// M: Remove below section for the reason that new PS/CS design has been applied.</span><br><span class="line">	//mPhone.getCallTracker().registerForVoiceCallEnded (this,</span><br><span class="line">	//       DctConstants.EVENT_VOICE_CALL_ENDED, null);</span><br><span class="line">	//mPhone.getCallTracker().registerForVoiceCallStarted (this,</span><br><span class="line">	//       DctConstants.EVENT_VOICE_CALL_STARTED, null);</span><br><span class="line">	// M: End</span><br><span class="line">    //数据连接驻网</span><br><span class="line">	mPhone.getServiceStateTracker().registerForDataConnectionAttached(this,</span><br><span class="line">		   DctConstants.EVENT_DATA_CONNECTION_ATTACHED, null);</span><br><span class="line">	mPhone.getServiceStateTracker().registerForDataConnectionDetached(this,</span><br><span class="line">		   DctConstants.EVENT_DATA_CONNECTION_DETACHED, null);</span><br><span class="line">    //数据漫游</span><br><span class="line">	mPhone.getServiceStateTracker().registerForDataRoamingOn(this,</span><br><span class="line">		   DctConstants.EVENT_ROAMING_ON, null);</span><br><span class="line">	mPhone.getServiceStateTracker().registerForDataRoamingOff(this,</span><br><span class="line">		   DctConstants.EVENT_ROAMING_OFF, null);</span><br><span class="line">	//ps域注册</span><br><span class="line">	mPhone.getServiceStateTracker().registerForPsRestrictedEnabled(this,</span><br><span class="line">			DctConstants.EVENT_PS_RESTRICT_ENABLED, null);</span><br><span class="line">	mPhone.getServiceStateTracker().registerForPsRestrictedDisabled(this,</span><br><span class="line">			DctConstants.EVENT_PS_RESTRICT_DISABLED, null);</span><br><span class="line"> //   SubscriptionManager.registerForDdsSwitch(this,</span><br><span class="line"> //          DctConstants.EVENT_CLEAN_UP_ALL_CONNECTIONS, null);</span><br><span class="line">	// M: cc33</span><br><span class="line">	mPhone.mCi.registerForRemoveRestrictEutran(this, DctConstants.EVENT_REMOVE_RESTRICT_EUTRAN</span><br><span class="line">			,null);</span><br><span class="line"></span><br><span class="line">	//M: Reset Attach Apn重新注册apn</span><br><span class="line">	mPhone.mCi.registerForResetAttachApn(this, DctConstants.EVENT_RESET_ATTACH_APN, null);</span><br><span class="line"></span><br><span class="line">	// M: [LTE][Low Power][UL traffic shaping] Start</span><br><span class="line">	mPhone.mCi.registerForLteAccessStratumState(this,</span><br><span class="line">			DctConstants.EVENT_LTE_ACCESS_STRATUM_STATE, null);</span><br><span class="line">	// M: [LTE][Low Power][UL traffic shaping] End</span><br><span class="line">    //监听网络技术(LTE/GSM/UMTS)</span><br><span class="line">	mPhone.getServiceStateTracker().registerForDataRegStateOrRatChanged(this,</span><br><span class="line">			DctConstants.EVENT_DATA_RAT_CHANGED, null);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h3 id="initApnContent"><a href="#initApnContent" class="headerlink" title="initApnContent"></a>initApnContent</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br></pre></td><td class="code"><pre><span class="line">protected void initApnContexts() &#123;</span><br><span class="line">	log(&quot;initApnContexts: E&quot;);</span><br><span class="line">	// Load device network attributes from resources</span><br><span class="line">	String[] networkConfigStrings = mPhone.getContext().getResources().getStringArray(//获得配置的默认apn参数</span><br><span class="line">			com.android.internal.R.array.networkAttributes);</span><br><span class="line">	for (String networkConfigString : networkConfigStrings) &#123;</span><br><span class="line">		NetworkConfig networkConfig = new NetworkConfig(networkConfigString);</span><br><span class="line">		ApnContext apnContext = null;</span><br><span class="line"></span><br><span class="line">		switch (networkConfig.type) &#123;</span><br><span class="line">		case ConnectivityManager.TYPE_MOBILE:</span><br><span class="line">			apnContext = addApnContext(PhoneConstants.APN_TYPE_DEFAULT, networkConfig);</span><br><span class="line">			break;</span><br><span class="line">		case ConnectivityManager.TYPE_MOBILE_MMS:</span><br><span class="line">			apnContext = addApnContext(PhoneConstants.APN_TYPE_MMS, networkConfig);</span><br><span class="line">			break;</span><br><span class="line">		case ConnectivityManager.TYPE_MOBILE_SUPL:</span><br><span class="line">			apnContext = addApnContext(PhoneConstants.APN_TYPE_SUPL, networkConfig);</span><br><span class="line">			break;</span><br><span class="line">		case ConnectivityManager.TYPE_MOBILE_DUN:</span><br><span class="line">			apnContext = addApnContext(PhoneConstants.APN_TYPE_DUN, networkConfig);</span><br><span class="line">			break;</span><br><span class="line">		case ConnectivityManager.TYPE_MOBILE_HIPRI:</span><br><span class="line">			apnContext = addApnContext(PhoneConstants.APN_TYPE_HIPRI, networkConfig);</span><br><span class="line">			break;</span><br><span class="line">		case ConnectivityManager.TYPE_MOBILE_FOTA:</span><br><span class="line">			apnContext = addApnContext(PhoneConstants.APN_TYPE_FOTA, networkConfig);</span><br><span class="line">			break;</span><br><span class="line">		case ConnectivityManager.TYPE_MOBILE_IMS:</span><br><span class="line">			apnContext = addApnContext(PhoneConstants.APN_TYPE_IMS, networkConfig);</span><br><span class="line">			break;</span><br><span class="line">		case ConnectivityManager.TYPE_MOBILE_CBS:</span><br><span class="line">			apnContext = addApnContext(PhoneConstants.APN_TYPE_CBS, networkConfig);</span><br><span class="line">			break;</span><br><span class="line">		case ConnectivityManager.TYPE_MOBILE_IA:</span><br><span class="line">			apnContext = addApnContext(PhoneConstants.APN_TYPE_IA, networkConfig);</span><br><span class="line">			break;</span><br><span class="line">		/** M: start */</span><br><span class="line">		case ConnectivityManager.TYPE_MOBILE_DM:</span><br><span class="line">			apnContext = addApnContext(PhoneConstants.APN_TYPE_DM, networkConfig);</span><br><span class="line">			break;</span><br><span class="line">		case ConnectivityManager.TYPE_MOBILE_NET:</span><br><span class="line">			apnContext = addApnContext(PhoneConstants.APN_TYPE_NET, networkConfig);</span><br><span class="line">			break;</span><br><span class="line">		case ConnectivityManager.TYPE_MOBILE_WAP:</span><br><span class="line">			apnContext = addApnContext(PhoneConstants.APN_TYPE_WAP, networkConfig);</span><br><span class="line">			break;</span><br><span class="line">		case ConnectivityManager.TYPE_MOBILE_CMMAIL:</span><br><span class="line">			apnContext = addApnContext(PhoneConstants.APN_TYPE_CMMAIL, networkConfig);</span><br><span class="line">			break;</span><br><span class="line">		case ConnectivityManager.TYPE_MOBILE_RCSE:</span><br><span class="line">			apnContext = addApnContext(PhoneConstants.APN_TYPE_RCSE, networkConfig);</span><br><span class="line">			break;</span><br><span class="line">		case ConnectivityManager.TYPE_MOBILE_XCAP:</span><br><span class="line">			apnContext = addApnContext(PhoneConstants.APN_TYPE_XCAP, networkConfig);</span><br><span class="line">			break;</span><br><span class="line">		case ConnectivityManager.TYPE_MOBILE_RCS:</span><br><span class="line">			apnContext = addApnContext(PhoneConstants.APN_TYPE_RCS, networkConfig);</span><br><span class="line">			break;</span><br><span class="line">		/** M: end*/</span><br><span class="line">		case ConnectivityManager.TYPE_MOBILE_EMERGENCY:</span><br><span class="line">			apnContext = addApnContext(PhoneConstants.APN_TYPE_EMERGENCY, networkConfig);</span><br><span class="line">			break;</span><br><span class="line">		default:</span><br><span class="line">			log(&quot;initApnContexts: skipping unknown type=&quot; + networkConfig.type);</span><br><span class="line">			continue;</span><br><span class="line">		&#125;</span><br><span class="line">		log(&quot;initApnContexts: apnContext=&quot; + apnContext);</span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line">	//The implement of priorityQueue class is incorrect, we sort the list by ourself对apn进行排序</span><br><span class="line">	Collections.sort(mPrioritySortedApnContexts, new Comparator&lt;ApnContext&gt;() &#123;</span><br><span class="line">		public int compare(ApnContext c1, ApnContext c2) &#123;</span><br><span class="line">			return c2.priority - c1.priority;</span><br><span class="line">		&#125;</span><br><span class="line">	&#125;);</span><br><span class="line">	log(&quot;initApnContexts: mPrioritySortedApnContexts=&quot; + mPrioritySortedApnContexts);</span><br><span class="line">	log(&quot;initApnContexts: X mApnContexts=&quot; + mApnContexts);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>至此apn的初始化完成</p>
+<h2 id="apn参数的创建"><a href="#apn参数的创建" class="headerlink" title="apn参数的创建"></a>apn参数的创建</h2><p>当sim卡载入完毕后就会触发监听进行apn的创建onRecordsLoaded()<br>当apn改变也会触发监听onApnChanged()  </p>
+<h2 id="onReecordsLoaded"><a href="#onReecordsLoaded" class="headerlink" title="onReecordsLoaded()"></a>onReecordsLoaded()</h2><p>createAllApnlist()  </p>
+<ul>
+<li>获取当前sim卡的apn参数及紧急apn<ul>
+<li>operater获取sim卡的PLMN</li>
+<li>创建mAllApnSetting列表</li>
+<li>添加紧急apn</li>
+<li>合并apn</li>
+<li>寻找适合的apn</li>
+</ul>
+</li>
+<li>合并相同的apn</li>
+<li>寻找当前适合的apn<br>setInitialAttachApn()设置默认apn<br>向modem设置Attach默认的apn</li>
+</ul>
+<h2 id="apn参数激活"><a href="#apn参数激活" class="headerlink" title="apn参数激活"></a>apn参数激活</h2><h2 id="数据连接请求"><a href="#数据连接请求" class="headerlink" title="数据连接请求"></a>数据连接请求</h2>
+            <div class="clearfix"></div>
+            <hr class="nogutter">
+        </div>
+        <nav class="pagination" role="pagination">
+    
+    <a class="pull-left" href="/2017/12/20/hello-world/" style="float: left;">
+        ← Hello World
+    </a>
+    
+    
+    <a class="pull-right" href="/2017/12/20/AngularJS/">
+        AngularJS学习笔记 →
+    </a>
+    
+	<br/>
+</nav>
+
+        <br/>
+	<div class="row col-md-offset-2">
+            <div class="col-md-8">
+    			<div class="wumi">
+<!-- WUMI BEGIN -->
+<script type="text/javascript" id="wumiiComments">
+    var wumiiPermaLink = ""; 
+    var wumiiTitle = "Android源码学习——开机过程"; 
+    var wumiiSitePrefix = "http://www.chenguangsong.online"; 
+    var wumiiCommentParams = "&pf=JAVASCRIPT";
+</script>
+<script type="text/javascript" src="http://widget.wumii.cn/ext/cw/widget"></script>
+<!-- WUMI END -->
+
+</div>
+            </div>
+        </div>
+    </div>
+</section>
+
+
+      
+<!-- ============================ Footer =========================== -->
+
+<footer>
+    <div class="container">
+            <div class="copy">
+                <p>
+                    &copy; 2014<script>new Date().getFullYear()>2010&&document.write("-"+new Date().getFullYear());</script>, Content By Jxust_CGS. All Rights Reserved.<br>
+					<span id="busuanzi_container_site_pv">本站总访问量<span id="busuanzi_value_site_pv"></span>次</span>
+					<span id="busuanzi_container_site_uv">本站访客数<span id="busuanzi_value_site_uv"></span>人次</span><br />
+                </p>
+                <p>Theme By <a href="//go.kieran.top" style="color: #767D84">Kieran</a></p>
+            </div>
+            <div class="social">
+                <ul>
+                    
+                    <li><a href="https://github.com/jxust-CGS" title="Github" target="_blank"><i class="icon-github"></i></a>&nbsp;</li>
+                    
+                    
+                    
+                    
+                    
+                    <li><a href="http://weibo.com/jxustCGS" title="Sina-Weibo" target="_blank"><i class="icon-sina-weibo"></i></a>&nbsp;</li>
+                    
+                </ul>
+            </div>
+            <div class="clearfix"> </div>
+        </div>
+</footer>
+<script>
+(function(){
+    var bp = document.createElement('script');
+    var curProtocol = window.location.protocol.split(':')[0];
+    if (curProtocol === 'https') {
+        bp.src = 'https://zz.bdstatic.com/linksubmit/push.js';        
+    }
+    else {
+        bp.src = 'http://push.zhanzhang.baidu.com/push.js';
+    }
+    var s = document.getElementsByTagName("script")[0];
+    s.parentNode.insertBefore(bp, s);
+})();
+</script>
+<!-- ============================ END Footer =========================== -->
+      <!-- Load our scripts -->
+<!-- Resizable 'on-demand' full-height hero -->
+<script type="text/javascript">
+    var resizeHero = function () {
+        var hero = $(".cover,.heightblock"),
+            window1 = $(window);
+        hero.css({
+            "height": window1.height()
+        });
+    };
+
+    resizeHero();
+
+    $(window).resize(function () {
+        resizeHero();
+    });
+</script>
+<script src="/js/plugins.min.js"></script><!-- Bootstrap core and concatenated plugins always load here -->
+<script src="/js/jquery.flexslider-min.js"></script><!-- Flexslider plugin -->
+<script src="/js/scripts.js"></script><!-- Theme scripts -->
+
+
+<link rel="stylesheet" href="/fancybox/jquery.fancybox.css" media="screen" type="text/css">
+<script src="/fancybox/jquery.fancybox.pack.js"></script>
+<script type="text/javascript">
+$('#intro').find('img').each(function(){
+  var alt = this.alt;
+
+  if (alt){
+    $(this).after('<span class="caption" style="display:none">' + alt + '</span>');
+  }
+
+  $(this).wrap('<a href="' + this.src + '" title="' + alt + '" class="fancybox" rel="gallery" />');
+});
+(function($){
+  $('.fancybox').fancybox();
+})(jQuery);
+</script>
+
+<!-- Initiate flexslider plugin -->
+<script type="text/javascript">
+    $(document).ready(function($) {
+      (function(){
+        console.log('font');
+        var getCss = function(path) {
+          var head = document.getElementsByTagName('head')[0];
+          link = document.createElement('link');
+          link.href = path;
+          link.rel = 'stylesheet';
+          link.type = 'text/css';
+          head.appendChild(link);
+        };
+        getCss('https://fonts.googleapis.com/css?family=Montserrat:400,700');
+        getCss('https://fonts.googleapis.com/css?family=Open+Sans:400,600');
+      })();
+      $('.flexslider').flexslider({
+        animation: "fade",
+        prevText: "",
+        nextText: "",
+        directionNav: true
+      });
+    });
+</script>
+</body>
+</html>

@@ -1,0 +1,527 @@
+<!DOCTYPE html>
+<!--[if lte IE 8 ]>
+<html class="ie" xmlns="http://www.w3.org/1999/xhtml" xml:lang="en-US" lang="en-US">
+<![endif]-->
+<!--[if (gte IE 9)|!(IE)]><!-->
+<!--
+***************  *      *     *
+      8          *    *       *
+      8          *  *         *
+      8          **           *
+      8          *  *         *
+      8          *    *       *
+      8          *      *     *
+      8          *        *   ***********    -----Theme By Kieran(http://go.kieran.top)
+-->
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en-US" lang="en-US">
+<!--<![endif]-->
+
+<head>
+  <title>git学习笔记 | 极光轨迹</title>
+  <!-- Meta data -->
+    <meta http-equiv="Content-Type" content="text/html" charset="UTF-8" >
+    <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="generator" content="极光轨迹">
+    
+    <meta name="author" content="Jxust_CGS">
+    
+    <meta name="description" itemprop="description" content="跟着廖雪峰老师学习git命令，日常基本使用够了。">
+    
+	
+	<meta name="Keywords" content="git,git教程,git命令">
+    
+
+    <!-- Favicon, (keep icon in root folder) -->
+    <link rel="Shortcut Icon" href="/img/favicon.ico" type="image/ico">
+
+    <link rel="alternate" href="/atom.xml" title="极光轨迹" type="application/atom+xml">
+    <link rel="stylesheet" href="/css/all.css" media="screen" type="text/css">
+    
+    <link rel="stylesheet" href="/highlightjs/vs.css" type="text/css">
+    
+
+    <!--[if IE 8]>
+    <link rel="stylesheet" type="text/css" href="/css/ie8.css" />
+    <![endif]-->
+
+    <!-- jQuery | Load our jQuery, with an alternative source fallback to a local version if request is unavailable -->
+    <script src="/js/jquery-1.11.1.min.js"></script>
+    <script>window.jQuery || document.write('<script src="js/jquery-1.11.1.min.js"><\/script>')</script>
+
+    <!-- Load these in the <head> for quicker IE8+ load times -->
+    <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+    <script src="/js/html5shiv.min.js"></script>
+    <script src="/js/respond.min.js"></script>
+    <![endif]-->
+
+  
+  <link rel="alternate" type="application/rss+xml" title="RSS" href="atom.xml">
+  
+  
+  <link rel="alternate" type="application/atom+xml" title="Atom 0.3" href="atom.xml">
+  
+  
+
+  <style>.col-md-8.col-md-offset-2.opening-statement img{display:none;}</style>
+  
+  <script src="/js/busuanzi.pure.mini.js"></script>
+  <script src="/js/lufei.js"></script>
+</head>
+
+<!--
+<body class="post-template">
+-->
+<body id="index" class="lightnav animsition">
+	  <!-- ============================ START lufei =========================== -->
+		<div id="xiaoren" class="xiaoren">
+			<div id="message">正在加载中……</div>
+			<div id="lufei" class="lufei"></div>
+		</div>
+	  <!-- ============================ END lufei =========================== -->
+      <!-- ============================ Off-canvas navigation =========================== -->
+
+    <div class="sb-slidebar sb-right sb-style-overlay sb-momentum-scrolling">
+        <div class="sb-close" aria-label="Close Menu" aria-hidden="true">
+            <img src="/img/close.png" alt="Close"/>
+        </div>
+        <!-- Lists in Slidebars -->
+        <ul class="sb-menu">
+            <li><a href="/" class="animsition-link" title="Home">首页</a></li>
+            <li><a href="/archives" class="animsition-link" title="archive">文章</a></li>
+            <!-- Dropdown Menu -->
+            
+        	<li>
+        		<a class="sb-toggle-submenu">分类<span class="sb-caret"></span></a>
+            	<ul class="sb-submenu">
+				  	
+				    <li><a href="/categories/Angular/" class="animsition-link">Angular<small>(1)</small></a></li>
+				    
+				    <li><a href="/categories/Hibernate/" class="animsition-link">Hibernate<small>(6)</small></a></li>
+				    
+				    <li><a href="/categories/Java/" class="animsition-link">Java<small>(1)</small></a></li>
+				    
+				    <li><a href="/categories/Radis/" class="animsition-link">Radis<small>(1)</small></a></li>
+				    
+				    <li><a href="/categories/Spring/" class="animsition-link">Spring<small>(4)</small></a></li>
+				    
+				    <li><a href="/categories/Swagger2/" class="animsition-link">Swagger2<small>(1)</small></a></li>
+				    
+				    <li><a href="/categories/VBS/" class="animsition-link">VBS<small>(1)</small></a></li>
+				    
+				    <li><a href="/categories/android/" class="animsition-link">android<small>(13)</small></a></li>
+				    
+				    <li><a href="/categories/android源码/" class="animsition-link">android源码<small>(3)</small></a></li>
+				    
+				    <li><a href="/categories/fullcalendar-js/" class="animsition-link">fullcalendar.js<small>(1)</small></a></li>
+				    
+				    <li><a href="/categories/git/" class="animsition-link">git<small>(1)</small></a></li>
+				    
+				    <li><a href="/categories/html/" class="animsition-link">html<small>(2)</small></a></li>
+				    
+				    <li><a href="/categories/java/" class="animsition-link">java<small>(3)</small></a></li>
+				    
+				    <li><a href="/categories/linux/" class="animsition-link">linux<small>(2)</small></a></li>
+				    
+				    <li><a href="/categories/modem/" class="animsition-link">modem<small>(1)</small></a></li>
+				    
+				    <li><a href="/categories/python/" class="animsition-link">python<small>(1)</small></a></li>
+				    
+				    <li><a href="/categories/web/" class="animsition-link">web<small>(2)</small></a></li>
+				    
+				    <li><a href="/categories/杂谈/" class="animsition-link">杂谈<small>(2)</small></a></li>
+				    
+				    <li><a href="/categories/正则表达式/" class="animsition-link">正则表达式<small>(1)</small></a></li>
+				    
+				    <li><a href="/categories/设计模式/" class="animsition-link">设计模式<small>(1)</small></a></li>
+				    
+				    <li><a href="/categories/阿里云/" class="animsition-link">阿里云<small>(1)</small></a></li>
+				    
+				</ul>
+        	</li>
+			
+			
+        	<li>
+        		<a class="sb-toggle-submenu">标签<span class="sb-caret"></span></a>
+            	<ul class="sb-submenu">
+				  	
+				    <li><a href="/tags/Angular/" class="animsition-link">Angular<small>(1)</small></a></li>
+				    
+				    <li><a href="/tags/Hibernate/" class="animsition-link">Hibernate<small>(6)</small></a></li>
+				    
+				    <li><a href="/tags/Json/" class="animsition-link">Json<small>(1)</small></a></li>
+				    
+				    <li><a href="/tags/Maven/" class="animsition-link">Maven<small>(1)</small></a></li>
+				    
+				    <li><a href="/tags/Radis/" class="animsition-link">Radis<small>(1)</small></a></li>
+				    
+				    <li><a href="/tags/Spring/" class="animsition-link">Spring<small>(4)</small></a></li>
+				    
+				    <li><a href="/tags/Swagger2/" class="animsition-link">Swagger2<small>(1)</small></a></li>
+				    
+				    <li><a href="/tags/VBS/" class="animsition-link">VBS<small>(1)</small></a></li>
+				    
+				    <li><a href="/tags/android/" class="animsition-link">android<small>(12)</small></a></li>
+				    
+				    <li><a href="/tags/android源码/" class="animsition-link">android源码<small>(3)</small></a></li>
+				    
+				    <li><a href="/tags/android源码-android/" class="animsition-link">android源码,android<small>(1)</small></a></li>
+				    
+				    <li><a href="/tags/bootstrap/" class="animsition-link">bootstrap<small>(2)</small></a></li>
+				    
+				    <li><a href="/tags/first/" class="animsition-link">first<small>(1)</small></a></li>
+				    
+				    <li><a href="/tags/freemarker/" class="animsition-link">freemarker<small>(1)</small></a></li>
+				    
+				    <li><a href="/tags/fullcalendar-js/" class="animsition-link">fullcalendar.js<small>(1)</small></a></li>
+				    
+				    <li><a href="/tags/git/" class="animsition-link">git<small>(1)</small></a></li>
+				    
+				    <li><a href="/tags/html/" class="animsition-link">html<small>(2)</small></a></li>
+				    
+				    <li><a href="/tags/linux/" class="animsition-link">linux<small>(1)</small></a></li>
+				    
+				    <li><a href="/tags/selenium/" class="animsition-link">selenium<small>(1)</small></a></li>
+				    
+				    <li><a href="/tags/shell-linux/" class="animsition-link">shell,linux<small>(1)</small></a></li>
+				    
+				    <li><a href="/tags/velocity/" class="animsition-link">velocity<small>(1)</small></a></li>
+				    
+				    <li><a href="/tags/术语/" class="animsition-link">术语<small>(1)</small></a></li>
+				    
+				    <li><a href="/tags/正则表达式/" class="animsition-link">正则表达式<small>(1)</small></a></li>
+				    
+				    <li><a href="/tags/设计模式/" class="animsition-link">设计模式<small>(1)</small></a></li>
+				    
+				    <li><a href="/tags/超级终端-at指令/" class="animsition-link">超级终端,at指令<small>(1)</small></a></li>
+				    
+				    <li><a href="/tags/阿里云/" class="animsition-link">阿里云<small>(1)</small></a></li>
+				    
+				</ul>
+        	</li>
+			
+			
+            <li>
+                <a class="sb-toggle-submenu">其他<span class="sb-caret"></span></a>
+                <ul class="sb-submenu">
+                    
+                        <li><a href="/links" target="_BLANK" class="animsition-link">导航</a></li>
+                    
+                </ul>
+            </li>
+            
+            
+            <li>
+                <a class="sb-toggle-submenu">友情链接<span class="sb-caret"></span></a>
+                <ul class="sb-submenu">
+                    
+                    <li><a href="http://ykzhai.top/" class="animsition-link">砦龑堃</a></li>
+                    
+                </ul>
+            </li>
+            
+        </ul>
+        <!-- Lists in Slidebars -->
+        <ul class="sb-menu secondary">
+            <li><a href="/curriculumvitae" class="animsition-link" title="about">关于</a></li>
+            <li><a href="/atom.xml" class="animsition-link" title="rss">RSS</a></li>
+        </ul>
+    </div>
+    
+    <!-- ============================ END Off-canvas navigation =========================== -->
+
+    <!-- ============================ #sb-site Main Page Wrapper =========================== -->
+
+    <div id="sb-site">
+        <!-- #sb-site - All page content should be contained within this id, except the off-canvas navigation itself -->
+
+        <!-- ============================ Header & Logo bar =========================== -->
+
+        <div id="navigation" class="navbar navbar-fixed-top">
+            <div class="navbar-inner">
+                <div class="container">
+                    <!-- Nav logo -->
+                    <div class="logo">
+                        <a href="/" title="Logo" class="animsition-link">
+                         <img src="/img/logo.png" alt="Logo" width="35px;"/> 
+                        </a>
+                    </div>
+                    <!-- // Nav logo -->
+                    <!-- Info-bar -->
+                    <nav>
+                        <ul class="nav">
+                            <li><a href="/" class="animsition-link">极光轨迹</a></li>
+                            <li class="nolink"><span>Always </span>Creative.</li>
+                            
+                            <li><a href="https://github.com/jxust-CGS" title="Github" target="_blank"><i class="icon-github"></i></a></li>
+                            
+                            
+                            
+                            
+                            
+                            <li><a href="http://weibo.com/jxustCGS" title="Sina-Weibo" target="_blank"><i class="icon-sina-weibo"></i></a></li>
+                            
+                            <li class="nolink"><span>Welcome!</span></li>
+                        </ul>
+                    </nav>
+                    <!--// Info-bar -->
+                </div>
+                <!-- // .container -->
+                <div class="learnmore sb-toggle-right">更多</div>
+                <button type="button" class="navbar-toggle menu-icon sb-toggle-right" title="More">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar before"></span>
+                <span class="icon-bar main"></span>
+                <span class="icon-bar after"></span>
+                </button>
+            </div>
+            <!-- // .navbar-inner -->
+        </div>
+
+        <!-- ============================ Header & Logo bar =========================== -->
+
+
+      
+<section id="intro">
+    <div class="container">
+		<div class="row col-md-offset-2">
+            <div class="col-md-8">
+                <h1>git学习笔记</h1>
+		<span class="post-meta">
+      <time datetime="2016-07-13T03:45:54.000Z" itemprop="datePublished">
+          2016-07-13
+      </time>
+	
+    
+    | 分类：
+    <a class="categories" href='/categories/git/'>git</a>
+    
+    
+    
+    
+    | 标签：
+    <a class="tags" href='/tags/git/'>git</a>
+    
+    
+</span>
+		<br/>
+            </div>
+        </div>
+        <div class="col-md-8 col-md-offset-2">
+      		<p>本文参考自：<a href="http://www.liaoxuefeng.com/wiki/0013739516305929606dd18361248578c67b8067c8c017b000/" target="_blank" rel="noopener">Git教程 - 廖雪峰的官方网站</a>、<a href="http://www.bootcss.com/p/git-guide/" target="_blank" rel="noopener">git简易指南</a></p>
+<h1 id="git的介绍"><a href="#git的介绍" class="headerlink" title="git的介绍"></a>git的介绍</h1><p>进行过团队编程的都是用过版本管理工具，比如我之前学习j2ee时就会和同学组成团队进行编程<br>完成web项目。当时使用的是svn感觉还是挺好用的。后来在网上搜索”版本工具时发现svn不是最好<br>的版本管理工具（个人觉得挺好用的呀），不管了既然git更好的话，我就了解下。和网上介绍一样<br>git是分布式的，而svn是集中式的。具体的介绍还是百度吧。</p>
+<h1 id="git的工作流"><a href="#git的工作流" class="headerlink" title="git的工作流"></a>git的工作流</h1><p>你的本地仓库（repository）由git维护的三棵“树”组成。第一个是你的<b>工作目录</b>，它持有实际文件；第二个是<b>缓存区（Index）</b>，它像个缓存区域，临时保存你的改动；最后是<b>HEAD</b>(即本地代码仓库)，指向你最近一次提交后的结果。<br>同时你的代码也会有一个远程仓库，你可以将本地代码仓库中的代码合并到远程仓库。</p>
+<h1 id="git的命令"><a href="#git的命令" class="headerlink" title="git的命令"></a>git的命令</h1><h3 id="1、首先需要“自报家门”"><a href="#1、首先需要“自报家门”" class="headerlink" title="1、首先需要“自报家门”"></a>1、首先需要“自报家门”</h3><pre><code>$ git config --global user.name &quot;Your Name&quot;
+$ git config --global user.email &quot;email@example.com&quot;
+</code></pre><h3 id="2、建立本地仓库"><a href="#2、建立本地仓库" class="headerlink" title="2、建立本地仓库"></a>2、建立本地仓库</h3><pre><code>git init
+</code></pre><h3 id="3、将项目导入仓库中（直接新建项目、拉取远程仓库项目）"><a href="#3、将项目导入仓库中（直接新建项目、拉取远程仓库项目）" class="headerlink" title="3、将项目导入仓库中（直接新建项目、拉取远程仓库项目）"></a>3、将项目导入仓库中（直接新建项目、拉取远程仓库项目）</h3><pre><code>git status//查看当前文件状态，看修改了那些文件，那些文件要放入缓存区
+git diff &lt;filename&gt;//查看filename文件做了什么修改（对比本地参库）
+git add &lt;filename&gt;//添加filename到缓存区
+git commit -m “介绍本次提交代码内容” //将缓存区代码提交到本地仓库
+</code></pre><h3 id="4、代码回退"><a href="#4、代码回退" class="headerlink" title="4、代码回退"></a>4、代码回退</h3><p>在编码时难免会遇到做了错误的修改，这时你就急需一颗“后悔药”。</p>
+<pre><code>git log//查看代码提交历史记录（这时你就知道问什么提交时要写说明了吧，不然鬼知道你那时提交了啥）
+git log --pretty=oneline//精简版log
+git log --graph//查看分支合并情况
+git reset &lt;commit_id&gt;//代码回退到commit_id提交时的状态  
+git reflog//查看命令历史记录
+</code></pre><h3 id="5、管理修改"><a href="#5、管理修改" class="headerlink" title="5、管理修改"></a>5、管理修改</h3><p>git管理的是修改而不是文件，就是说如果你修改了将文件放入缓存区的是修改，提交的也是修改。所以你在将<br>文件修改放入缓存区后做的修改都不会被提交。  </p>
+<h3 id="6、撤销修改"><a href="#6、撤销修改" class="headerlink" title="6、撤销修改"></a>6、撤销修改</h3><pre><code>git checkout -- &lt;filename&gt;
+命令git checkout -- readme.txt意思就是，把readme.txt文件在工作区的修改全部撤销，这里有两种情况：
+一种是readme.txt自修改后还没有被放到暂存区，现在，撤销修改就回到和版本库一模一样的状态；
+一种是readme.txt已经添加到暂存区后，又作了修改，现在，撤销修改就回到添加到暂存区后的状态。
+git reset HEAD &lt;filename&gt;
+</code></pre><h3 id="7、删除文件"><a href="#7、删除文件" class="headerlink" title="7、删除文件"></a>7、删除文件</h3><pre><code>git rm &lt;filename&gt;//git status发现本地文件删除了，确实需要从仓库中删除则使用此命令
+git checkout -- &lt;filename&gt; //是误删，则可以轻松找回
+</code></pre><h3 id="8、远程仓库"><a href="#8、远程仓库" class="headerlink" title="8、远程仓库"></a>8、远程仓库</h3><p>github是一个提供git远程仓库服务的网站，不过也有其它网站比如“coding”、“开源中国”，也可以自己搭建git服务器<br>话说我也没搭建过想了解的可以找度娘，这里主要介绍下使用github做为远程仓库。<br>本地仓库与github上的远程仓库之间进行文件传输是使用了SSH_KEY进行的。<br>1、首先要有一个github账号<br>2、配置SSH_KEY<a href="http://jingyan.baidu.com/article/a65957f4e91ccf24e77f9b11.html" target="_blank" rel="noopener">百度经验 window下配置SSH连接GitHub、GitHub配置ssh key</a><br>3、将本地仓库关联至远程仓库、并推送代码</p>
+<pre><code>$ git remote add origin git@github.com:michaelliao/learngit.git//关联远程仓库
+$ git push origin master//推送本地master分支更改到远程origin库
+$ git clone git@github.com:michaelliao/gitskills.git//克隆版本到本地
+$ git remote//查看远程库信息
+$ git remote -v//查看详细远程库信息
+</code></pre><h3 id="9、分支的使用"><a href="#9、分支的使用" class="headerlink" title="9、分支的使用"></a>9、分支的使用</h3><pre><code>查看分支：git branch
+创建分支：git branch &lt;name&gt;
+切换分支：git checkout &lt;name&gt;
+创建+切换分支：git checkout -b &lt;name&gt;
+合并某分支到当前分支：git merge &lt;name&gt;
+删除分支：git branch -d &lt;name&gt;
+合并分支时如果两个分支中的修改有冲突需要先解决冲突才能完成合并
+$ git merge --no-ff -m &quot;merge with no-ff&quot; dev//默认合并分支是fast forward模式，在删除分支后会丢失分支信息，--no-ff是用于禁用fast forward，这样就能在分支历史中查看到分支信息了
+git branch -D &lt;name&gt;//强行删除未合并分支（丢失修改）
+</code></pre><h3 id="10、暂停存档"><a href="#10、暂停存档" class="headerlink" title="10、暂停存档"></a>10、暂停存档</h3><p>好像好厉害的样子，就是你在a分支上工作但是没有完成（不能提交），但这时你要到另外一个b分支去解决一个bug，这时你就需要将当前在a分支上的修改记录进行存档，然后再切换分支。</p>
+<pre><code>git stash//存档
+git stash list//查看存档历史
+git stash apply stash@{0}//读取存档
+git stash pop stash@{0}//读取存档并删除存档  
+</code></pre><h3 id="11、标签"><a href="#11、标签" class="headerlink" title="11、标签"></a>11、标签</h3><pre><code>git tag v1.0//当前分支head添加tag
+git tag//查看tag
+git tag v0.9 &lt;commit_id&gt;//在commit_id处添加tag
+git show v0.9显示v0.9标签信息
+git tag -a &quot;v0.1&quot; -m &quot;version 0.1 released&quot; &lt;commit_id&gt;//添加tag并添加说明
+PGP签名标签
+git tag -d v0.1//删除本地v0.1tag
+git push origin --tags//推送所有本地未提交的tag
+git push origin :refs/tags/&lt;tagname&gt;//删除远程tag
+</code></pre><h3 id="12、其他配置"><a href="#12、其他配置" class="headerlink" title="12、其他配置"></a>12、其他配置</h3><p>1、配置颜色</p>
+<pre><code>$ git config --global color.ui true
+</code></pre><p>2、配置别名</p>
+<pre><code>$ git config --global alias.st status
+$ git config --global alias.co checkout
+$ git config --global alias.ci commit
+$ git config --global alias.br branch
+$ git config --global alias.lg &quot;log --color --graph --pretty=format:&apos;%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)&lt;%an&gt;%Creset&apos; --abbrev-commit&quot;
+</code></pre><p>3、配置文件</p>
+<ul>
+<li>每个仓库的Git配置文件都放在.git/config文件中</li>
+<li>.gitignore文件，配置git忽略文件</li>
+<li>当前用户的Git配置文件放在用户主目录下的一个隐藏文件.gitconfig中</li>
+</ul>
+<h3 id="13、搭建git服务器"><a href="#13、搭建git服务器" class="headerlink" title="13、搭建git服务器"></a>13、搭建git服务器</h3><p><a href="http://www.liaoxuefeng.com/wiki/0013739516305929606dd18361248578c67b8067c8c017b000/00137583770360579bc4b458f044ce7afed3df579123eca000" target="_blank" rel="noopener">搭建git服务器</a></p>
+
+            <div class="clearfix"></div>
+            <hr class="nogutter">
+        </div>
+        <nav class="pagination" role="pagination">
+    
+    <a class="pull-left" href="/2016/08/12/Android学习笔记（10）——Volley/" style="float: left;">
+        ← Android学习笔记(10)——Volley
+    </a>
+    
+    
+    <a class="pull-right" href="/2016/06/29/Android学习笔记（9）——广播/">
+        Android学习笔记(9)——广播 →
+    </a>
+    
+	<br/>
+</nav>
+
+        <br/>
+	<div class="row col-md-offset-2">
+            <div class="col-md-8">
+    			<div class="wumi">
+<!-- WUMI BEGIN -->
+<script type="text/javascript" id="wumiiComments">
+    var wumiiPermaLink = ""; 
+    var wumiiTitle = "git学习笔记"; 
+    var wumiiSitePrefix = "http://www.chenguangsong.online"; 
+    var wumiiCommentParams = "&pf=JAVASCRIPT";
+</script>
+<script type="text/javascript" src="http://widget.wumii.cn/ext/cw/widget"></script>
+<!-- WUMI END -->
+
+</div>
+            </div>
+        </div>
+    </div>
+</section>
+
+
+      
+<!-- ============================ Footer =========================== -->
+
+<footer>
+    <div class="container">
+            <div class="copy">
+                <p>
+                    &copy; 2014<script>new Date().getFullYear()>2010&&document.write("-"+new Date().getFullYear());</script>, Content By Jxust_CGS. All Rights Reserved.<br>
+					<span id="busuanzi_container_site_pv">本站总访问量<span id="busuanzi_value_site_pv"></span>次</span>
+					<span id="busuanzi_container_site_uv">本站访客数<span id="busuanzi_value_site_uv"></span>人次</span><br />
+                </p>
+                <p>Theme By <a href="//go.kieran.top" style="color: #767D84">Kieran</a></p>
+            </div>
+            <div class="social">
+                <ul>
+                    
+                    <li><a href="https://github.com/jxust-CGS" title="Github" target="_blank"><i class="icon-github"></i></a>&nbsp;</li>
+                    
+                    
+                    
+                    
+                    
+                    <li><a href="http://weibo.com/jxustCGS" title="Sina-Weibo" target="_blank"><i class="icon-sina-weibo"></i></a>&nbsp;</li>
+                    
+                </ul>
+            </div>
+            <div class="clearfix"> </div>
+        </div>
+</footer>
+<script>
+(function(){
+    var bp = document.createElement('script');
+    var curProtocol = window.location.protocol.split(':')[0];
+    if (curProtocol === 'https') {
+        bp.src = 'https://zz.bdstatic.com/linksubmit/push.js';        
+    }
+    else {
+        bp.src = 'http://push.zhanzhang.baidu.com/push.js';
+    }
+    var s = document.getElementsByTagName("script")[0];
+    s.parentNode.insertBefore(bp, s);
+})();
+</script>
+<!-- ============================ END Footer =========================== -->
+      <!-- Load our scripts -->
+<!-- Resizable 'on-demand' full-height hero -->
+<script type="text/javascript">
+    var resizeHero = function () {
+        var hero = $(".cover,.heightblock"),
+            window1 = $(window);
+        hero.css({
+            "height": window1.height()
+        });
+    };
+
+    resizeHero();
+
+    $(window).resize(function () {
+        resizeHero();
+    });
+</script>
+<script src="/js/plugins.min.js"></script><!-- Bootstrap core and concatenated plugins always load here -->
+<script src="/js/jquery.flexslider-min.js"></script><!-- Flexslider plugin -->
+<script src="/js/scripts.js"></script><!-- Theme scripts -->
+
+
+<link rel="stylesheet" href="/fancybox/jquery.fancybox.css" media="screen" type="text/css">
+<script src="/fancybox/jquery.fancybox.pack.js"></script>
+<script type="text/javascript">
+$('#intro').find('img').each(function(){
+  var alt = this.alt;
+
+  if (alt){
+    $(this).after('<span class="caption" style="display:none">' + alt + '</span>');
+  }
+
+  $(this).wrap('<a href="' + this.src + '" title="' + alt + '" class="fancybox" rel="gallery" />');
+});
+(function($){
+  $('.fancybox').fancybox();
+})(jQuery);
+</script>
+
+<!-- Initiate flexslider plugin -->
+<script type="text/javascript">
+    $(document).ready(function($) {
+      (function(){
+        console.log('font');
+        var getCss = function(path) {
+          var head = document.getElementsByTagName('head')[0];
+          link = document.createElement('link');
+          link.href = path;
+          link.rel = 'stylesheet';
+          link.type = 'text/css';
+          head.appendChild(link);
+        };
+        getCss('https://fonts.googleapis.com/css?family=Montserrat:400,700');
+        getCss('https://fonts.googleapis.com/css?family=Open+Sans:400,600');
+      })();
+      $('.flexslider').flexslider({
+        animation: "fade",
+        prevText: "",
+        nextText: "",
+        directionNav: true
+      });
+    });
+</script>
+</body>
+</html>

@@ -1,0 +1,499 @@
+<!DOCTYPE html>
+<!--[if lte IE 8 ]>
+<html class="ie" xmlns="http://www.w3.org/1999/xhtml" xml:lang="en-US" lang="en-US">
+<![endif]-->
+<!--[if (gte IE 9)|!(IE)]><!-->
+<!--
+***************  *      *     *
+      8          *    *       *
+      8          *  *         *
+      8          **           *
+      8          *  *         *
+      8          *    *       *
+      8          *      *     *
+      8          *        *   ***********    -----Theme By Kieran(http://go.kieran.top)
+-->
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en-US" lang="en-US">
+<!--<![endif]-->
+
+<head>
+  <title>Java学习笔记（2）——freemarker | 极光轨迹</title>
+  <!-- Meta data -->
+    <meta http-equiv="Content-Type" content="text/html" charset="UTF-8" >
+    <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="generator" content="极光轨迹">
+    
+    <meta name="author" content="Jxust_CGS">
+    
+    <meta name="description" itemprop="description" content="FreeMarker是一款模板引擎： 即一种基于模板和要改变的数据，	并用来生成输出文本（HTML网页、电子邮件、配置文件、源代码等）的通用工具。">
+    
+	
+	<meta name="Keywords" content="freemarker">
+    
+
+    <!-- Favicon, (keep icon in root folder) -->
+    <link rel="Shortcut Icon" href="/img/favicon.ico" type="image/ico">
+
+    <link rel="alternate" href="/atom.xml" title="极光轨迹" type="application/atom+xml">
+    <link rel="stylesheet" href="/css/all.css" media="screen" type="text/css">
+    
+    <link rel="stylesheet" href="/highlightjs/vs.css" type="text/css">
+    
+
+    <!--[if IE 8]>
+    <link rel="stylesheet" type="text/css" href="/css/ie8.css" />
+    <![endif]-->
+
+    <!-- jQuery | Load our jQuery, with an alternative source fallback to a local version if request is unavailable -->
+    <script src="/js/jquery-1.11.1.min.js"></script>
+    <script>window.jQuery || document.write('<script src="js/jquery-1.11.1.min.js"><\/script>')</script>
+
+    <!-- Load these in the <head> for quicker IE8+ load times -->
+    <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+    <script src="/js/html5shiv.min.js"></script>
+    <script src="/js/respond.min.js"></script>
+    <![endif]-->
+
+  
+  <link rel="alternate" type="application/rss+xml" title="RSS" href="atom.xml">
+  
+  
+  <link rel="alternate" type="application/atom+xml" title="Atom 0.3" href="atom.xml">
+  
+  
+
+  <style>.col-md-8.col-md-offset-2.opening-statement img{display:none;}</style>
+  
+  <script src="/js/busuanzi.pure.mini.js"></script>
+  <script src="/js/lufei.js"></script>
+</head>
+
+<!--
+<body class="post-template">
+-->
+<body id="index" class="lightnav animsition">
+	  <!-- ============================ START lufei =========================== -->
+		<div id="xiaoren" class="xiaoren">
+			<div id="message">正在加载中……</div>
+			<div id="lufei" class="lufei"></div>
+		</div>
+	  <!-- ============================ END lufei =========================== -->
+      <!-- ============================ Off-canvas navigation =========================== -->
+
+    <div class="sb-slidebar sb-right sb-style-overlay sb-momentum-scrolling">
+        <div class="sb-close" aria-label="Close Menu" aria-hidden="true">
+            <img src="/img/close.png" alt="Close"/>
+        </div>
+        <!-- Lists in Slidebars -->
+        <ul class="sb-menu">
+            <li><a href="/" class="animsition-link" title="Home">首页</a></li>
+            <li><a href="/archives" class="animsition-link" title="archive">文章</a></li>
+            <!-- Dropdown Menu -->
+            
+        	<li>
+        		<a class="sb-toggle-submenu">分类<span class="sb-caret"></span></a>
+            	<ul class="sb-submenu">
+				  	
+				    <li><a href="/categories/Angular/" class="animsition-link">Angular<small>(1)</small></a></li>
+				    
+				    <li><a href="/categories/Hibernate/" class="animsition-link">Hibernate<small>(6)</small></a></li>
+				    
+				    <li><a href="/categories/Java/" class="animsition-link">Java<small>(1)</small></a></li>
+				    
+				    <li><a href="/categories/Radis/" class="animsition-link">Radis<small>(1)</small></a></li>
+				    
+				    <li><a href="/categories/Spring/" class="animsition-link">Spring<small>(4)</small></a></li>
+				    
+				    <li><a href="/categories/Swagger2/" class="animsition-link">Swagger2<small>(1)</small></a></li>
+				    
+				    <li><a href="/categories/VBS/" class="animsition-link">VBS<small>(1)</small></a></li>
+				    
+				    <li><a href="/categories/android/" class="animsition-link">android<small>(13)</small></a></li>
+				    
+				    <li><a href="/categories/android源码/" class="animsition-link">android源码<small>(3)</small></a></li>
+				    
+				    <li><a href="/categories/fullcalendar-js/" class="animsition-link">fullcalendar.js<small>(1)</small></a></li>
+				    
+				    <li><a href="/categories/git/" class="animsition-link">git<small>(1)</small></a></li>
+				    
+				    <li><a href="/categories/html/" class="animsition-link">html<small>(2)</small></a></li>
+				    
+				    <li><a href="/categories/java/" class="animsition-link">java<small>(3)</small></a></li>
+				    
+				    <li><a href="/categories/linux/" class="animsition-link">linux<small>(2)</small></a></li>
+				    
+				    <li><a href="/categories/modem/" class="animsition-link">modem<small>(1)</small></a></li>
+				    
+				    <li><a href="/categories/python/" class="animsition-link">python<small>(1)</small></a></li>
+				    
+				    <li><a href="/categories/web/" class="animsition-link">web<small>(2)</small></a></li>
+				    
+				    <li><a href="/categories/杂谈/" class="animsition-link">杂谈<small>(2)</small></a></li>
+				    
+				    <li><a href="/categories/正则表达式/" class="animsition-link">正则表达式<small>(1)</small></a></li>
+				    
+				    <li><a href="/categories/设计模式/" class="animsition-link">设计模式<small>(1)</small></a></li>
+				    
+				    <li><a href="/categories/阿里云/" class="animsition-link">阿里云<small>(1)</small></a></li>
+				    
+				</ul>
+        	</li>
+			
+			
+        	<li>
+        		<a class="sb-toggle-submenu">标签<span class="sb-caret"></span></a>
+            	<ul class="sb-submenu">
+				  	
+				    <li><a href="/tags/Angular/" class="animsition-link">Angular<small>(1)</small></a></li>
+				    
+				    <li><a href="/tags/Hibernate/" class="animsition-link">Hibernate<small>(6)</small></a></li>
+				    
+				    <li><a href="/tags/Json/" class="animsition-link">Json<small>(1)</small></a></li>
+				    
+				    <li><a href="/tags/Maven/" class="animsition-link">Maven<small>(1)</small></a></li>
+				    
+				    <li><a href="/tags/Radis/" class="animsition-link">Radis<small>(1)</small></a></li>
+				    
+				    <li><a href="/tags/Spring/" class="animsition-link">Spring<small>(4)</small></a></li>
+				    
+				    <li><a href="/tags/Swagger2/" class="animsition-link">Swagger2<small>(1)</small></a></li>
+				    
+				    <li><a href="/tags/VBS/" class="animsition-link">VBS<small>(1)</small></a></li>
+				    
+				    <li><a href="/tags/android/" class="animsition-link">android<small>(12)</small></a></li>
+				    
+				    <li><a href="/tags/android源码/" class="animsition-link">android源码<small>(3)</small></a></li>
+				    
+				    <li><a href="/tags/android源码-android/" class="animsition-link">android源码,android<small>(1)</small></a></li>
+				    
+				    <li><a href="/tags/bootstrap/" class="animsition-link">bootstrap<small>(2)</small></a></li>
+				    
+				    <li><a href="/tags/first/" class="animsition-link">first<small>(1)</small></a></li>
+				    
+				    <li><a href="/tags/freemarker/" class="animsition-link">freemarker<small>(1)</small></a></li>
+				    
+				    <li><a href="/tags/fullcalendar-js/" class="animsition-link">fullcalendar.js<small>(1)</small></a></li>
+				    
+				    <li><a href="/tags/git/" class="animsition-link">git<small>(1)</small></a></li>
+				    
+				    <li><a href="/tags/html/" class="animsition-link">html<small>(2)</small></a></li>
+				    
+				    <li><a href="/tags/linux/" class="animsition-link">linux<small>(1)</small></a></li>
+				    
+				    <li><a href="/tags/selenium/" class="animsition-link">selenium<small>(1)</small></a></li>
+				    
+				    <li><a href="/tags/shell-linux/" class="animsition-link">shell,linux<small>(1)</small></a></li>
+				    
+				    <li><a href="/tags/velocity/" class="animsition-link">velocity<small>(1)</small></a></li>
+				    
+				    <li><a href="/tags/术语/" class="animsition-link">术语<small>(1)</small></a></li>
+				    
+				    <li><a href="/tags/正则表达式/" class="animsition-link">正则表达式<small>(1)</small></a></li>
+				    
+				    <li><a href="/tags/设计模式/" class="animsition-link">设计模式<small>(1)</small></a></li>
+				    
+				    <li><a href="/tags/超级终端-at指令/" class="animsition-link">超级终端,at指令<small>(1)</small></a></li>
+				    
+				    <li><a href="/tags/阿里云/" class="animsition-link">阿里云<small>(1)</small></a></li>
+				    
+				</ul>
+        	</li>
+			
+			
+            <li>
+                <a class="sb-toggle-submenu">其他<span class="sb-caret"></span></a>
+                <ul class="sb-submenu">
+                    
+                        <li><a href="/links" target="_BLANK" class="animsition-link">导航</a></li>
+                    
+                </ul>
+            </li>
+            
+            
+            <li>
+                <a class="sb-toggle-submenu">友情链接<span class="sb-caret"></span></a>
+                <ul class="sb-submenu">
+                    
+                    <li><a href="http://ykzhai.top/" class="animsition-link">砦龑堃</a></li>
+                    
+                </ul>
+            </li>
+            
+        </ul>
+        <!-- Lists in Slidebars -->
+        <ul class="sb-menu secondary">
+            <li><a href="/curriculumvitae" class="animsition-link" title="about">关于</a></li>
+            <li><a href="/atom.xml" class="animsition-link" title="rss">RSS</a></li>
+        </ul>
+    </div>
+    
+    <!-- ============================ END Off-canvas navigation =========================== -->
+
+    <!-- ============================ #sb-site Main Page Wrapper =========================== -->
+
+    <div id="sb-site">
+        <!-- #sb-site - All page content should be contained within this id, except the off-canvas navigation itself -->
+
+        <!-- ============================ Header & Logo bar =========================== -->
+
+        <div id="navigation" class="navbar navbar-fixed-top">
+            <div class="navbar-inner">
+                <div class="container">
+                    <!-- Nav logo -->
+                    <div class="logo">
+                        <a href="/" title="Logo" class="animsition-link">
+                         <img src="/img/logo.png" alt="Logo" width="35px;"/> 
+                        </a>
+                    </div>
+                    <!-- // Nav logo -->
+                    <!-- Info-bar -->
+                    <nav>
+                        <ul class="nav">
+                            <li><a href="/" class="animsition-link">极光轨迹</a></li>
+                            <li class="nolink"><span>Always </span>Creative.</li>
+                            
+                            <li><a href="https://github.com/jxust-CGS" title="Github" target="_blank"><i class="icon-github"></i></a></li>
+                            
+                            
+                            
+                            
+                            
+                            <li><a href="http://weibo.com/jxustCGS" title="Sina-Weibo" target="_blank"><i class="icon-sina-weibo"></i></a></li>
+                            
+                            <li class="nolink"><span>Welcome!</span></li>
+                        </ul>
+                    </nav>
+                    <!--// Info-bar -->
+                </div>
+                <!-- // .container -->
+                <div class="learnmore sb-toggle-right">更多</div>
+                <button type="button" class="navbar-toggle menu-icon sb-toggle-right" title="More">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar before"></span>
+                <span class="icon-bar main"></span>
+                <span class="icon-bar after"></span>
+                </button>
+            </div>
+            <!-- // .navbar-inner -->
+        </div>
+
+        <!-- ============================ Header & Logo bar =========================== -->
+
+
+      
+<section id="intro">
+    <div class="container">
+		<div class="row col-md-offset-2">
+            <div class="col-md-8">
+                <h1>Java学习笔记（2）——freemarker</h1>
+		<span class="post-meta">
+      <time datetime="2017-12-20T15:29:16.484Z" itemprop="datePublished">
+          2017-12-20
+      </time>
+	
+    
+    | 分类：
+    <a class="categories" href='/categories/java/'>java</a>
+    
+    
+    
+    
+    | 标签：
+    <a class="tags" href='/tags/freemarker/'>freemarker</a>
+    
+    
+</span>
+		<br/>
+            </div>
+        </div>
+        <div class="col-md-8 col-md-offset-2">
+      		<h1 id="准备工作"><a href="#准备工作" class="headerlink" title="准备工作"></a>准备工作</h1><p>要使用freemarker作为项目的表现层模板引擎，需要导入jar包 <a href="https://mvnrepository.com/search?q=freemarker" target="_blank" rel="noopener">freemarker.x.x.x.jar</a>  </p>
+<h1 id="FreeMarker模板文件"><a href="#FreeMarker模板文件" class="headerlink" title="FreeMarker模板文件"></a>FreeMarker模板文件</h1><p>FreeMarker模板文件主要由如下4个部分组成:   </p>
+<ul>
+<li>文本:直接输出的部分  </li>
+<li>注释:&lt;#– … –&gt;格式部分,不会输出  </li>
+<li>插值:即${…}或#{…}格式的部分,将使用数据模型中的部分替代输出  </li>
+<li>FTL指令:FreeMarker指定,和HTML标记类似,名字前加#予以区分,不会输出  </li>
+</ul>
+<h1 id="构建模板"><a href="#构建模板" class="headerlink" title="构建模板"></a>构建模板</h1><p>在一个项目中你需要为你使用到的页面构建一个通用的模板，这样其他页面可以通过模板构建避免很多重复的代码，提高程序可复用性。需求更改时只需要在一处修改，程序整体更加统一。  </p>
+<h1 id="FTL标签"><a href="#FTL标签" class="headerlink" title="FTL标签"></a>FTL标签</h1><p>插值规则<br>FreeMarker的插值有如下两种类型<br>1、通用插值：${expr}<br>2、数字格式化插值：#{expr}或者#{expr;format}  </p>
+<p>通用插值，有可以分为四种情况<br>a、插值结果为字符串值：直接输出表达式结果<br>b、插值结果为数字值：根据默认格式(#setting 指令设置)将表达式结果转换成文本输出。可以使用内建的字符串函数格式单个插值，例如<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">&lt;#setting number_format = &quot;currency&quot; /&gt;</span><br><span class="line">&lt;#assign price = 42 /&gt;</span><br><span class="line">$&#123;price&#125;</span><br><span class="line">$&#123;price?string&#125;</span><br><span class="line">$&#123;price?string.number&#125;</span><br><span class="line">$&#123;price?string.currency&#125;</span><br><span class="line">$&#123;price?string.percent&#125;</span><br></pre></td></tr></table></figure></p>
+<p>c、输出值为日期值：根据默认格式(由 #setting 指令设置)将表达式结果转换成文本输出，可以使用内建的字符串函数格式化单个插值，例如<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">&lt;#assign lastUpdated = &quot;2009-01-07 15:05&quot;?datetime(&quot;yyyy-MM-dd HH:mm&quot;) /&gt;</span><br><span class="line">$&#123;lastUpdated?string(&quot;yyyy-MM-dd HH:mm:ss zzzz&quot;)&#125;;</span><br><span class="line">$&#123;lastUpdated?string(&quot;EEE,MMM d,yy&quot;)&#125;;</span><br><span class="line">$&#123;lastUpdated?string(&quot;EEEE,MMMM dd,yyyy,hh:mm:ss a &apos;(&apos;zzz&apos;)&apos;&quot;)&#125;;</span><br><span class="line">$&#123;lastUpdated?string.short&#125;;</span><br><span class="line">$&#123;lastUpdated?string.long&#125;;</span><br><span class="line">$&#123;lastUpdated?String.full&#125;;</span><br></pre></td></tr></table></figure></p>
+<p>d、插值结果为布尔值<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">&lt;#assign foo=true /&gt;</span><br><span class="line">$&#123;foo?string(&quot;是foo&quot;,&quot;非foo&quot;)&#125;</span><br></pre></td></tr></table></figure></p>
+<p>数字格式化插值<br> 数字格式化插值可采用#{expr;format}的形式来格式化数字，其中format可以是：<br> mX:小数部分最小X位<br> MX:小数部分最大X位<br> 例如：<br> <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">&lt;#assign x = 2.582 /&gt;</span><br><span class="line">&lt;#assign y =4 /&gt;</span><br><span class="line">#&#123;x;M2&#125;;</span><br><span class="line">#&#123;y;M2&#125;;</span><br><span class="line">#&#123;x;m1&#125;;</span><br><span class="line">#&#123;y;m1&#125;;</span><br><span class="line">#&#123;x;m1M2&#125;;</span><br><span class="line">#&#123;y:m1M2&#125;;</span><br></pre></td></tr></table></figure></p>
+<h1 id="指令"><a href="#指令" class="headerlink" title="指令"></a>指令</h1><ul>
+<li><p>部分指令示例</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">&lt;#list [&quot;星期一&quot;, &quot;星期二&quot;, &quot;星期三&quot;, &quot;星期四&quot;, &quot;星期五&quot;, &quot;星期六&quot;, &quot;星期天&quot;] as x&gt;    &lt;#-- 遍历列表 --&gt;</span><br><span class="line">    $&#123;x_index + 1&#125;.$&#123;x&#125;                                                            &lt;#-- $&#123;x_index + 1&#125;代表序号 --&gt;</span><br><span class="line">    &lt;#if x_has_next&gt;                                                               &lt;#-- $&#123;x_has_next&#125;判断是否遍历结束 --&gt;</span><br><span class="line">        ,</span><br><span class="line">    &lt;/if&gt;</span><br><span class="line">    &lt;#if x=&quot;星期四&quot;&gt;</span><br><span class="line">        &lt;#break&gt;                                                                   &lt;#-- 跳出循环 --&gt;</span><br><span class="line">    &lt;/#if&gt;</span><br><span class="line">&lt;/#list&gt;</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>&lt;#noparse&gt; 此标签包含的内容不进行freemarker语法解析  </p>
+</li>
+<li>&lt;#escape identifier as expression&gt;…</li>
+<li>&lt;#assign x&gt;申明一个/多个变量,并为变量赋值</li>
+<li>&lt;#import “/lib/common.ftl” as com&gt; 导入ftl文件中的变量及方法</li>
+<li><p>&lt;#macro name param1 param2 … paramN&gt;宏定义</p>
+  <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">在macro中定义参数要放在macro变量后面，如：  </span><br><span class="line">&lt;#macro greet person&gt;</span><br><span class="line">    &lt;font  size=’+2’&gt;Hello $&#123;person&#125;&lt;/font&gt;</span><br><span class="line">&lt;/#macro&gt;</span><br><span class="line">在使用的时候：</span><br><span class="line">&lt;@greet person=’Fred’/&gt; and &lt;@greet person=’Batman’/&gt;</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>&lt;#nested loopvar1, loopvar2, …, loopvarN&gt;宏嵌套<br>  <a href="http://www.cnblogs.com/xx0405/p/6646213.html" target="_blank" rel="noopener">freemarker 宏嵌套nested 的使用 - 小小小飞鱼 - 博客园</a></p>
+</li>
+<li><p>&lt;#return&gt;return指令:该指令可用于随时结束该自定义宏指令.</p>
+</li>
+</ul>
+<h2 id="判断条件”-gt-”和”-lt-”与标签括号冲突解决方案"><a href="#判断条件”-gt-”和”-lt-”与标签括号冲突解决方案" class="headerlink" title="判断条件”&gt;”和”&lt;”与标签括号冲突解决方案"></a>判断条件”&gt;”和”&lt;”与标签括号冲突解决方案</h2><ul>
+<li>用符号代替，&gt; gt, &gt;=  gte ,&lt; lt , &lt;= lte</li>
+<li>加括号 &lt;#if(x&gt;y)&gt;  </li>
+</ul>
+<h2 id="判空"><a href="#判空" class="headerlink" title="判空"></a>判空</h2><ul>
+<li>!:指定缺失变量的默认值,variable!或variable!defaultValue,第一种用法不给缺失的变量指定默认值,表明默认值是空字符串    </li>
+<li>??:判断某个变量是否存在，<code>variable??</code>,如果该变量存在,返回true,否则返回false<h2 id="格式化输出数据"><a href="#格式化输出数据" class="headerlink" title="格式化输出数据"></a>格式化输出数据</h2>1,通用插值${expr};<br>2,数字格式化插值:#{expr}或#{expr;format}<h2 id="转义字符"><a href="#转义字符" class="headerlink" title="转义字符"></a>转义字符</h2>在<code>${}</code>中输出文本时遇到特殊字符要进行转义如：双引号<code>\&quot;</code>,但是如果在一个插值语句中有很多字符需要转义可以<code>${r其他内容}</code>  </li>
+</ul>
+<h1 id="相关链接"><a href="#相关链接" class="headerlink" title="相关链接"></a>相关链接</h1><p><a href="hhttp://blog.csdn.net/chenghui0317/article/details/7832474" target="_blank" rel="noopener">Freemarker实例教程 - 永恒の_☆ - CSDN博客</a><br><a href="http://demojava.iteye.com/blog/800204" target="_blank" rel="noopener">Freemarker 使用 - 只有准备爆发，才会甘于沉默 - ITeye博客</a><br><a href="http://www.bubuko.com/infodetail-2041788.html" target="_blank" rel="noopener">简介JSP与FreeMarker及Volicity区别</a><br><a href="http://www.runoob.com/jsp/jsp-jstl.html" target="_blank" rel="noopener">JSP 标准标签库（JSTL） | 菜鸟教程</a><br><a href="http://www.blogjava.net/kxbin/articles/366505.html" target="_blank" rel="noopener">FreeMarker标签介绍 - kxbin - BlogJava</a></p>
+
+            <div class="clearfix"></div>
+            <hr class="nogutter">
+        </div>
+        <nav class="pagination" role="pagination">
+    
+    <a class="pull-left" href="/2017/12/20/使用selenium-python自动化操作浏览器/" style="float: left;">
+        ← 使用selenium+python自动化操作浏览器
+    </a>
+    
+    
+    <a class="pull-right" href="/2017/12/20/Maven教程/">
+        Maven教程 →
+    </a>
+    
+	<br/>
+</nav>
+
+        <br/>
+	<div class="row col-md-offset-2">
+            <div class="col-md-8">
+    			<div class="wumi">
+<!-- WUMI BEGIN -->
+<script type="text/javascript" id="wumiiComments">
+    var wumiiPermaLink = ""; 
+    var wumiiTitle = "Java学习笔记（2）——freemarker"; 
+    var wumiiSitePrefix = "http://www.chenguangsong.online"; 
+    var wumiiCommentParams = "&pf=JAVASCRIPT";
+</script>
+<script type="text/javascript" src="http://widget.wumii.cn/ext/cw/widget"></script>
+<!-- WUMI END -->
+
+</div>
+            </div>
+        </div>
+    </div>
+</section>
+
+
+      
+<!-- ============================ Footer =========================== -->
+
+<footer>
+    <div class="container">
+            <div class="copy">
+                <p>
+                    &copy; 2014<script>new Date().getFullYear()>2010&&document.write("-"+new Date().getFullYear());</script>, Content By Jxust_CGS. All Rights Reserved.<br>
+					<span id="busuanzi_container_site_pv">本站总访问量<span id="busuanzi_value_site_pv"></span>次</span>
+					<span id="busuanzi_container_site_uv">本站访客数<span id="busuanzi_value_site_uv"></span>人次</span><br />
+                </p>
+                <p>Theme By <a href="//go.kieran.top" style="color: #767D84">Kieran</a></p>
+            </div>
+            <div class="social">
+                <ul>
+                    
+                    <li><a href="https://github.com/jxust-CGS" title="Github" target="_blank"><i class="icon-github"></i></a>&nbsp;</li>
+                    
+                    
+                    
+                    
+                    
+                    <li><a href="http://weibo.com/jxustCGS" title="Sina-Weibo" target="_blank"><i class="icon-sina-weibo"></i></a>&nbsp;</li>
+                    
+                </ul>
+            </div>
+            <div class="clearfix"> </div>
+        </div>
+</footer>
+<script>
+(function(){
+    var bp = document.createElement('script');
+    var curProtocol = window.location.protocol.split(':')[0];
+    if (curProtocol === 'https') {
+        bp.src = 'https://zz.bdstatic.com/linksubmit/push.js';        
+    }
+    else {
+        bp.src = 'http://push.zhanzhang.baidu.com/push.js';
+    }
+    var s = document.getElementsByTagName("script")[0];
+    s.parentNode.insertBefore(bp, s);
+})();
+</script>
+<!-- ============================ END Footer =========================== -->
+      <!-- Load our scripts -->
+<!-- Resizable 'on-demand' full-height hero -->
+<script type="text/javascript">
+    var resizeHero = function () {
+        var hero = $(".cover,.heightblock"),
+            window1 = $(window);
+        hero.css({
+            "height": window1.height()
+        });
+    };
+
+    resizeHero();
+
+    $(window).resize(function () {
+        resizeHero();
+    });
+</script>
+<script src="/js/plugins.min.js"></script><!-- Bootstrap core and concatenated plugins always load here -->
+<script src="/js/jquery.flexslider-min.js"></script><!-- Flexslider plugin -->
+<script src="/js/scripts.js"></script><!-- Theme scripts -->
+
+
+<link rel="stylesheet" href="/fancybox/jquery.fancybox.css" media="screen" type="text/css">
+<script src="/fancybox/jquery.fancybox.pack.js"></script>
+<script type="text/javascript">
+$('#intro').find('img').each(function(){
+  var alt = this.alt;
+
+  if (alt){
+    $(this).after('<span class="caption" style="display:none">' + alt + '</span>');
+  }
+
+  $(this).wrap('<a href="' + this.src + '" title="' + alt + '" class="fancybox" rel="gallery" />');
+});
+(function($){
+  $('.fancybox').fancybox();
+})(jQuery);
+</script>
+
+<!-- Initiate flexslider plugin -->
+<script type="text/javascript">
+    $(document).ready(function($) {
+      (function(){
+        console.log('font');
+        var getCss = function(path) {
+          var head = document.getElementsByTagName('head')[0];
+          link = document.createElement('link');
+          link.href = path;
+          link.rel = 'stylesheet';
+          link.type = 'text/css';
+          head.appendChild(link);
+        };
+        getCss('https://fonts.googleapis.com/css?family=Montserrat:400,700');
+        getCss('https://fonts.googleapis.com/css?family=Open+Sans:400,600');
+      })();
+      $('.flexslider').flexslider({
+        animation: "fade",
+        prevText: "",
+        nextText: "",
+        directionNav: true
+      });
+    });
+</script>
+</body>
+</html>
