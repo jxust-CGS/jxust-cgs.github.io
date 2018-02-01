@@ -191,8 +191,15 @@
     </url>
 
     <url>
+        <loc>http://www.chenguangsong.online/tags/java/</loc>
+        <lastmod>2018-02-01T13:24:19.667Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.2</priority>
+    </url>
+
+    <url>
         <loc>http://www.chenguangsong.online/tags/Log4j/</loc>
-        <lastmod>2018-01-23T13:28:39.048Z</lastmod>
+        <lastmod>2018-02-01T13:27:53.405Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.2</priority>
     </url>

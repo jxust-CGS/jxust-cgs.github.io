@@ -17,7 +17,7 @@
 <!--<![endif]-->
 
 <head>
-  <title>Log4j用法 | 极光轨迹</title>
+  <title>内存溢出、栈溢出与热部署 | 极光轨迹</title>
   <!-- Meta data -->
     <meta http-equiv="Content-Type" content="text/html" charset="UTF-8" >
     <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
@@ -26,10 +26,10 @@
     
     <meta name="author" content="Jxust_CGS">
     
-    <meta name="description" itemprop="description" content="Log4j用于记录项目中的log信息，以需要的格式及形式输出，用于记录系统运行情况。用于后期维护代码可以清楚了解系统运行情况及定位问题点">
+    <meta name="description" itemprop="description" content="在java编程中经常会遇到OutOfMemoryError,那么每次碰到都会去改vm参数，那么具体vm参数代表什么意思呢？内存溢出的原因又是什么？">
     
 	
-	<meta name="Keywords" content="Log4j">
+	<meta name="Keywords" content="java,内存溢出,栈溢出,StackOverflowError,OutOfMemoryError,热部署">
     
 
     <!-- Favicon, (keep icon in root folder) -->
@@ -122,7 +122,7 @@
 				    
 				    <li><a href="/categories/html/" class="animsition-link">html<small>(2)</small></a></li>
 				    
-				    <li><a href="/categories/java/" class="animsition-link">java<small>(3)</small></a></li>
+				    <li><a href="/categories/java/" class="animsition-link">java<small>(4)</small></a></li>
 				    
 				    <li><a href="/categories/linux/" class="animsition-link">linux<small>(2)</small></a></li>
 				    
@@ -185,6 +185,8 @@
 				    <li><a href="/tags/git/" class="animsition-link">git<small>(1)</small></a></li>
 				    
 				    <li><a href="/tags/html/" class="animsition-link">html<small>(2)</small></a></li>
+				    
+				    <li><a href="/tags/java/" class="animsition-link">java<small>(1)</small></a></li>
 				    
 				    <li><a href="/tags/linux/" class="animsition-link">linux<small>(1)</small></a></li>
 				    
@@ -295,21 +297,21 @@
     <div class="container">
 		<div class="row col-md-offset-2">
             <div class="col-md-8">
-                <h1>Log4j用法</h1>
+                <h1>内存溢出、栈溢出与热部署</h1>
 		<span class="post-meta">
-      <time datetime="2018-11-01T03:45:54.000Z" itemprop="datePublished">
-          2018-11-01
+      <time datetime="2018-02-01T13:17:57.094Z" itemprop="datePublished">
+          2018-02-01
       </time>
 	
     
     | 分类：
-    <a class="categories" href='/categories/Log4j/'>Log4j</a>
+    <a class="categories" href='/categories/java/'>java</a>
     
     
     
     
     | 标签：
-    <a class="tags" href='/tags/Log4j/'>Log4j</a>
+    <a class="tags" href='/tags/java/'>java</a>
     
     
 </span>
@@ -317,23 +319,37 @@
             </div>
         </div>
         <div class="col-md-8 col-md-offset-2">
-      		<h1 id="在项目中使用log4j管理log输出"><a href="#在项目中使用log4j管理log输出" class="headerlink" title="在项目中使用log4j管理log输出"></a>在项目中使用log4j管理log输出</h1><p>首先需要在项目中导入log4j.jar包<br>在项目的src目录下配置log4j.properties<br>如果配置文件不在src下，就需要在web.xml中添加listener  </p>
-<h1 id="日志优先级"><a href="#日志优先级" class="headerlink" title="日志优先级"></a>日志优先级</h1><p>log优先级从低到高，即DEBUG，INFO，WARN，ERROR，FATAL;</p>
-<h1 id="如何在代码中输出日志"><a href="#如何在代码中输出日志" class="headerlink" title="如何在代码中输出日志"></a>如何在代码中输出日志</h1><ul>
-<li>在类中声明一个Logger对象</li>
-<li>在方法中用Logger对象，已对应级别输出log内容<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">   private Logger logger = Logger.getLogger(getClass());</span><br><span class="line"></span><br><span class="line">@Test</span><br><span class="line">public void test() throws Exception &#123;</span><br><span class="line">	logger.info(&quot;输出info&quot;);</span><br><span class="line">	logger.debug(&quot;输出debug&quot;);</span><br><span class="line">	logger.error(&quot;输出error&quot;);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-</li>
-</ul>
-<h1 id="log4j配置说明"><a href="#log4j配置说明" class="headerlink" title="log4j配置说明"></a>log4j配置说明</h1><p>配置log4j配置步骤：</p>
+      		<h1 id="java中的堆heap与栈stack"><a href="#java中的堆heap与栈stack" class="headerlink" title="java中的堆heap与栈stack"></a>java中的堆heap与栈stack</h1><p><a href="http://pengjiaheng.iteye.com/blog/518623" target="_blank" rel="noopener">JVM调优总结（一）– 一些概念 - 和你在一起 - ITeye博客</a><br>堆中存的是对象。<br>栈中存的是基本数据类型和堆中对象的引用。<br>一个对象的大小是不可估计的，或者说是可以动态变化的，但是在栈中，一个对象只对应了一个4btye的引用（堆栈分离的好处：））。  </p>
+<h1 id="内存溢出-OutOfMemoryError"><a href="#内存溢出-OutOfMemoryError" class="headerlink" title="内存溢出(OutOfMemoryError)"></a>内存溢出(OutOfMemoryError)</h1><pre><code>我们这里提到的内存溢出其实就是堆空间不足
+</code></pre><p>首先、通过示例查看内存溢出原因是什么？<br><a href="https://www.cnblogs.com/panxuejun/p/5882424.html" target="_blank" rel="noopener">java内存溢出示例(堆溢出、栈溢出) - THISISPAN - 博客园</a>  </p>
+<p><img src="http://oeb33qix3.bkt.clouddn.com/18-2-1/95948607.jpg" alt="堆内存图解"><br>堆内存分为3块年轻代（young generation)、年老代（old generation）、持久代（permanent generation）  ，其中年轻代分为eden区以及2个（或多个）Survivor区  </p>
+<p>jvm中配置堆内存参数：</p>
 <ul>
-<li>首先配置log输出源</li>
-<li>配置每个输出源的输出方式</li>
-<li>配置每个输出源的输出格式<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br></pre></td><td class="code"><pre><span class="line"># LOG4J配置</span><br><span class="line">#log4j.rootCategory=INFO, stdout, file, errorfile   //rootCategory是rootLogger的父类，在老版本时会用到，最新版本的不推荐使用</span><br><span class="line">log4j.rootLogger=INFO, stdout, file, errorfile //输出项目所有代码log，配置输出log级别为info以上，定义3个输出源，分别为stdout, file, errorfile</span><br><span class="line">log4j.logger.com.xxx=DEBUG, xxxfile //配置com.xxx包下代码的log，输出log级别为debug以上，定义一个输出源为xxxfile</span><br><span class="line">log4j.additivity.xxxfile = false //xxxfile中log不在rootlog中输出</span><br><span class="line"></span><br><span class="line"># rootlog控制对应包下的输出日志等级</span><br><span class="line">log4j.logger.com.neusoft=DEBUG   </span><br><span class="line">log4j.logger.com.opensymphony.oscache=ERROR   </span><br><span class="line"></span><br><span class="line"># 控制台输出</span><br><span class="line">log4j.appender.stdout=org.apache.log4j.ConsoleAppender</span><br><span class="line">log4j.appender.stdout.layout=org.apache.log4j.PatternLayout</span><br><span class="line">log4j.appender.stdout.layout.ConversionPattern=%d&#123;yyyy-MM-dd HH:mm:ss,SSS&#125; %5p %c&#123;1&#125;:%L - %m%n</span><br><span class="line"></span><br><span class="line"># root日志输出</span><br><span class="line">log4j.appender.file=org.apache.log4j.DailyRollingFileAppender</span><br><span class="line">log4j.appender.file.file=logs/all.log</span><br><span class="line">log4j.appender.file.DatePattern=&apos;.&apos;yyyy-MM-dd</span><br><span class="line">log4j.appender.file.layout=org.apache.log4j.PatternLayout</span><br><span class="line">log4j.appender.file.layout.ConversionPattern=%d&#123;yyyy-MM-dd HH:mm:ss,SSS&#125; %5p %c&#123;1&#125;:%L - %m%n</span><br><span class="line"></span><br><span class="line"># com.xxx包下的日志输出</span><br><span class="line">log4j.appender.xxxfile=org.apache.log4j.DailyRollingFileAppender //定义输出方式为每日文件输出</span><br><span class="line">log4j.appender.xxxfile.file=logs/my.log //配置输出路径</span><br><span class="line">log4j.appender.xxxfile.DatePattern=&apos;.&apos;yyyy-MM-dd //配置文件日期后缀</span><br><span class="line">log4j.appender.xxxfile.layout=org.apache.log4j.PatternLayout //定义输出格式为自定义格式</span><br><span class="line">log4j.appender.xxxfile.layout.ConversionPattern=%d&#123;yyyy-MM-dd HH:mm:ss,SSS&#125; %5p %c&#123;1&#125;:%L  //定义log输出格式</span><br></pre></td></tr></table></figure>
+<li><strong>-Xms</strong> 是指设定程序启动时占用堆内存大小。一般来讲，大点，程序会启动的快一点，但是也可能会导致机器暂时间变慢。  </li>
+<li><strong>-Xmx</strong> 是指设定程序运行期间最大可占用的堆内存大小。如果程序运行需要占用更多的内存，超出了这个设置值，就会抛出OutOfMemory异常。  </li>
+</ul>
+<p>堆空间不足(OutOfMemoryError: Java heap space) </p>
+<ul>
+<li>内存溢出是由于java程序引用对象过多超出了jvm的空间大小<ul>
+<li>优化程序避免不必要的对象引用（如出现循环创建对象）    </li>
+<li>调整vm参数,增大-Xmx最大堆空间</li>
+</ul>
 </li>
 </ul>
-<h1 id="log输出方式"><a href="#log输出方式" class="headerlink" title="log输出方式"></a>log输出方式</h1><p>Log4j提供的appender有以下几种：<br>org.apache.log4j.ConsoleAppender（控制台），<br>org.apache.log4j.FileAppender（文件），<br>org.apache.log4j.DailyRollingFileAppender（每天产生一个日志文件），<br>org.apache.log4j.RollingFileAppender（文件大小到达指定尺寸的时候产生一个新的文件），<br>org.apache.log4j.WriterAppender（将日志信息以流格式发送到任意指定的地方）  </p>
-<h1 id="log输出格式"><a href="#log输出格式" class="headerlink" title="log输出格式"></a>log输出格式</h1><p>Log4j提供的layout有以下几种：<br>org.apache.log4j.HTMLLayout（以HTML表格形式布局），<br>org.apache.log4j.PatternLayout（可以灵活地指定布局模式），<br>org.apache.log4j.SimpleLayout（包含日志信息的级别和信息字符串），<br>org.apache.log4j.TTCCLayout（包含日志产生的时间、线程、类别等等信息）  </p>
-<p><a href="https://www.cnblogs.com/zyw-205520/p/5416412.html" target="_blank" rel="noopener">log4j.properties 详解与配置步骤总结 - 黑天鹅Coding - 博客园</a><br><a href="http://blog.csdn.net/anlina_1984/article/details/5313023" target="_blank" rel="noopener">org.apache.log4j.Logger详解 - CSDN博客</a></p>
+<p>永久代溢出(OutOfMemoryError: PermGen space)</p>
+<ul>
+<li>程序中声明了过多的静态变量及方法<ul>
+<li>设置-XX:MaxPermSize增大空间  </li>
+</ul>
+</li>
+</ul>
+<h1 id="栈溢出-StackOverflowError"><a href="#栈溢出-StackOverflowError" class="headerlink" title="栈溢出(StackOverflowError)"></a>栈溢出(StackOverflowError)</h1><p>栈溢出是由于java代码的<strong>循环调用</strong>、或方法调用层次超出jvm的堆栈空间（如执行递归算法）<br><strong>-Xss</strong>是指设定每个线程的堆栈大小。这个就要依据你的程序，看一个线程大约需要占用多少内存，可能会有多少线程同时运行等。JDK5.0以后每个线程堆栈大小默认为1M</p>
+<h1 id="内存泄漏"><a href="#内存泄漏" class="headerlink" title="内存泄漏"></a>内存泄漏</h1><ul>
+<li>内存泄漏(memory leak)指由于疏忽或错误造成程序未能释放已经不再使用的内存的情况。内存泄漏并非指内存在物理上的消失，而是应用程序分配某段内存后，由于设计错误，失去了对该段内存的控制，因而造成了内存的浪费。<br><img src="http://oeb33qix3.bkt.clouddn.com/18-1-31/48465623.jpg" alt="内存泄漏"></li>
+<li>通过这种有向图的内存管理方式，当一个内存对象失去了所有的引用之后，GC 就可以将其回收。反过来说，如果这个对象还存在引用，那么它将不会被 GC 回收，哪怕是 Java 虚拟机抛出 OutOfMemoryError 。</li>
+</ul>
+<h1 id="热部署"><a href="#热部署" class="headerlink" title="热部署"></a>热部署</h1><p>使用idea开发设置tomcat热部署项目避免修改后手动编译部署<br>修改服务器配置，使得IDEA窗口失去焦点时，更新类和资源<br>菜单Run -&gt; EditConfiguration , 然后配置指定服务器下，右侧server标签下on frame deactivation = Update classes and resource。<br><img src="http://oeb33qix3.bkt.clouddn.com/18-1-31/5690435.jpg" alt=""><br>基于JVM提供的热加载仅支持方法块内代码修改，只有debug模式下，并且是在idea失去焦点时才会触发热加载，相对加载速度缓慢<br><a href="https://www.cnblogs.com/jcook/p/6910238.html" target="_blank" rel="noopener">Intellij IDEA 4种配置热部署的方法 - JCook - 博客园</a></p>
+<h1 id="其他参考链接"><a href="#其他参考链接" class="headerlink" title="其他参考链接"></a>其他参考链接</h1><p><a href="http://blog.csdn.net/qq_35212671/article/details/53563226" target="_blank" rel="noopener">什么是堆，栈，内存泄漏和内存溢出？ - CSDN博客</a><br><a href="http://blog.csdn.net/cpcpcp123/article/details/51262940" target="_blank" rel="noopener">JVM垃圾回收–年轻代、年老点和持久代 - CSDN博客</a><br><a href="https://www.cnblogs.com/panxuejun/p/5882424.html" target="_blank" rel="noopener">java内存溢出示例(堆溢出、栈溢出) - THISISPAN - 博客园</a><br><a href="http://unixboy.iteye.com/blog/174173/" target="_blank" rel="noopener">JVM调优总结 -Xms -Xmx -Xmn -Xss - unixboy - ITeye博客</a>  </p>
 
             <div class="clearfix"></div>
             <hr class="nogutter">
@@ -355,7 +371,7 @@
 <!-- WUMI BEGIN -->
 <script type="text/javascript" id="wumiiComments">
     var wumiiPermaLink = ""; 
-    var wumiiTitle = "Log4j用法"; 
+    var wumiiTitle = "内存溢出、栈溢出与热部署"; 
     var wumiiSitePrefix = "http://www.chenguangsong.online"; 
     var wumiiCommentParams = "&pf=JAVASCRIPT";
 </script>

@@ -4,12 +4,12 @@
 
     
   <url>
-    <loc>http://www.chenguangsong.online/2018/11/01/Log4j%E7%94%A8%E6%B3%95/</loc>
-    <lastmod>2018-01-23T13:28:39.048Z</lastmod>
+    <loc>http://www.chenguangsong.online/2017/11/01/Log4j%E7%94%A8%E6%B3%95/</loc>
+    <lastmod>2018-02-01T13:27:53.405Z</lastmod>
     <data>
         <display>
         <title>Log4j用法</title>
-        <pubTime>2018-11-01T03:45:54.000Z</pubTime>
+        <pubTime>2017-11-01T03:45:54.000Z</pubTime>
         
         <tag>Log4j</tag>
          
@@ -17,6 +17,26 @@
            
              
               <breadCrumb title="Log4j" url="http://www.chenguangsong.online/categories/Log4j/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>http://www.chenguangsong.online/2018/02/01/%E5%86%85%E5%AD%98%E6%BA%A2%E5%87%BA%E3%80%81%E6%A0%88%E6%BA%A2%E5%87%BA%E4%B8%8E%E7%83%AD%E9%83%A8%E7%BD%B2/</loc>
+    <lastmod>2018-02-01T13:24:19.667Z</lastmod>
+    <data>
+        <display>
+        <title>内存溢出、栈溢出与热部署</title>
+        <pubTime>2018-02-01T13:17:57.094Z</pubTime>
+        
+        <tag>java</tag>
+         
+         
+           
+             
+              <breadCrumb title="java" url="http://www.chenguangsong.online/categories/java/"/>
           
         </display>
     </data>
@@ -366,26 +386,6 @@
 
     
   <url>
-    <loc>http://www.chenguangsong.online/2017/12/20/linux%E5%AD%A6%E4%B9%A0%E2%80%94%E2%80%94%E5%91%BD%E4%BB%A4%E8%A1%8C%E9%A2%9C%E8%89%B2%E9%85%8D%E7%BD%AE%E5%8F%8A%E7%8E%AF%E5%A2%83%E5%8F%98%E9%87%8F%E9%85%8D%E7%BD%AE/</loc>
-    <lastmod>2017-03-16T14:59:14.000Z</lastmod>
-    <data>
-        <display>
-        <title>linux学习——命令行颜色配置及环境变量配置</title>
-        <pubTime>2017-12-20T15:29:16.484Z</pubTime>
-        
-        <tag>linux</tag>
-         
-         
-           
-             
-              <breadCrumb title="linux" url="http://www.chenguangsong.online/categories/linux/"/>
-          
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
     <loc>http://www.chenguangsong.online/2017/03/03/%E5%AE%89%E5%8D%93%E6%BA%90%E7%A0%81%E5%AD%A6%E4%B9%A0%EF%BC%882%EF%BC%89%E2%80%94%E2%80%94%E5%86%85%E7%BD%AE%E7%B3%BB%E7%BB%9Fapp/</loc>
     <lastmod>2017-03-16T14:59:14.000Z</lastmod>
     <data>
@@ -399,6 +399,26 @@
            
              
               <breadCrumb title="android" url="http://www.chenguangsong.online/categories/android/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>http://www.chenguangsong.online/2017/12/20/linux%E5%AD%A6%E4%B9%A0%E2%80%94%E2%80%94%E5%91%BD%E4%BB%A4%E8%A1%8C%E9%A2%9C%E8%89%B2%E9%85%8D%E7%BD%AE%E5%8F%8A%E7%8E%AF%E5%A2%83%E5%8F%98%E9%87%8F%E9%85%8D%E7%BD%AE/</loc>
+    <lastmod>2017-03-16T14:59:14.000Z</lastmod>
+    <data>
+        <display>
+        <title>linux学习——命令行颜色配置及环境变量配置</title>
+        <pubTime>2017-12-20T15:29:16.484Z</pubTime>
+        
+        <tag>linux</tag>
+         
+         
+           
+             
+              <breadCrumb title="linux" url="http://www.chenguangsong.online/categories/linux/"/>
           
         </display>
     </data>

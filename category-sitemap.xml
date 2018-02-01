@@ -105,13 +105,6 @@
     </url>
 
     <url>
-        <loc>http://www.chenguangsong.online/categories/java/</loc>
-        <lastmod>2017-09-18T13:12:14.000Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.2</priority>
-    </url>
-
-    <url>
         <loc>http://www.chenguangsong.online/categories/html/</loc>
         <lastmod>2017-09-19T15:37:12.000Z</lastmod>
         <changefreq>weekly</changefreq>
@@ -161,8 +154,15 @@
     </url>
 
     <url>
+        <loc>http://www.chenguangsong.online/categories/java/</loc>
+        <lastmod>2018-02-01T13:24:19.667Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.2</priority>
+    </url>
+
+    <url>
         <loc>http://www.chenguangsong.online/categories/Log4j/</loc>
-        <lastmod>2018-01-23T13:28:39.048Z</lastmod>
+        <lastmod>2018-02-01T13:27:53.405Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.2</priority>
     </url>
