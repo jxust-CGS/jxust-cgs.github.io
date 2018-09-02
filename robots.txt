@@ -6,4 +6,4 @@ Disallow: /fancybox
 Disallow: /font-awesome
 Disallow: /img
 Disallow: /js
-Sitemap: http://www.chenguangsong.online/baidusitemap.xml
+Sitemap: http://www.javacoder.fun/baidusitemap.xml
