@@ -322,7 +322,7 @@
       		<h1 id="java中的堆heap与栈stack"><a href="#java中的堆heap与栈stack" class="headerlink" title="java中的堆heap与栈stack"></a>java中的堆heap与栈stack</h1><p><a href="http://pengjiaheng.iteye.com/blog/518623" target="_blank" rel="noopener">JVM调优总结（一）– 一些概念 - 和你在一起 - ITeye博客</a><br>堆中存的是对象。<br>栈中存的是基本数据类型和堆中对象的引用。<br>一个对象的大小是不可估计的，或者说是可以动态变化的，但是在栈中，一个对象只对应了一个4btye的引用（堆栈分离的好处：））。  </p>
 <h1 id="内存溢出-OutOfMemoryError"><a href="#内存溢出-OutOfMemoryError" class="headerlink" title="内存溢出(OutOfMemoryError)"></a>内存溢出(OutOfMemoryError)</h1><pre><code>我们这里提到的内存溢出其实就是堆空间不足
 </code></pre><p>首先、通过示例查看内存溢出原因是什么？<br><a href="https://www.cnblogs.com/panxuejun/p/5882424.html" target="_blank" rel="noopener">java内存溢出示例(堆溢出、栈溢出) - THISISPAN - 博客园</a>  </p>
-<p><img src="http://oeb33qix3.bkt.clouddn.com/18-2-1/95948607.jpg" alt="堆内存图解"><br>堆内存分为3块年轻代（young generation)、年老代（old generation）、持久代（permanent generation）  ，其中年轻代分为eden区以及2个（或多个）Survivor区  </p>
+<p><img src="/photos/qiniu/18-2-1/95948607.jpg" alt="堆内存图解"><br>堆内存分为3块年轻代（young generation)、年老代（old generation）、持久代（permanent generation）  ，其中年轻代分为eden区以及2个（或多个）Survivor区  </p>
 <p>jvm中配置堆内存参数：</p>
 <ul>
 <li><strong>-Xms</strong> 是指设定程序启动时占用堆内存大小。一般来讲，大点，程序会启动的快一点，但是也可能会导致机器暂时间变慢。  </li>
@@ -345,10 +345,10 @@
 </ul>
 <h1 id="栈溢出-StackOverflowError"><a href="#栈溢出-StackOverflowError" class="headerlink" title="栈溢出(StackOverflowError)"></a>栈溢出(StackOverflowError)</h1><p>栈溢出是由于java代码的<strong>循环调用</strong>、或方法调用层次超出jvm的堆栈空间（如执行递归算法）<br><strong>-Xss</strong>是指设定每个线程的堆栈大小。这个就要依据你的程序，看一个线程大约需要占用多少内存，可能会有多少线程同时运行等。JDK5.0以后每个线程堆栈大小默认为1M</p>
 <h1 id="内存泄漏"><a href="#内存泄漏" class="headerlink" title="内存泄漏"></a>内存泄漏</h1><ul>
-<li>内存泄漏(memory leak)指由于疏忽或错误造成程序未能释放已经不再使用的内存的情况。内存泄漏并非指内存在物理上的消失，而是应用程序分配某段内存后，由于设计错误，失去了对该段内存的控制，因而造成了内存的浪费。<br><img src="http://oeb33qix3.bkt.clouddn.com/18-1-31/48465623.jpg" alt="内存泄漏"></li>
+<li>内存泄漏(memory leak)指由于疏忽或错误造成程序未能释放已经不再使用的内存的情况。内存泄漏并非指内存在物理上的消失，而是应用程序分配某段内存后，由于设计错误，失去了对该段内存的控制，因而造成了内存的浪费。<br><img src="/photos/qiniu/18-1-31/48465623.jpg" alt="内存泄漏"></li>
 <li>通过这种有向图的内存管理方式，当一个内存对象失去了所有的引用之后，GC 就可以将其回收。反过来说，如果这个对象还存在引用，那么它将不会被 GC 回收，哪怕是 Java 虚拟机抛出 OutOfMemoryError 。</li>
 </ul>
-<h1 id="热部署"><a href="#热部署" class="headerlink" title="热部署"></a>热部署</h1><p>使用idea开发设置tomcat热部署项目避免修改后手动编译部署<br>修改服务器配置，使得IDEA窗口失去焦点时，更新类和资源<br>菜单Run -&gt; EditConfiguration , 然后配置指定服务器下，右侧server标签下on frame deactivation = Update classes and resource。<br><img src="http://oeb33qix3.bkt.clouddn.com/18-1-31/5690435.jpg" alt=""><br>基于JVM提供的热加载仅支持方法块内代码修改，只有debug模式下，并且是在idea失去焦点时才会触发热加载，相对加载速度缓慢<br><a href="https://www.cnblogs.com/jcook/p/6910238.html" target="_blank" rel="noopener">Intellij IDEA 4种配置热部署的方法 - JCook - 博客园</a></p>
+<h1 id="热部署"><a href="#热部署" class="headerlink" title="热部署"></a>热部署</h1><p>使用idea开发设置tomcat热部署项目避免修改后手动编译部署<br>修改服务器配置，使得IDEA窗口失去焦点时，更新类和资源<br>菜单Run -&gt; EditConfiguration , 然后配置指定服务器下，右侧server标签下on frame deactivation = Update classes and resource。<br><img src="/photos/qiniu/18-1-31/5690435.jpg" alt=""><br>基于JVM提供的热加载仅支持方法块内代码修改，只有debug模式下，并且是在idea失去焦点时才会触发热加载，相对加载速度缓慢<br><a href="https://www.cnblogs.com/jcook/p/6910238.html" target="_blank" rel="noopener">Intellij IDEA 4种配置热部署的方法 - JCook - 博客园</a></p>
 <h1 id="其他参考链接"><a href="#其他参考链接" class="headerlink" title="其他参考链接"></a>其他参考链接</h1><p><a href="http://blog.csdn.net/qq_35212671/article/details/53563226" target="_blank" rel="noopener">什么是堆，栈，内存泄漏和内存溢出？ - CSDN博客</a><br><a href="http://blog.csdn.net/cpcpcp123/article/details/51262940" target="_blank" rel="noopener">JVM垃圾回收–年轻代、年老点和持久代 - CSDN博客</a><br><a href="https://www.cnblogs.com/panxuejun/p/5882424.html" target="_blank" rel="noopener">java内存溢出示例(堆溢出、栈溢出) - THISISPAN - 博客园</a><br><a href="http://unixboy.iteye.com/blog/174173/" target="_blank" rel="noopener">JVM调优总结 -Xms -Xmx -Xmn -Xss - unixboy - ITeye博客</a>  </p>
 
             <div class="clearfix"></div>
@@ -372,7 +372,7 @@
 <script type="text/javascript" id="wumiiComments">
     var wumiiPermaLink = ""; 
     var wumiiTitle = "内存溢出、栈溢出与热部署"; 
-    var wumiiSitePrefix = "http://www.chenguangsong.online"; 
+    var wumiiSitePrefix = "http://www.javacoder.fun"; 
     var wumiiCommentParams = "&pf=JAVASCRIPT";
 </script>
 <script type="text/javascript" src="http://widget.wumii.cn/ext/cw/widget"></script>
