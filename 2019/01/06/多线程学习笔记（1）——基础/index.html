@@ -1,0 +1,534 @@
+<!DOCTYPE html>
+<!--[if lte IE 8 ]>
+<html class="ie" xmlns="http://www.w3.org/1999/xhtml" xml:lang="en-US" lang="en-US">
+<![endif]-->
+<!--[if (gte IE 9)|!(IE)]><!-->
+<!--
+***************  *      *     *
+      8          *    *       *
+      8          *  *         *
+      8          **           *
+      8          *  *         *
+      8          *    *       *
+      8          *      *     *
+      8          *        *   ***********    -----Theme By Kieran(http://go.kieran.top)
+-->
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en-US" lang="en-US">
+<!--<![endif]-->
+
+<head>
+  <title>多线程学习笔记（1）——基础 | 极光轨迹</title>
+  <!-- Meta data -->
+    <meta http-equiv="Content-Type" content="text/html" charset="UTF-8" >
+    <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="generator" content="极光轨迹">
+    
+    <meta name="author" content="Jxust_CGS">
+    
+    <meta name="description" itemprop="description" content="学习多线程，了解java中为了提高程序执行效率，充分利用计算机多核多线程的特性，但是任务划分到多个线程中去执行，效率是提高了但是任务间的关联，前后执行约束等，就需要通过java的多线程api来使程序按照预期去执行。">
+    
+	
+	<meta name="Keywords" content="java,多线程,Thread">
+    
+
+    <!-- Favicon, (keep icon in root folder) -->
+    <link rel="Shortcut Icon" href="/img/favicon.ico" type="image/ico">
+
+    <link rel="alternate" href="/atom.xml" title="极光轨迹" type="application/atom+xml">
+    <link rel="stylesheet" href="/css/all.css" media="screen" type="text/css">
+    
+    <link rel="stylesheet" href="/highlightjs/vs.css" type="text/css">
+    
+
+    <!--[if IE 8]>
+    <link rel="stylesheet" type="text/css" href="/css/ie8.css" />
+    <![endif]-->
+
+    <!-- jQuery | Load our jQuery, with an alternative source fallback to a local version if request is unavailable -->
+    <script src="/js/jquery-1.11.1.min.js"></script>
+    <script>window.jQuery || document.write('<script src="js/jquery-1.11.1.min.js"><\/script>')</script>
+
+    <!-- Load these in the <head> for quicker IE8+ load times -->
+    <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+    <script src="/js/html5shiv.min.js"></script>
+    <script src="/js/respond.min.js"></script>
+    <![endif]-->
+
+  
+  <link rel="alternate" type="application/rss+xml" title="RSS" href="atom.xml">
+  
+  
+  <link rel="alternate" type="application/atom+xml" title="Atom 0.3" href="atom.xml">
+  
+  
+
+  <style>.col-md-8.col-md-offset-2.opening-statement img{display:none;}</style>
+  
+  <script src="/js/busuanzi.pure.mini.js"></script>
+  <script src="/js/lufei.js"></script>
+</head>
+
+<!--
+<body class="post-template">
+-->
+<body id="index" class="lightnav animsition">
+	  <!-- ============================ START lufei =========================== -->
+		<div id="xiaoren" class="xiaoren">
+			<div id="message">正在加载中……</div>
+			<div id="lufei" class="lufei"></div>
+		</div>
+	  <!-- ============================ END lufei =========================== -->
+      <!-- ============================ Off-canvas navigation =========================== -->
+
+    <div class="sb-slidebar sb-right sb-style-overlay sb-momentum-scrolling">
+        <div class="sb-close" aria-label="Close Menu" aria-hidden="true">
+            <img src="/img/close.png" alt="Close"/>
+        </div>
+        <!-- Lists in Slidebars -->
+        <ul class="sb-menu">
+            <li><a href="/" class="animsition-link" title="Home">首页</a></li>
+            <li><a href="/archives" class="animsition-link" title="archive">文章</a></li>
+            <!-- Dropdown Menu -->
+            
+        	<li>
+        		<a class="sb-toggle-submenu">分类<span class="sb-caret"></span></a>
+            	<ul class="sb-submenu">
+				  	
+				    <li><a href="/categories/Angular/" class="animsition-link">Angular<small>(1)</small></a></li>
+				    
+				    <li><a href="/categories/Hibernate/" class="animsition-link">Hibernate<small>(6)</small></a></li>
+				    
+				    <li><a href="/categories/Java/" class="animsition-link">Java<small>(1)</small></a></li>
+				    
+				    <li><a href="/categories/Log4j/" class="animsition-link">Log4j<small>(1)</small></a></li>
+				    
+				    <li><a href="/categories/Radis/" class="animsition-link">Radis<small>(1)</small></a></li>
+				    
+				    <li><a href="/categories/Spring/" class="animsition-link">Spring<small>(4)</small></a></li>
+				    
+				    <li><a href="/categories/Swagger2/" class="animsition-link">Swagger2<small>(1)</small></a></li>
+				    
+				    <li><a href="/categories/VBS/" class="animsition-link">VBS<small>(1)</small></a></li>
+				    
+				    <li><a href="/categories/android/" class="animsition-link">android<small>(13)</small></a></li>
+				    
+				    <li><a href="/categories/android源码/" class="animsition-link">android源码<small>(3)</small></a></li>
+				    
+				    <li><a href="/categories/bat/" class="animsition-link">bat<small>(1)</small></a></li>
+				    
+				    <li><a href="/categories/fullcalendar-js/" class="animsition-link">fullcalendar.js<small>(1)</small></a></li>
+				    
+				    <li><a href="/categories/git/" class="animsition-link">git<small>(1)</small></a></li>
+				    
+				    <li><a href="/categories/html/" class="animsition-link">html<small>(2)</small></a></li>
+				    
+				    <li><a href="/categories/java/" class="animsition-link">java<small>(8)</small></a></li>
+				    
+				    <li><a href="/categories/linux/" class="animsition-link">linux<small>(2)</small></a></li>
+				    
+				    <li><a href="/categories/modem/" class="animsition-link">modem<small>(1)</small></a></li>
+				    
+				    <li><a href="/categories/python/" class="animsition-link">python<small>(1)</small></a></li>
+				    
+				    <li><a href="/categories/spring/" class="animsition-link">spring<small>(1)</small></a></li>
+				    
+				    <li><a href="/categories/tomcat/" class="animsition-link">tomcat<small>(1)</small></a></li>
+				    
+				    <li><a href="/categories/web/" class="animsition-link">web<small>(2)</small></a></li>
+				    
+				    <li><a href="/categories/杂谈/" class="animsition-link">杂谈<small>(2)</small></a></li>
+				    
+				    <li><a href="/categories/正则表达式/" class="animsition-link">正则表达式<small>(1)</small></a></li>
+				    
+				    <li><a href="/categories/设计模式/" class="animsition-link">设计模式<small>(1)</small></a></li>
+				    
+				    <li><a href="/categories/阿里云/" class="animsition-link">阿里云<small>(1)</small></a></li>
+				    
+				</ul>
+        	</li>
+			
+			
+        	<li>
+        		<a class="sb-toggle-submenu">标签<span class="sb-caret"></span></a>
+            	<ul class="sb-submenu">
+				  	
+				    <li><a href="/tags/Angular/" class="animsition-link">Angular<small>(1)</small></a></li>
+				    
+				    <li><a href="/tags/Hibernate/" class="animsition-link">Hibernate<small>(6)</small></a></li>
+				    
+				    <li><a href="/tags/Json/" class="animsition-link">Json<small>(1)</small></a></li>
+				    
+				    <li><a href="/tags/Log4j/" class="animsition-link">Log4j<small>(1)</small></a></li>
+				    
+				    <li><a href="/tags/Maven/" class="animsition-link">Maven<small>(1)</small></a></li>
+				    
+				    <li><a href="/tags/Radis/" class="animsition-link">Radis<small>(1)</small></a></li>
+				    
+				    <li><a href="/tags/Spring/" class="animsition-link">Spring<small>(4)</small></a></li>
+				    
+				    <li><a href="/tags/Swagger2/" class="animsition-link">Swagger2<small>(1)</small></a></li>
+				    
+				    <li><a href="/tags/VBS/" class="animsition-link">VBS<small>(1)</small></a></li>
+				    
+				    <li><a href="/tags/android/" class="animsition-link">android<small>(12)</small></a></li>
+				    
+				    <li><a href="/tags/android源码/" class="animsition-link">android源码<small>(3)</small></a></li>
+				    
+				    <li><a href="/tags/android源码-android/" class="animsition-link">android源码,android<small>(1)</small></a></li>
+				    
+				    <li><a href="/tags/bat/" class="animsition-link">bat<small>(1)</small></a></li>
+				    
+				    <li><a href="/tags/bootstrap/" class="animsition-link">bootstrap<small>(2)</small></a></li>
+				    
+				    <li><a href="/tags/first/" class="animsition-link">first<small>(1)</small></a></li>
+				    
+				    <li><a href="/tags/freemarker/" class="animsition-link">freemarker<small>(1)</small></a></li>
+				    
+				    <li><a href="/tags/fullcalendar-js/" class="animsition-link">fullcalendar.js<small>(1)</small></a></li>
+				    
+				    <li><a href="/tags/git/" class="animsition-link">git<small>(1)</small></a></li>
+				    
+				    <li><a href="/tags/html/" class="animsition-link">html<small>(2)</small></a></li>
+				    
+				    <li><a href="/tags/java/" class="animsition-link">java<small>(5)</small></a></li>
+				    
+				    <li><a href="/tags/linux/" class="animsition-link">linux<small>(1)</small></a></li>
+				    
+				    <li><a href="/tags/selenium/" class="animsition-link">selenium<small>(1)</small></a></li>
+				    
+				    <li><a href="/tags/shell-linux/" class="animsition-link">shell,linux<small>(1)</small></a></li>
+				    
+				    <li><a href="/tags/spring/" class="animsition-link">spring<small>(1)</small></a></li>
+				    
+				    <li><a href="/tags/tomcat/" class="animsition-link">tomcat<small>(1)</small></a></li>
+				    
+				    <li><a href="/tags/velocity/" class="animsition-link">velocity<small>(1)</small></a></li>
+				    
+				    <li><a href="/tags/术语/" class="animsition-link">术语<small>(1)</small></a></li>
+				    
+				    <li><a href="/tags/正则表达式/" class="animsition-link">正则表达式<small>(1)</small></a></li>
+				    
+				    <li><a href="/tags/设计模式/" class="animsition-link">设计模式<small>(1)</small></a></li>
+				    
+				    <li><a href="/tags/超级终端-at指令/" class="animsition-link">超级终端,at指令<small>(1)</small></a></li>
+				    
+				    <li><a href="/tags/阿里云/" class="animsition-link">阿里云<small>(1)</small></a></li>
+				    
+				</ul>
+        	</li>
+			
+			
+            <li>
+                <a class="sb-toggle-submenu">其他<span class="sb-caret"></span></a>
+                <ul class="sb-submenu">
+                    
+                        <li><a href="/links" target="_BLANK" class="animsition-link">导航</a></li>
+                    
+                </ul>
+            </li>
+            
+            
+            <li>
+                <a class="sb-toggle-submenu">友情链接<span class="sb-caret"></span></a>
+                <ul class="sb-submenu">
+                    
+                    <li><a href="http://ykzhai.top/" class="animsition-link">砦龑堃</a></li>
+                    
+                </ul>
+            </li>
+            
+        </ul>
+        <!-- Lists in Slidebars -->
+        <ul class="sb-menu secondary">
+            <li><a href="/curriculumvitae" class="animsition-link" title="about">关于</a></li>
+            <li><a href="/atom.xml" class="animsition-link" title="rss">RSS</a></li>
+        </ul>
+    </div>
+    
+    <!-- ============================ END Off-canvas navigation =========================== -->
+
+    <!-- ============================ #sb-site Main Page Wrapper =========================== -->
+
+    <div id="sb-site">
+        <!-- #sb-site - All page content should be contained within this id, except the off-canvas navigation itself -->
+
+        <!-- ============================ Header & Logo bar =========================== -->
+
+        <div id="navigation" class="navbar navbar-fixed-top">
+            <div class="navbar-inner">
+                <div class="container">
+                    <!-- Nav logo -->
+                    <div class="logo">
+                        <a href="/" title="Logo" class="animsition-link">
+                         <img src="/img/logo.png" alt="Logo" width="35px;"/> 
+                        </a>
+                    </div>
+                    <!-- // Nav logo -->
+                    <!-- Info-bar -->
+                    <nav>
+                        <ul class="nav">
+                            <li><a href="/" class="animsition-link">极光轨迹</a></li>
+                            <li class="nolink"><span>Always </span>Creative.</li>
+                            
+                            <li><a href="https://github.com/jxust-CGS" title="Github" target="_blank"><i class="icon-github"></i></a></li>
+                            
+                            
+                            
+                            
+                            
+                            <li><a href="http://weibo.com/jxustCGS" title="Sina-Weibo" target="_blank"><i class="icon-sina-weibo"></i></a></li>
+                            
+                            <li class="nolink"><span>Welcome!</span></li>
+                        </ul>
+                    </nav>
+                    <!--// Info-bar -->
+                </div>
+                <!-- // .container -->
+                <div class="learnmore sb-toggle-right">更多</div>
+                <button type="button" class="navbar-toggle menu-icon sb-toggle-right" title="More">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar before"></span>
+                <span class="icon-bar main"></span>
+                <span class="icon-bar after"></span>
+                </button>
+            </div>
+            <!-- // .navbar-inner -->
+        </div>
+
+        <!-- ============================ Header & Logo bar =========================== -->
+
+
+      
+<section id="intro">
+    <div class="container">
+		<div class="row col-md-offset-2">
+            <div class="col-md-8">
+                <h1>多线程学习笔记（1）——基础</h1>
+		<span class="post-meta">
+      <time datetime="2019-01-06T03:45:54.000Z" itemprop="datePublished">
+          2019-01-06
+      </time>
+	
+    
+    | 分类：
+    <a class="categories" href='/categories/java/'>java</a>
+    
+    
+    
+    
+    | 标签：
+    <a class="tags" href='/tags/java/'>java</a>
+    
+    
+</span>
+		<br/>
+            </div>
+        </div>
+        <div class="col-md-8 col-md-offset-2">
+      		<h2 id="线程的启动"><a href="#线程的启动" class="headerlink" title="线程的启动"></a>线程的启动</h2><p>java中启动一个新的线程的方式：调用继承了Thread类的start()方法或实现了Runabled接口的类的start()方法  </p>
+<h2 id="线程类（Thread）的常用方法"><a href="#线程类（Thread）的常用方法" class="headerlink" title="线程类（Thread）的常用方法"></a>线程类（Thread）的常用方法</h2><ul>
+<li>isAlive()：判断线程是否在执行  </li>
+<li>sleep()：静态方法，将当前线程暂停一段时间  </li>
+<li>getId()：获取线程的id    </li>
+<li>interrupt():发送中断信息</li>
+<li>interrupted():静态方法，获取所在线程是否中断并清除中断信号</li>
+<li>isInterrupted():获取是否中断  </li>
+<li>stop():过时方法，不建议使用，直接停止线程，并强制解除锁导致数据不一致<br>停不下来的线程，只能通过在线程中监听中断信息的变化自行处理中断任务<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br></pre></td><td class="code"><pre><span class="line">import java.util.Date;</span><br><span class="line"></span><br><span class="line">public class InterruptTest &#123;</span><br><span class="line">    public static void main(String[] arg)&#123;</span><br><span class="line">        InterruptThread thread = new InterruptThread();   //在main线程中新建线程实例thread</span><br><span class="line">        thread.start();                                   //启动thread线程，此时2个线程在同时执行</span><br><span class="line">        try &#123;</span><br><span class="line">            Thread.sleep(10);                        //main线程休息10微秒，sleep是静态方法，不推荐用thread.sleep(10）容易造成歧义</span><br><span class="line">        &#125; catch (InterruptedException e) &#123;</span><br><span class="line">            e.printStackTrace();</span><br><span class="line">        &#125;</span><br><span class="line">        thread.interrupt();                                //主线程休息、thread 执行10微秒后向thread线程发送中断信号</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">&#125;</span><br><span class="line">class InterruptThread extends Thread&#123;//当此线程开始执行的时候</span><br><span class="line">    public void run()&#123;</span><br><span class="line">        int i= 0;</span><br><span class="line">        System.out.println(&quot;InterruptThread start&quot;);</span><br><span class="line">        while(!Thread.interrupted())&#123;</span><br><span class="line">            System.out.println(&quot;InterruptThread doing ! i=&quot;+i);</span><br><span class="line">            i++;</span><br><span class="line">        &#125;</span><br><span class="line">        System.out.println(&quot;InterruptThread end&quot;);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+<p>sleep方法中会去检查是否线程状态是否中断，如果为true则抛出异常InterruptedException，从而达到中断线程的目的   </p>
+<h2 id="suspend-与-resume"><a href="#suspend-与-resume" class="headerlink" title="suspend 与 resume"></a>suspend 与 resume</h2><p>虽然与stop方法一样，这两个方法也是过时的，也了解一下<br>suspend与resume是线程的暂停与继续方法，能够暂停当前线程，但是如果在线程中加入了同步锁synchronized锁，那么当一个线程被暂停那么这个线程的锁将不会释放，如果这时程序中忘记或遗漏掉了resume方法，那么这个线程间一直处于锁定的状态。当有其他线程再次访问加锁的对象将会一直处于等待。<br>ps：System.out.println方法中有synchronized锁  </p>
+<h2 id="yield"><a href="#yield" class="headerlink" title="yield"></a>yield</h2><p>静态方法，yield切换到其他线程，即让当前运行的线程放弃对cpu的占据，让其他线程运行<br>但是当cpu再次空闲将继续执行</p>
+<h2 id="setPriority"><a href="#setPriority" class="headerlink" title="setPriority"></a>setPriority</h2><p>设置当前线程的优先级别，系统默认优先级别1~10，级别不在此范围内将会抛出错误<br>setPriority具有继承特性、规律性、随机性  </p>
+<ul>
+<li>继承性：如果A线程中启动B线程，那么B线程的优先级将和A线程保持一致  </li>
+<li>规律性：优先级较高的线程将会先执行，能够分配到cpu时间更多运行任务执行更快  </li>
+<li>随机性：优先级更好是会优先抢占cpu时间但是也不是优先级更好的线程一定早于优先级更低的线程执行。个人理解优先级就是类似高概率</li>
+</ul>
+<h2 id="setDaemon"><a href="#setDaemon" class="headerlink" title="setDaemon"></a>setDaemon</h2><p>守护线程：当非守护线程全部结束，守护线程即自行结束<br>如果守护线程的存在时间不够长也会早于其他线程结束任务，但是当守护线程的一直处于运行中，这时才能应用到此特性，当其他所有非守护线程结束，守护线程就会自行结束任务<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br></pre></td><td class="code"><pre><span class="line">public class DaemonThreadTest &#123;</span><br><span class="line">    public static void main(String[] args) &#123;</span><br><span class="line">        DeamonThread thread = new DeamonThread(&quot;A&quot;,100);//A线程任务时长100秒</span><br><span class="line">        DeamonThread thread1 = new DeamonThread(&quot;B&quot;,2);//B线程任务时长2秒</span><br><span class="line">        DeamonThread thread2 = new DeamonThread(&quot;C&quot;,4);//C线程任务时长4秒</span><br><span class="line">        thread.setDaemon(true);</span><br><span class="line">        thread.start();</span><br><span class="line">        thread1.start();</span><br><span class="line">        thread2.start();</span><br><span class="line">        System.out.println(&quot;Main 线程执行任务完成！&quot;);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line">class DeamonThread extends Thread&#123;</span><br><span class="line">    private String name;</span><br><span class="line">    private int k;</span><br><span class="line">    public DeamonThread(String name,int k)&#123;</span><br><span class="line">        this.name = name;</span><br><span class="line">        this.k = k;</span><br><span class="line">    &#125;</span><br><span class="line">    @Override</span><br><span class="line">    public void run() &#123;</span><br><span class="line">        super.run();</span><br><span class="line">        int i =0;</span><br><span class="line">        while(i&lt;k)&#123;</span><br><span class="line">            System.out.println(this.name +&quot; i=&quot;+i++);</span><br><span class="line">            try &#123;</span><br><span class="line">                Thread.sleep(1000);</span><br><span class="line">            &#125; catch (InterruptedException e) &#123;</span><br><span class="line">                e.printStackTrace();</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        System.out.println(this.name + &quot;线程任务执行完成&quot;);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<p>此示例中Main、B、C这3个线程是非守护线程、A是守护线程：原本运行时长最长的A任务在其他非守护线程任务时长最长的C任务之后就直接结束了  </p>
+<h2 id="synchronized"><a href="#synchronized" class="headerlink" title="synchronized"></a>synchronized</h2><p>在线程中为了避免多线程访问同一个对象，调用时数据的脏读取，导致程序异常，我们需要给程序加上同步锁，也就是使用synchronized关键字<br>synchronized是为当前对象添加或指定的对象同步锁，对于<code>多个对象并行访问多个对象</code>的情况下是不存在脏读取的问题，页面<code>不存在线程不安全一说</code><br>只有在多个线程同时访问同一个对象的情况下才需要添加同步锁<br>synchronized如果是添加在方法上如：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">synchronized public vvoid methodA()&#123;</span><br><span class="line">    System.out.println(&quot;do some things&quot;);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<p>其效果与此相同<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line">public void methodA()&#123;</span><br><span class="line">    synchonized(this)&#123;</span><br><span class="line">        System.out.println(&quot;do some things&quot;);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line">```  </span><br><span class="line">* 同步锁加在方法上会将整个方法的调用都等待获取锁，这就是同步锁加在方法体上的弊端，可以通过锁定代码块的方式来优化，在方法中将耗时长的操作放置到同步代码块之前，将数据修改的方法放到同步代码块中，这样方法能并发执行耗时的操作，但是又兼顾了数据的脏读取问题。  </span><br><span class="line">* 还有就是锁加在方法体上会锁定整个对象，这样不利于其他线程调用当前对象的其他同步方法，通过代码块的方式可以只锁定需要修改的属性，而不需要锁定整个对象   </span><br><span class="line">  </span><br><span class="line">只有调用了加了同步锁的方法是线程才会等待，直到获取当前锁对象的最最新值并获取锁，才能继续执行  </span><br><span class="line">但是未加同步锁的方法则不会去检查并同步对象，而是直接读取数据开始执行方法。因此未添加同步锁的方法的执行效率会高于加锁的方法，但是也就有脏读取的风险。  </span><br><span class="line">因此日常编程中如果不存在多线程的问题是一般是不会去给方法添加同步锁  </span><br><span class="line">j2ee企业级开发中tomcat等容器是支持多线程并发调用的，所有在项目开发中需要注意多线程的并发问题，并且在与数据库等外部系统交互时还会增加事务管理，为的就是避免数据的脏读取，导致的数据错误  </span><br><span class="line"></span><br><span class="line">### synchronized的可重入性</span><br></pre></td></tr></table></figure></p>
+<p>public class MutilSyncTest {</p>
+<pre><code>public static void main(String[] args) {
+    MutilSyncMethod object = new MutilSyncMethod();
+    Thread thread = new Thread(object);
+    thread.start();
+
+}
+</code></pre><p>}<br>class MutilSyncMethod implements Runnable{</p>
+<pre><code>@Override
+public void run() {
+    this.methoda();//线程调用同步方法methoda(),将获取当前对象的锁，此时再调用当前对象的同步方法methodb(),并没有因为方法methoda()锁定对象、要等待methoda()方法执行完成而支持处于等待，而是直接开始执行methodb()
+}
+
+synchronized public void methoda(){
+    System.out.println(&quot;MethodA do&quot;);
+    this.methodb();
+}
+
+synchronized public void methodb(){
+    System.out.println(&quot;MethodB do&quot;);
+}
+</code></pre><p>}<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line">### synchronized出现异常，释放锁  </span><br><span class="line">当synchronized方法中出现异常将自动释放当前对象锁  </span><br><span class="line">### synchronized不会继承</span><br><span class="line">当子类中复写父类的同步方法并没有保留同步锁，那么子类中的语句就会异步执行，但是如果在子类中仍然调用了父类方法，那么还是会去获取父类对象锁，才能执行父类方法。  </span><br><span class="line">如果在子类中执行的操作需要增加锁的话，那么子类中方法也要增加synchronized关键字  </span><br><span class="line">## jvm中存在String常量池功能  </span><br><span class="line">[java String 缓冲池概念的举例说明 - hanyuanbo - 博客园](https://www.cnblogs.com/hanyuanbo/archive/2012/09/06/2673011.html)  </span><br><span class="line">Integer中也有缓存池，关注  </span><br><span class="line">[深入剖析Java中的装箱和拆箱 - Matrix海子 - 博客园](https://www.cnblogs.com/dolphin0520/p/3780005.html)  </span><br><span class="line">所以在synchronized中锁定对象中尽量不要使用String对象，可能会导致意外情况发生  </span><br><span class="line"></span><br><span class="line">## 死锁  </span><br><span class="line">死锁是2个同步方法，相互等待各自锁定的对象释放，才能继续执行的情况   </span><br><span class="line"></span><br><span class="line">## 锁监视的是对象指向的地址  </span><br><span class="line">synchronized中的对象监视器，监视的对象，在线程执行中被赋值到其他的对象引用，那么此时的其他方法获取此变量，监视器将监视新的对象，使得两个方法的同步关系失效  </span><br><span class="line">## volatile  </span><br><span class="line">volatile支持数据的可见性，不支持数据的原子性。  </span><br><span class="line">默认在线程运行时，数据转载到临时线程空间后，知道处理完成才将数据回收或回写到主存中。当在多线程场景下，当前线程在运行时，其他线程操作了此线程中的数据，这时在运行的线程不能发现这个修改  </span><br><span class="line">而volatile的作用就是，定义变量时刻从主存中读取和写入，保证数据的可见性</span><br></pre></td></tr></table></figure></p>
+<p>public class VolatileTest {<br>    public static void main(String[] args) throws InterruptedException {<br>        TemplateThread thread = new TemplateThread();<br>        thread.start();<br>        Thread.sleep(1000);<br>        System.out.println(“main try stop TemplateThread!”);<br>        thread.setFlag(false);<br>        System.out.println(“main end!”);<br>    }<br>}<br>class TemplateThread extends Thread{<br>    private boolean flag = true;</p>
+<pre><code>public void setFlag(boolean flag) {
+    this.flag = flag;
+}
+
+@Override
+public void run() {
+    super.run();
+    System.out.println(&quot;TemplateThread start!&quot;);
+    while (this.flag){
+</code></pre><p>//            try {<br>              System.out.println(“TemplateThread is running!”);<br>//                Thread.sleep(100);<br>//            } catch (InterruptedException e) {<br>//                e.printStackTrace();<br>//            }<br>        }<br>        System.out.println(“TemplateThread end!”);<br>    }<br>}<br>```</p>
+
+            <div class="clearfix"></div>
+            <hr class="nogutter">
+        </div>
+        <nav class="pagination" role="pagination">
+    
+    <a class="pull-left" href="/2019/02/06/多线程学习笔记（2）——线程通讯/" style="float: left;">
+        ← 多线程学习笔记（2）——线程通讯
+    </a>
+    
+    
+    <a class="pull-right" href="/2018/02/01/内存溢出、栈溢出与热部署/">
+        内存溢出、栈溢出与热部署 →
+    </a>
+    
+	<br/>
+</nav>
+
+        <br/>
+	<div class="row col-md-offset-2">
+            <div class="col-md-8">
+    			<div class="wumi">
+<!-- WUMI BEGIN -->
+<script type="text/javascript" id="wumiiComments">
+    var wumiiPermaLink = ""; 
+    var wumiiTitle = "多线程学习笔记（1）——基础"; 
+    var wumiiSitePrefix = "http://www.javacoder.fun"; 
+    var wumiiCommentParams = "&pf=JAVASCRIPT";
+</script>
+<script type="text/javascript" src="http://widget.wumii.cn/ext/cw/widget"></script>
+<!-- WUMI END -->
+
+</div>
+            </div>
+        </div>
+    </div>
+</section>
+
+
+      
+<!-- ============================ Footer =========================== -->
+
+<footer>
+    <div class="container">
+            <div class="copy">
+                <p>
+                    &copy; 2014<script>new Date().getFullYear()>2010&&document.write("-"+new Date().getFullYear());</script>, Content By Jxust_CGS. All Rights Reserved.<br>
+					<span id="busuanzi_container_site_pv">本站总访问量<span id="busuanzi_value_site_pv"></span>次</span>
+					<span id="busuanzi_container_site_uv">本站访客数<span id="busuanzi_value_site_uv"></span>人次</span><br />
+                </p>
+                <p>Theme By <a href="//go.kieran.top" style="color: #767D84">Kieran</a></p>
+            </div>
+            <div class="social">
+                <ul>
+                    
+                    <li><a href="https://github.com/jxust-CGS" title="Github" target="_blank"><i class="icon-github"></i></a>&nbsp;</li>
+                    
+                    
+                    
+                    
+                    
+                    <li><a href="http://weibo.com/jxustCGS" title="Sina-Weibo" target="_blank"><i class="icon-sina-weibo"></i></a>&nbsp;</li>
+                    
+                </ul>
+            </div>
+            <div class="clearfix"> </div>
+        </div>
+</footer>
+<script>
+(function(){
+    var bp = document.createElement('script');
+    var curProtocol = window.location.protocol.split(':')[0];
+    if (curProtocol === 'https') {
+        bp.src = 'https://zz.bdstatic.com/linksubmit/push.js';        
+    }
+    else {
+        bp.src = 'http://push.zhanzhang.baidu.com/push.js';
+    }
+    var s = document.getElementsByTagName("script")[0];
+    s.parentNode.insertBefore(bp, s);
+})();
+</script>
+<!-- ============================ END Footer =========================== -->
+      <!-- Load our scripts -->
+<!-- Resizable 'on-demand' full-height hero -->
+<script type="text/javascript">
+    var resizeHero = function () {
+        var hero = $(".cover,.heightblock"),
+            window1 = $(window);
+        hero.css({
+            "height": window1.height()
+        });
+    };
+
+    resizeHero();
+
+    $(window).resize(function () {
+        resizeHero();
+    });
+</script>
+<script src="/js/plugins.min.js"></script><!-- Bootstrap core and concatenated plugins always load here -->
+<script src="/js/jquery.flexslider-min.js"></script><!-- Flexslider plugin -->
+<script src="/js/scripts.js"></script><!-- Theme scripts -->
+
+
+<link rel="stylesheet" href="/fancybox/jquery.fancybox.css" media="screen" type="text/css">
+<script src="/fancybox/jquery.fancybox.pack.js"></script>
+<script type="text/javascript">
+$('#intro').find('img').each(function(){
+  var alt = this.alt;
+
+  if (alt){
+    $(this).after('<span class="caption" style="display:none">' + alt + '</span>');
+  }
+
+  $(this).wrap('<a href="' + this.src + '" title="' + alt + '" class="fancybox" rel="gallery" />');
+});
+(function($){
+  $('.fancybox').fancybox();
+})(jQuery);
+</script>
+
+<!-- Initiate flexslider plugin -->
+<script type="text/javascript">
+    $(document).ready(function($) {
+      (function(){
+        console.log('font');
+        var getCss = function(path) {
+          var head = document.getElementsByTagName('head')[0];
+          link = document.createElement('link');
+          link.href = path;
+          link.rel = 'stylesheet';
+          link.type = 'text/css';
+          head.appendChild(link);
+        };
+        getCss('https://fonts.googleapis.com/css?family=Montserrat:400,700');
+        getCss('https://fonts.googleapis.com/css?family=Open+Sans:400,600');
+      })();
+      $('.flexslider').flexslider({
+        animation: "fade",
+        prevText: "",
+        nextText: "",
+        directionNav: true
+      });
+    });
+</script>
+</body>
+</html>
