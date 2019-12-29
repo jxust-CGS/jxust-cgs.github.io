@@ -37,7 +37,7 @@ $(document).ready(function($) {
 	        cursorborderradius: "5px",
 	        cursorwidth: 9,
 	        enablemousewheel: true,
-	        background: "rgba(255,255,255,0.6)",
+	        background: "rgba(255,255,255,0.7)",
 		});
 
 		// Page transitions
