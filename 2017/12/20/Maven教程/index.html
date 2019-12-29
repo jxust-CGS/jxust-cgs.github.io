@@ -359,13 +359,13 @@
         </div>
         <nav class="pagination" role="pagination">
     
-    <a class="pull-left" href="/2017/12/20/Redis/" style="float: left;">
-        ← Redis学习笔记
+    <a class="pull-left" href="/2017/12/20/Java学习笔记（2）——freemarker/" style="float: left;">
+        ← Java学习笔记（2）——freemarker
     </a>
     
     
-    <a class="pull-right" href="/2017/12/20/使用selenium-python自动化操作浏览器/">
-        使用selenium+python自动化操作浏览器 →
+    <a class="pull-right" href="/2017/12/20/linux学习——命令行颜色配置及环境变量配置/">
+        linux学习——命令行颜色配置及环境变量配置 →
     </a>
     
 	<br/>
@@ -374,10 +374,44 @@
         <br/>
 	<div class="row col-md-offset-2">
             <div class="col-md-8">
-    			<div class="gitment"><div id="comment" class="comments-area">
-    <h4 class="title"><a href="#disqus_comments" name="disqus_comments">Comments</a></h4>
-    
-</div>
+    			<div class="gitment">
+<div id="gitment_title" class="gitment_title"></div>
+<div id="container" style="display:none"></div>
+<link rel="stylesheet" href="https://imsun.github.io/gitment/style/default.css">
+<script src="https://imsun.github.io/gitment/dist/gitment.browser.js"></script>
+<script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+<script>
+  const myTheme = {
+    render(state, instance) {
+      const container = document.createElement('div');
+      container.lang = "en-US";
+      container.className = 'gitment-container gitment-root-container';
+      container.appendChild(instance.renderHeader(state, instance));
+      container.appendChild(instance.renderEditor(state, instance));
+      container.appendChild(instance.renderComments(state, instance));
+      container.appendChild(instance.renderFooter(state, instance));
+      return container;
+    }
+  }
+
+  function showGitment() {
+    $("#gitment_title").attr("style", "display:none");
+    $("#container").attr("style", "").addClass("gitment_container");
+    var gitment = new Gitment({
+      id: decodeURI(window.location.pathname),
+      theme: myTheme,
+      owner: 'jxust-CGS',
+      repo: 'jxust-cgs.github.io',
+      oauth: {
+        client_id: '65441bc04e16e27690a8',
+        client_secret: '9198fa39d85157008598196cb5c4d14ae75cd31c'
+      }
+    });
+    gitment.render('container');
+  }
+
+  showGitment();
+</script>
 </div>
             </div>
         </div>
